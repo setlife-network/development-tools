@@ -71,8 +71,8 @@ var generateModels = function(name, options) {
       var className = modelJson.className
       var variables = modelJson.variables
 
-      var templatePath = path.join(process.cwd(), 'src/templates', 'swiftModel.ejs');
-      var destinationPath = path.join(process.cwd(), 'src/components', className + '.swift');
+      var templatePath = path.join(process.cwd(), 'api/templates', 'swiftModel.ejs');
+      var destinationPath = path.join(process.cwd(), 'api/models/generated', className + '.swift');
 
       fs.readFile(templatePath, 'utf8', function(err, data) {
           var model = ejs.render(data, {
@@ -256,7 +256,6 @@ program
         }
     });
 
-<<<<<<< HEAD
 program
     .command('create-model <name>')
     .option('-t, --type', 'Create associated Bookshelf-GraphQL Type file in /api/types/')
@@ -272,19 +271,17 @@ program
             addTypeToIndex(name);
         }
     });
-=======
-  program
-      .command('generate-models <name>')
-      .option('-s, --swift', 'Generate Swift models')
-      .option('-k, --kotlin', 'Generate Kotlin models')
-      .option('-j, --java', 'Generate Java models')
-      .option('-r, --react', 'Generate React models')
-      .description('Generate models for a given project.')
-      .action(function(name, options) {
-          generateModels(name, options);
-      });
->>>>>>> 239e82b... adding files
 
+program
+    .command('generate-models <name>')
+    .option('-s, --swift', 'Generate Swift models')
+    .option('-k, --kotlin', 'Generate Kotlin models')
+    .option('-j, --java', 'Generate Java models')
+    .option('-r, --react', 'Generate React models')
+    .description('Generate models for a given project.')
+    .action(function(name, options) {
+        generateModels(name, options);
+    });
 
 // Failsafe that shows the help dialogue if the command is not recognized (`$ react xyz`)
 program.on('*', function(opt) {
