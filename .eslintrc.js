@@ -52,7 +52,7 @@ module.exports = {
         'react/jsx-indent-props': ['error', 4],
         'react/self-closing-comp': ['warn'],
         'react/prop-types': 'off',
-        'semi': ['error', 'always'],
+        'semi': ['error', 'off'],
         'space-before-function-paren': ['off'],
         'spaced-comment': ['off'],
         'strict': ['off'],

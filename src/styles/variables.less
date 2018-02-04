@@ -9,15 +9,16 @@
 @defaultFontSize: 1.25rem;
 @defaultLineHeight: 1.65rem;
 
-// spacing
-@defaultSpacing: 0.8rem;
-@smallSpace: 0.5rem;
-@mediumSpace: 1.3rem;
-
 // factors
-@smallFactor: 0.8;
-@mediumFactor: 1.1;
+@smallFactor: 0.75;
+@mediumFactor: 1.25;
 @largeFactor: 1.5;
+
+// spacing
+@baseRem: 0.75rem;
+@smallRem: @baseRem * @smallFactor;
+@mediumRem: @baseRem * @mediumFactor;
+@largeRem: @baseRem * @largeFactor;
 
 // default component sizing
 @windowWidth: 100vw;

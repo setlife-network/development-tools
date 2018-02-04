@@ -68,13 +68,13 @@
     height: @height;
 }
 .sizePadding(@yFactor: 1, @xFactor: 1) {
-    padding: @defaultSpacing * @yFactor @defaultSpacing * @xFactor;
+    padding: @baseRem * @yFactor @baseRem * @xFactor;
 }
 .sizeMargin(@factor: 1) {
-    margin: @defaultSpacing * @factor;
+    margin: @baseRem * @factor;
 }
 .sizeMargin(@yFactor: 1, @xFactor: 1) {
-    margin: @defaultSpacing * @yFactor @defaultSpacing * @xFactor;
+    margin: @baseRem * @yFactor @baseRem * @xFactor;
 }
 .transform(@value) {
     -webkit-transform: @value;
