@@ -1,3 +1,5 @@
+### Overview
+
 Styles are located in the /src/styles folder and can generally be created with a corresponding React components (see the README on how to use the auto-generator CLI tools)
 
 There are several stylesheets containing mixins and variables that optimize reusability and readability
@@ -16,3 +18,11 @@ Store all custom px or rem values to standardize the size of reusable elements l
 
 - flex.less
 A custom SetFlex layer with flexbox style mixins to optimize shorthand classnames for flex rows and columns. The basic mixins are .row, .column, .flex, and alignments and justifications classes. The rest is ancient magic created by @quinstinchurchill to banish Bootstrap long ago and needs to be documented
+
+### SetFlex Approach
+
+- Look for rows and columns within a design mock and lay out the HTML elements without styling
+- Add .column or .row if elements aren't flowing in the right direction
+- To center horizontally, .flex-center should help
+- Prefer padding and margins over setting fixed heights and widths. This generally leads to fewer CSS rules
+- .flex, .flex-self, and .flex-shrink are usually only necessary when there are repeated elements that need to align properly across multiple flex containers (like a list of customers)

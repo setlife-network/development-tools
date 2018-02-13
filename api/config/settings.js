@@ -1,6 +1,5 @@
 module.exports = {
     // Database configuration
-    // API Access Keys - AS ENVIRONMENT VARIABLES ONLY
     // Custom config functions
     db: {
         host: 'insert rds database host',
@@ -25,12 +24,6 @@ module.exports = {
                 password: 'make this password secure',
                 charset: 'UTF8_GENERAL_CI'
             }
-        }
-    },
-    apiKeys: {
-        aws: {
-            accessKeyId: 'Do not hardcode AWS keys',
-            secretAccessKey: 'Use environment variables'
         }
     },
     forceHttps: function(req, res, next) {

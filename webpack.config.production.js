@@ -23,9 +23,9 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.(js|jsx)?$/,
-                                include: [
-                                    path.resolve(__dirname, 'src')
-                                ],
+                include: [
+                    path.resolve(__dirname, 'src')
+                ],
 				loaders: ['babel?presets[]=es2015,presets[]=react,presets[]=stage-0'],
 				exclude: /node_modules/,
 				

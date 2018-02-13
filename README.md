@@ -6,9 +6,9 @@ Libaries used: Express, React, Redux, React Router, Webpack
 
 ## Setup
 
-1. Clone the repo `git clone https://github.com/brgarciarivas/setlife`
+1. Clone the repo `git clone https://github.com/otech47/setlife-react-node-boilerplate`
 
-2. Move into the directory `cd setlife`
+2. Move into the directory `cd setlife-react-node-boilerplate`
 
 3. Install dependencies `npm install` 
 
@@ -60,7 +60,7 @@ In development, the bundle is created behind the scenes and is not production re
 
 this command will bundle up files and export them to public folder:
 
-	Setlife/public
+	~/public
 
 ## Testing your production bundle 
 
@@ -81,6 +81,11 @@ This script will serve your app from the production bundle in the public folder.
 to terminate the express server run:
 
 	npm run stop
+
+or
+    
+    CTRL/CMD + C
+
 
 ## Using the CLI tools
 
