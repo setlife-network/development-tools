@@ -80,65 +80,19 @@ var generateType = function(name) {
 var addModelToIndex = function(name) {
     console.log('Adding ' + name + ' model to index...');
 
-    var modelsIndexPath = path.join(process.cwd(), 'api/models', 'index.js');
-
-    fs.readFile(modelsIndexPath, 'utf8', function(err, indexedModels) {
-        var newModelIndex = indexedModels.split('return {')[0] + 'return {';
-        var afterReturn = indexedModels.split('return {')[1];
-
-        // Matches all strings inside require('') statements
-        var rx = /require\(\'.\/\s*(.*?)\s*\'\)/g;
-        var models = [];
-        var match;
-
-        while ((match = rx.exec(afterReturn)) !== null) {
-            models.push(match[1]);
-        }
-
-        models.push(name);
-        models.sort();
-
-        models.forEach(function(m, i) {
-            newModelIndex += '\n        ' + m + ': require(\'./' + m + '\'),';
-        });
-        newModelIndex = newModelIndex.substring(0, newModelIndex.length - 1);
-        newModelIndex += '\n    };\n})();';
-
-        fs.writeFile(modelsIndexPath, newModelIndex);
-        console.log('Added model:  ' + name + ' to index...');
-    });
+    amendJsIndex({
+        itemPath: 'api/models',
+        itemName: name
+    })
 };
 
 var addTypeToIndex = function(name) {
     console.log('Adding ' + name + 'Type to index...');
 
-    var typesIndexPath = path.join(process.cwd(), 'api/types', 'index.js');
-
-    fs.readFile(typesIndexPath, 'utf8', function(err, indexedTypes) {
-        var newTypeIndex = indexedTypes.split('return {')[0] + 'return {';
-        var afterReturn = indexedTypes.split('return {')[1];
-
-        // Matches all strings inside require('') statements
-        var rx = /require\(\'.\/\s*(.*?)\s*\'\)/g;
-        var types = [];
-        var match;
-
-        while ((match = rx.exec(afterReturn)) !== null) {
-            types.push(match[1]);
-        }
-
-        types.push(name + 'Type');
-        types.sort();
-
-        types.forEach(function(t, i) {
-            newTypeIndex += '\n        ' + t + ': require(\'./' + t + '\'),';
-        });
-        newTypeIndex = newTypeIndex.substring(0, newTypeIndex.length - 1);
-        newTypeIndex += '\n    };\n})();';
-
-        fs.writeFile(typesIndexPath, newTypeIndex);
-        console.log('Added type:  ' + name + 'Type to index...');
-    });
+    amendJsIndex({
+        itemPath: 'api/types',
+        itemName: name + 'Type'
+    })
 };
 
 var addStyleToIndex = function(name) {
@@ -168,6 +122,37 @@ var addStyleToIndex = function(name) {
         console.log('Added stylesheet:  ' + name + ' to index...');
     });
 };
+
+const amendJsIndex = (params) => {
+    var indexPath = path.join(process.cwd(), params.itemPath, 'index.js');
+
+    fs.readFile(indexPath, 'utf8', function(err, indexedItems) {
+        var newItemIndex = indexedItems.split('return {')[0] + 'return {';
+        var afterReturn = indexedItems.split('return {')[1];
+
+        // Matches all strings inside require('') statements
+        var rx = /require\(\'.\/\s*(.*?)\s*\'\)/g;
+        var items = [];
+        var match;
+
+        while ((match = rx.exec(afterReturn)) !== null) {
+            items.push(match[1]);
+        }
+
+        items.push(params.itemName);
+        items.sort();
+        items = _.uniq(items);
+
+        items.forEach(function(s, i) {
+            newItemIndex += '\n        ' + s + ': require(\'./' + s + '\'),';
+        });
+        newItemIndex = newItemIndex.substring(0, newItemIndex.length - 1);
+        newItemIndex += '\n    };\n})();';
+
+        fs.writeFile(indexPath, newItemIndex);
+        console.log(params.itemName + ' has been added to the ' + params.itemPath + ' index')
+    });
+}
 
 // Parse command line options
 

@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import StartReducer from './StartReducer';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
+import sampleState from './sampleState';
+
 export default combineReducers({
-    StartReducer,
+    sampleState,
     routing: routerReducer
 });

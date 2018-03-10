@@ -4,9 +4,10 @@ import { Router, Route, browserHistory, hashHistory } from 'react-router';
 import { Provider, connect } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux';
-import reducers from './reducers/index';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
+
+import reducers from './reducers/index';
 import routes from './routes';
 
 // Stylesheets

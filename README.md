@@ -28,10 +28,9 @@ Get familiar with the **setlife** folder structure
 	|-- /fonts/						# Avenir Font included
 	|-- /images/					# Store all photos here
 |-- /src/							# Application source code
-	|-- /actions/					# Redux Actions 
 	|-- /components/			    # React components
 	|-- /constants/					# Any constant variable used throughout the app
-	|-- /reducers/					# Redux Reducers
+	|-- /reducers/					# Redux Reducers + Redux Actions in the same file
 	|-- /scripts/					# Functions for API calls, data formatters, validators, etc
 	|-- /styles/					# All .less stylesheets
 ```
@@ -40,7 +39,7 @@ Get familiar with the **setlife** folder structure
 
 ## Development
 
-Development files are served from webpack-dev-server, configured with webpack.config.js, and hot-reloaded automatically.
+React+Redux front-end development files are served from webpack-dev-server, configured with webpack.config.js, and hot-reloaded automatically on every save.
 
 to start webpack-dev-server run:
 
@@ -48,9 +47,15 @@ to start webpack-dev-server run:
 
 this command will bundle up files for webpack-dev-sever and host them on: 
 
-	http://localhost:8080
+http://localhost:8080
 
-**_anything outside of the ~/src folder will not be hot-reloaded when changed_**
+
+to start the Node+Express application sourced in the `/api` folder run:
+
+    node server
+
+
+**_Hot-reloading is only enabled for files in the /src folder. Changes to any files in the /api folder will usually require a server restart_**
 
 ## Production	
 
@@ -66,28 +71,19 @@ this command will bundle up files and export them to public folder:
 
 Testing the production bundle can be done by running an express server from server.js in the root directory. To start the server run:
 
-	npm run start
-	
-or
-
 	node server
 	
-This script will serve your app from the production bundle in the public folder. To access the app visit 
+This script will serve your app from the production bundle in the public folder. To access the app go to 
 
 	http://localhost:3000
 
 **_Make sure to terminate the server when finished testing_**
 
-to terminate the express server run:
+to terminate the express server press `CTRL + c`:
 
-	npm run stop
+## Automated Programming - CLI Tools
 
-or
-    
-    CTRL/CMD + C
-
-
-## Using the CLI tools
+The `setlife.js` file enables convenience tools that generate React components based off the templates in `/src/templates` and `/api/templates`
 
 - Run `npm install -g` to enable `setlife` CLI tools
 - `setlife create-component <name>` creates a standard component in /src/components

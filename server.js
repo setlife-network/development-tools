@@ -5,7 +5,7 @@ var fs = require('fs');
 var app = express();
 
 var isProduction = process.env.NODE_ENV === 'production';
-var port = isProduction ? 80 : 3000;
+var port = isProduction ? process.env.PORT : 3000;
 
 // var settings = require('./api/config/settings');
 // app.use(settings.forceHttps);

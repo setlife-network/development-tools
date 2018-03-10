@@ -3,7 +3,7 @@ var _ = require('lodash');
 
 var sampleModule = module.exports = (function() {
 
-    var privateFunction1 = function(params) {
+    const privateFunction1 = function(params) {
         // All functions should only ever need 1 parameter
         // Pass params around to any function in any module as a singleton object
         // Add or rename properties as needed
@@ -14,7 +14,7 @@ var sampleModule = module.exports = (function() {
         });
     };
 
-    var privateFunction2 = function(params) {
+    const privateFunction2 = function(params) {
         return new Promise(function(resolve, reject) {
             privateFunction1(params)
             .then(function(params) {

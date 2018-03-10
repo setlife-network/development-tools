@@ -3,9 +3,26 @@
     background-color: @white;
     // LESS mixins
     .column;
+    .align-center;
     .sizeMargin();
     // Nested elements in each component
     h6 {
         text-decoration: italic;
+        .sizeFont(1.2);
+    }
+    span {
+        .smallFont;
+        .sizeMargin(0.5, 0);
+    }
+    .section {
+        .card();
+        .sizePadding();
+        .sizeMargin();
+        background-color: @dark-white;
+        border-radius: 6px;
+        width: 25rem;
+        text-align: center;
+        .column;
+        .align-center;
     }
 }

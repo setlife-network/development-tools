@@ -2,6 +2,10 @@ import React from 'react';
 import { API_ROOT } from '../constants';
 
 export default {
+    graphStringify(json) {
+        json = JSON.stringify(json);
+        return json.replace(/\"([^(\")"]+)\":/g,'$1:');
+    },
     get(route, query) {
         return (
             fetch(API_ROOT + route, {

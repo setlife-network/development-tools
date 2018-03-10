@@ -2,6 +2,7 @@ module.exports = {
     'extends': 'airbnb',
     'rules': {
         'arrow-body-style': ['off'],
+        'arrow-parens': ['off'],
         'comma-dangle': ['off'],
         'comma-spacing': ['error', { 'before': false, 'after': true }],
         'consistent-return': ['off'],
@@ -52,7 +53,7 @@ module.exports = {
         'react/jsx-indent-props': ['error', 4],
         'react/self-closing-comp': ['warn'],
         'react/prop-types': 'off',
-        'semi': ['error', 'off'],
+        'semi': 'off',
         'space-before-function-paren': ['off'],
         'spaced-comment': ['off'],
         'strict': ['off'],
