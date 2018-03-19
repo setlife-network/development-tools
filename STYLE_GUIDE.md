@@ -17,7 +17,7 @@ Import custom fonts in this file and make use of the font sizing mixins where ap
 Store all custom px or rem values to standardize the size of reusable elements like buttons, pages, panels, tiles, etc.
 
 - flex.less
-A custom SetFlex layer with flexbox style mixins to optimize shorthand classnames for flex rows and columns. The basic mixins are .row, .column, .flex, and alignments and justifications classes. The rest is ancient magic created by @quinstinchurchill to banish Bootstrap long ago and needs to be documented
+A custom SetFlex layer with flexbox style mixins to optimize shorthand classnames for flex rows and columns. The basic mixins are .row, .column, .flex, and alignments and justifications classes
 
 ### SetFlex Approach
 
