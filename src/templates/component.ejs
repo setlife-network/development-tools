@@ -3,13 +3,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 <% } -%>
 
+<% if (stateless) { -%>
+const <%- name %> = ({ props }) => {
+    return (
+        <div className='<%- name %>'>
+        </div>
+    )
+}
+
+export default <%- name %>
+<% } else if (redux) { -%>
 import Base from './Base';
 
-<% if (redux) { -%>
 class <%- name %> extends Base {
-<% } else { -%>
-export default class <%- name %> extends Base {
-<% } -%>
     render() {
         return (
             <div className='<%- name %>'>
@@ -18,6 +24,19 @@ export default class <%- name %> extends Base {
         );
     }
 }
+<% } else { -%>
+import Base from './Base';
+
+export default class <%- name %> extends Base {
+    render() {
+        return (
+            <div className='<%- name %>'>
+                <h6><%- name %></h6>
+            </div>
+        );
+    }
+}
+<% } -%>
 
 <% if (redux) { -%>
 const mapStateToProps = (state) => {

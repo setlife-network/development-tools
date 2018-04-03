@@ -1,0 +1,14 @@
+.NavLinkItem {
+    color: @accent;
+    cursor: pointer;
+}
+
+@media screen and (min-width: @sm) {
+    .NavLinkItem {
+        .flex;
+        .column;
+        > * {
+            .flex-center;
+        }
+    }
+}

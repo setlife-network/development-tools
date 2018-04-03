@@ -1,0 +1,32 @@
+.NavigationBar {
+    .sizePadding(0, 1);
+}
+
+@media screen and (min-width: @sm) {
+    .NavigationBar {
+        .sizePadding(0, 10);
+
+        height: @navBarHeight;
+        background-color: @secondary;
+
+        .row-nowrap;
+        .logo-container {
+            .flex;
+            .column;
+        }
+        .logo {
+            background-image: url('https://d1wbxby8dwa4u.cloudfront.net/namecheap/small_ca6a250fc84f30e571a62286fc8c2c16c7ce64b4.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: @navBarHeight;
+            width: @navBarHeight * 2;
+        }
+
+        .nav-container {
+            .flex-shrink;
+            .row-nowrap;
+            .align-center;
+        }
+    }
+}
