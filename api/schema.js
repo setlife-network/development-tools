@@ -12,24 +12,28 @@ var apiSchema = new g.GraphQLSchema(
             description: 'Endpoints with POST, PUT, and DELETE functionality go here',
 
             fields: {
-                executeRoute: {
+                submitContactForm: {
                     args: {
-                        requiredArgument: {
-                            description: 'This argument is required to execute this route',
+                        name: {
+                            description: 'The name of the person trying to get in touch',
                             type: new g.GraphQLNonNull(g.GraphQLString)
                         },
-                        optionalArgument: {
-                            description: 'This argument is not necessary. Be sure to handle null cases.',
-                            type: g.GraphQLString
+                        email: {
+                            description: 'The email address of the person trying to get in touch',
+                            type: new g.GraphQLNonNull(g.GraphQLString)
+                        },
+                        message: {
+                            description: 'The message from the person trying to get in touch',
+                            type: new g.GraphQLNonNull(g.GraphQLString)
                         }
                     },
 
-                    description: 'A sample mutation route executed. Whenever possible, name mutation routes as a grammatical combination of action verb and direct object. (ex: confirmOrder, sendInvoice, registerCustomer) ',
+                    description: 'A POST request with information from the Contact Form',
 
                     type: g.GraphQLString,
 
                     resolve: function(root, args) {
-                        return apiModules.sampleModule.publicFunction1(args);
+                        return apiModules.contact.sendEmail(args);
                     }
                 }
             }

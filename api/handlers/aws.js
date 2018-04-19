@@ -1,8 +1,8 @@
 var ses = require('node-ses');
 
-var awsKeys = require('../config/settings').aws;
+var awsConfig = require('../config/settings').aws;
 
-var client = ses.createClient({ key: awsKeys.accessKeyId, secret: awsKeys.secretAccessKey });
+var client = ses.createClient({ key: awsConfig.accessKeyId, secret: awsConfig.secretAccessKey });
 
 var aws = module.exports = (function() {
 
@@ -15,7 +15,7 @@ var aws = module.exports = (function() {
             
             return new Promise((resolve, reject) => {
                 client.sendEmail({
-                    to: params.recipient,
+                    to: awsConfig.contactRecipient,
                     from: params.sender,
                     subject: params.subject,
                     message: params.message

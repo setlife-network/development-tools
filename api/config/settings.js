@@ -26,6 +26,11 @@ module.exports = {
             }
         }
     },
+    aws: {
+        accessKeyId: 'AWS public key goes here',
+        secretAccessKey: 'AWS secret goes here',
+        contactRecipient: 'Email address for recieving contact form emails goes here'
+    },
     forceHttps: function(req, res, next) {
         var isProduction = process.env.NODE_ENV != null;
 
