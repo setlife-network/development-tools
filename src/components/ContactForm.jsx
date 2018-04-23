@@ -3,34 +3,56 @@ import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 
 import Base from './Base';
+import Button from './Button';
+import TextInput from './TextInput';
 
-import { API_ROOT } from '../constants/index';
+import { submitContactForm } from '../reducers/contact';
 
 class ContactForm extends Base {
-    handleSubmit() {
-
+    constructor(props) {
+        super(props);
+        this.autoBind('handleSubmit')
+    }
+    handleSubmit(values) {
+        this.props.submitContactForm(values)
     }
     render() {
+        const { handleSubmit } = this.props
+
         return (
-            <form action={API_ROOT + 'graph/'} method='POST'>
-                <label htmlFor='name'>Name</label>
-                <input type='text' name='name' />
+            <div className='ContactForm'>
+                <form onSubmit={handleSubmit(this.handleSubmit)}>
+                    <Field
+                        component={TextInput}
+                        name='name'
+                        label='Name'
+                        type='text'
+                    />
+                    <Field
+                        component={TextInput}
+                        name='email'
+                        label='Email'
+                        type='text'
+                    />
+                    <Field
+                        component={TextInput}
+                        name='message'
+                        label='Message'
+                        type='text'
+                    />
 
-                <label htmlFor='email'>Email</label>
-                <input type='email' name='email' />
-
-                <label htmlFor='message'>Message</label>
-                <textarea name='message' rows='3'></textarea>
-
-                <input type='submit' />
-            </form>
+                    <Button onClick={handleSubmit(this.handleSubmit)}>
+                        <p>Submit</p>
+                    </Button>
+                </form>
+            </div>
+            
         );
     }
 }
 
 ContactForm = reduxForm({
-    form: 'contact-form',
-    validate,
+    form: 'contact-form'
 })(ContactForm)
 
 const mapStateToProps = ({ contact }) => {
@@ -41,6 +63,7 @@ const mapStateToProps = ({ contact }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        submitContactForm: (data) => dispatch(submitContactForm(data))
     };
 };
 
