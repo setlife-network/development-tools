@@ -7,10 +7,7 @@ export default class TextInput extends Base {
         super(props);
     }
     render() {
-       
         const { input, meta: { touched, error }, name, label, text, type, className, disabled } = this.props;
-        
-        const disabledStatus = disabled ? 'disabled' : 'enabled';
         
         return (
             <div className={`TextInput column ${className || ''}`}> 
@@ -24,7 +21,7 @@ export default class TextInput extends Base {
                 <span className='bar'/>
                 <label
                     htmlFor={name} 
-                    className={`main_label ${disabledStatus} `}
+                    className={`main_label ${disabled ? 'disabled' : 'enabled'} `}
                 >
                     {label}
                 </label>
