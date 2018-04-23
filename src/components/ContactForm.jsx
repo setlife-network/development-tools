@@ -1,10 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
 
 import Base from './Base';
 
-import {API_ROOT} from '../constants/index';
+import { API_ROOT } from '../constants/index';
 
 class ContactForm extends Base {
+    handleSubmit() {
+
+    }
     render() {
         return (
             <form action={API_ROOT + 'graph/'} method='POST'>
@@ -23,4 +28,20 @@ class ContactForm extends Base {
     }
 }
 
-export default ContactForm;
+ContactForm = reduxForm({
+    form: 'contact-form',
+    validate,
+})(ContactForm)
+
+const mapStateToProps = ({ contact }) => {
+    return {
+        ...contact
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

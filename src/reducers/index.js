@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
-import sampleState from './sampleState';
+import environment from './environment';
 
 export default combineReducers({
-    sampleState,
+    environment,
     routing: routerReducer
 });

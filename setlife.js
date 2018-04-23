@@ -17,12 +17,14 @@ var generateComponent = function(name, options) {
 
     var templatePath = path.join(process.cwd(), 'src/templates', 'component.ejs');
     var destinationPath = path.join(process.cwd(), 'src/components', name + '.jsx');
-    var redux = options.redux;
+    var redux = options.redux || false;
+    var stateless = options.stateless || false;
 
     fs.readFile(templatePath, 'utf8', function(err, data) {
         var component = ejs.render(data, {
             name: name,
-            redux: options.redux || false
+            redux: options.redux || false,
+            stateless: stateless || false
         });
 
         fs.writeFile(destinationPath, component);
@@ -164,6 +166,7 @@ program
     .command('create-component <name>')
     .option('-s, --style', 'Create dedicated stylesheet')
     .option('-r, --redux', 'Connect Redux state mappings')
+    .option('-t, --stateless', 'Create a stateless component')
     .description('Generate a new React component.')
     .action(function(name, options) {
         generateComponent(name, options);

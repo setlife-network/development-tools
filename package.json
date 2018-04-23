@@ -1,5 +1,5 @@
 {
-  "name": "SetLife",
+  "name": "setlife-react-node-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,15 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brgarciarivas/SetLife.git"
+    "url": "git+https://github.com/otech47/setlife-react-node-boilerplate.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brgarciarivas/SetLife/issues"
+    "url": "https://github.com/otech47/setlife-react-node-boilerplate/issues"
   },
-  "homepage": "https://github.com/brgarciarivas/SetLife#readme",
+  "homepage": "https://github.com/otech47/setlife-react-node-boilerplate#readme",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.3",
     "@fortawesome/react-fontawesome": "0.0.17",
