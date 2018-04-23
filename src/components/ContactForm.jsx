@@ -21,6 +21,7 @@ class ContactForm extends Base {
 
         return (
             <div className='ContactForm'>
+                <p>This is the ContactForm component</p>
                 <form onSubmit={handleSubmit(this.handleSubmit)}>
                     <Field
                         component={TextInput}
