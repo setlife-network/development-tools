@@ -71,7 +71,8 @@ var apiSchema = new g.GraphQLSchema(
                     args: {
                         id: {
                             description: 'Specify the data model\'s unique ID',
-                            type: g.GraphQLLong
+                            type: g.GraphQLLong,
+                            defaultValue: 10
                         },
                         property: {
                             description: 'Or allow the client to specify any other properties as needed',
