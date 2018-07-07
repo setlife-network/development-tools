@@ -20,7 +20,7 @@ var apiSchema = new g.GraphQLSchema(
                         },
                         optionalArgument: {
                             description: 'This argument is not necessary. Be sure to handle null cases.',
-                            type: g.GraphQLLong
+                            type: g.GraphQLString
                         }
                     },
 

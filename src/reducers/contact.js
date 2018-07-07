@@ -2,7 +2,7 @@ import api from '../scripts/api';
 
 // Reducer
 const initialState = {
-    contactFormSubmitted: false
+    contactFormSubmitted: false 
 };
 
 export default function reducer(state = initialState, action) {
@@ -33,7 +33,7 @@ export function submitContactForm(params) {
             // Handle payload
             // Dispatch additional actions
             console.log(payload)
-            dispatch(changeContactFormSubmitted(true))
+            
         })
         .catch(err => {
             // Handle error
@@ -43,7 +43,7 @@ export function submitContactForm(params) {
 
 export function changeContactFormSubmitted(submitted) {
     return {
-        type: CHANGE_CONTACT_FORM_SUBMITTED,
+        type: ACTCHANGE_CONTACT_FORM_SUBMITTEDION_NAME,
         submitted
     };
 }
