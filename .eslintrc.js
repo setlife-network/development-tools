@@ -1,6 +1,7 @@
 module.exports = {
     'extends': 'airbnb',
     'rules': {
+        'array-callback-return': ['off'],
         'arrow-body-style': ['off'],
         'arrow-parens': ['off'],
         'comma-dangle': ['off'],
@@ -34,6 +35,7 @@ module.exports = {
         'no-self-compare': 'off',
         'no-shadow': 'off',
         'no-undef': 'off',
+        'no-underscore-dangle': 'off',
         'no-unused-vars': 'off',
         'no-unreachable': 'off',
         'no-useless-escape': 'off',
