@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "eslint ./src --ext .jsx; ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --inline ",
     "start": "node server.js",
+    "test": "jest",
     "deploy": "./node_modules/webpack/bin/webpack.js -p --config webpack.config.production.js"
   },
   "bin": {
@@ -80,6 +81,8 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "imports-loader": "^0.6.5",
+    "jest": "^23.3.0",
+    "jest-extended": "^0.7.2",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "path": "^0.12.7",
