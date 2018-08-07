@@ -1,4 +1,8 @@
 module.exports = {
+    "parser": "babel-eslint",
+    "ecmaFeatures": {
+        "classes": true
+    },
     'extends': 'airbnb',
     'rules': {
         'arrow-body-style': ['off'],
@@ -15,7 +19,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'class-methods-use-this': ['off'],
         'indent': ['error', 4],
-	'jsx-a11y/img-has-alt': 'off',
+        'jsx-a11y/img-has-alt': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-quotes': ['error', 'prefer-single'],
         'keyword-spacing': ['error', { 'after': true }],

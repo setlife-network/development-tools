@@ -13,9 +13,7 @@ const <%- name %> = ({ props }) => {
 
 export default <%- name %>
 <% } else if (redux) { -%>
-import Base from './Base';
-
-class <%- name %> extends Base {
+class <%- name %> extends React.Component {
     render() {
         return (
             <div className='<%- name %>'>
@@ -25,9 +23,7 @@ class <%- name %> extends Base {
     }
 }
 <% } else { -%>
-import Base from './Base';
-
-export default class <%- name %> extends Base {
+export default class <%- name %> extends React.Component {
     render() {
         return (
             <div className='<%- name %>'>
