@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Base from './Base';
-
-export default class Button extends Base {
+export default class Button extends React.Component {
     constructor(props) {
         super(props);
     }

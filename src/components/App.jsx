@@ -5,10 +5,9 @@ import React from 'react';
 import _ from 'lodash'
 
 // app components
-import Base from './Base';
 import NavigationBar from './NavigationBar';
 
-export default class App extends Base {
+export default class App extends React.Component {
     constructor(props) {
         super(props);
         // Bind custom component functions here that need to access the state

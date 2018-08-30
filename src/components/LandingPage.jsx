@@ -1,11 +1,10 @@
 import React from 'react';
 
-import Base from './Base';
 import Button from './Button';
 import ContactForm from './ContactForm';
 import Icon from './Icon';
 
-export default class LandingPage extends Base {
+export default class LandingPage extends React.Component {
     render() {
         return (
             <div className='LandingPage'>

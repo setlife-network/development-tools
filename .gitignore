@@ -39,3 +39,6 @@ jspm_packages
 # React package bundles
 public/bundle.js
 public/bundle.js.map
+
+# Hide Environment Variables
+.env

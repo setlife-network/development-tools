@@ -2,18 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
 
-import Base from './Base';
 import Button from './Button';
 import TextInput from './TextInput';
 
 import { submitContactForm } from '../reducers/contact';
 
-class ContactForm extends Base {
-    constructor(props) {
-        super(props);
-        this.autoBind('handleSubmit')
-    }
-    handleSubmit(values) {
+class ContactForm extends React.Component {
+    handleSubmit = (values) => {
         this.props.submitContactForm(values)
     }
     render() {

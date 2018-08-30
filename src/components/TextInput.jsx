@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Base from './Base';
-
-export default class TextInput extends Base {
+export default class TextInput extends React.Component {
     constructor(props) {
         super(props);
     }

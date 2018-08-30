@@ -1,14 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Base from './Base';
 import NavLinkItem from './NavLinkItem';
 
 import { NAVIGATION } from '../constants';
 
-class NavigationBar extends Base {
-    renderNavItem(item) {
-        console.log(item)
+class NavigationBar extends React.Component {
+    renderNavItem = (item) => {
         return (
             <NavLinkItem {...item}/>
         )
