@@ -1,2 +1,2 @@
-require('@babel/polyfill')
-require('whatwg-fetch')
+import '@babel/polyfill'
+import 'whatwg-fetch'

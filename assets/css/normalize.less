@@ -1,18 +1,9 @@
-// normalize
-html {
-    .colors(@white, @dark-gray);
-    font-size: @defaultFontSize;
-    font-family: Avenir;
-}
-
 body {
     margin: 0;
     padding: 0;
     cursor: default;
-    width: @windowWidth;
     overflow-x: hidden;
     overflow-y: hidden;
-    height: @windowHeight;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -24,16 +15,11 @@ a {
     background-color: transparent;
     text-decoration:none;
     cursor: pointer;
-    &:hover, &:active {
-        color:inherit;
-        outline: 0;
-    }
 }
 
-.App {
-    background-color: @white;
-    font-family: Avenir;
-    -webkit-overflow-scrolling: touch;
+a:hover, a:active {
+    color: inherit;
+    outline: 0;
 }
 
 img {
@@ -69,7 +55,6 @@ input::-moz-focus-inner {
     padding: 0;
 }
 input, input:focus, textarea {
-    .smallFont;
     border: none;
     background: none;
     outline: 0;

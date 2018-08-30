@@ -6,21 +6,23 @@ var paths = require('./paths')
 module.exports = {
     mode: 'development',
     // context: paths.appSrc,
-    entry: [
-        require.resolve('./polyfills'),
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
-        'react-hot-loader/patch',
-        paths.appIndex
-    ],
+    entry: {
+        polyfills: require.resolve('./polyfills'),
+        app: [
+            'webpack-dev-server/client?http://localhost:8080',
+            'webpack/hot/only-dev-server',
+            'react-hot-loader/patch',
+            paths.appIndex
+        ]
+    },
     // exclude dependencies from output bundles
     // externals: {
-    //     react: 'React'
+    //     react: 'react'
     // },
     devtool: 'cheap-module-eval-source-map',
     // webpack dev server config
     devServer: {
-        // contentBase: [paths.appAssets, paths.appSrc],
+        // where to look for static files when building
         contentBase: paths.appAssets,
         // bundled files will be available in browser under this path
         publicPath: '/',
@@ -31,7 +33,7 @@ module.exports = {
     },
     // done
     output: {
-        filename: 'main.js',
+        filename: '[name].bundle.js',
         // where app is built to
         path: paths.appBuild,
         pathinfo: true,
@@ -44,7 +46,8 @@ module.exports = {
         // commonly imported directories ie. import Row from 'styles'
         alias: {
             styles: paths.appStyles,
-            components: paths.appComponents
+            components: paths.appComponents,
+            assets: paths.appAssets
         }
     },
     plugins: [
@@ -71,7 +74,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.less$/,
+                test: /\.(less|css)$/,
                 use: ['style-loader', 'css-loader', 'less-loader']
             },
             {
@@ -80,7 +83,10 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: ['file-loader']
+                use: [
+                    'file-loader',
+                    'url-loader'
+                ]
             },
             {
                 include: /\.json$/,
