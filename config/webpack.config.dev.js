@@ -1,0 +1,33 @@
+var webpack = require('webpack')
+var merge = require('webpack-merge')
+var common = require('./webpack.common')
+var paths = require('./paths')
+
+module.exports = merge(common, {
+    mode: 'development',
+    entry: {
+        app: [
+            'webpack-dev-server/client?http://localhost:8080',
+            'webpack/hot/only-dev-server',
+            'react-hot-loader/patch',
+            paths.appIndex
+        ]
+    },
+    devtool: 'cheap-module-eval-source-map',
+    // webpack-dev-server config
+    devServer: {
+        // where to look for static files when building
+        contentBase: paths.appAssets,
+        // bundled files will be available in browser under this path
+        publicPath: '/',
+        historyApiFallback: true,
+        hot: true,
+        inline: true
+    },
+    output: {
+        pathinfo: true
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ]
+})

@@ -1,46 +1,20 @@
-var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var paths = require('./paths')
 
 module.exports = {
-    mode: 'development',
-    // context: paths.appSrc,
+    // where webpack resolves files relative to
+    context: paths.appRoot,
     entry: {
-        polyfills: require.resolve('./polyfills'),
-        app: [
-            'webpack-dev-server/client?http://localhost:8080',
-            'webpack/hot/only-dev-server',
-            'react-hot-loader/patch',
-            paths.appIndex
-        ]
+        polyfills: require.resolve('./polyfills')
     },
-    // exclude dependencies from output bundles
-    // externals: {
-    //     react: 'react'
-    // },
-    devtool: 'cheap-module-eval-source-map',
-    // webpack dev server config
-    devServer: {
-        // where to look for static files when building
-        contentBase: paths.appAssets,
-        // bundled files will be available in browser under this path
-        publicPath: '/',
-        historyApiFallback: true,
-        hot: true,
-        inline: true,
-        // open: true
-    },
-    // done
     output: {
         filename: '[name].bundle.js',
         // where app is built to
         path: paths.appBuild,
-        pathinfo: true,
         // where app is served from
         publicPath: '/',
     },
-    // done
     resolve: {
         extensions: ['.jsx', '.js', '.less'],
         // commonly imported directories ie. import Row from 'styles'
@@ -57,14 +31,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             'assets'
-        ]),
-        new webpack.HotModuleReplacementPlugin()
-        // new webpack.ProvidePlugin({
-        //     Promise: 'exports?global.Promise!es6-promise',
-        //     fetch: 'exports?self.fetch!whatwg-fetch'
-        // })
+        ])
     ],
-    // done
     module: {
         rules: [
             {
@@ -93,8 +61,5 @@ module.exports = {
                 loader: 'json-loader'
             }
         ]
-    },
-    node: {
-        fs: 'empty'
     }
 }

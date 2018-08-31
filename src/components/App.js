@@ -7,7 +7,7 @@ export default class App extends Component {
             <div className='App'>
                 {/* <NavigationBar/> */}
                 {this.props.children}
-                <h1>Hello world I am awesome</h1>
+                <h1>Hello world</h1>
             </div>
         );
     }

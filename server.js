@@ -42,20 +42,21 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 // GraphiQL Docs
-var graphqlHTTP = require('express-graphql');
-var apiSchema = require('./api/schema');
+// TODO refactor to graphql playground
+// var graphqlHTTP = require('express-graphql');
+// var apiSchema = require('./api/schema');
 
-app.use('/api/v/:vid/graph', graphqlHTTP(function(req, res) {
-    return {
-        schema: apiSchema,
-        rootValue: {
-            req: req,
-            res: res
-        },
-        pretty: true,
-        graphiql: true
-    };
-}));
+// app.use('/api/v/:vid/graph', graphqlHTTP(function(req, res) {
+//     return {
+//         schema: apiSchema,
+//         rootValue: {
+//             req: req,
+//             res: res
+//         },
+//         pretty: true,
+//         graphiql: true
+//     };
+// }));
 
 
 app.listen(port, function() {
