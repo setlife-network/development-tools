@@ -1,12 +1,18 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var paths = require('./paths')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const paths = require('./paths')
 
 module.exports = {
     // where webpack resolves files relative to
     context: paths.appRoot,
     entry: {
-        polyfills: require.resolve('./polyfills')
+        vendor: [
+            '@babel/polyfill',
+            'styled-components',
+            'react',
+            'react-dom',
+            'redux'
+        ]
     },
     output: {
         filename: '[name].bundle.js',
@@ -17,11 +23,24 @@ module.exports = {
     },
     resolve: {
         extensions: ['.jsx', '.js', '.less'],
+        modules: [paths.nodeModules],
         // commonly imported directories ie. import Row from 'styles'
         alias: {
             styles: paths.appStyles,
             components: paths.appComponents,
             assets: paths.appAssets
+        }
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                default: false,
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all'
+                }
+            }
         }
     },
     plugins: [
@@ -30,8 +49,11 @@ module.exports = {
             inject: 'body'
         }),
         new CopyWebpackPlugin([
-            'assets'
-        ])
+            {
+                from: 'assets',
+                ignore: ['*.less']
+            }
+        ]),
     ],
     module: {
         rules: [
@@ -42,7 +64,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(less|css)$/,
+                test: /\.(c|le)ss$/,
                 use: ['style-loader', 'css-loader', 'less-loader']
             },
             {
@@ -61,5 +83,14 @@ module.exports = {
                 loader: 'json-loader'
             }
         ]
+    },
+    stats: {
+        // show asset information
+        assets: true,
+        // add chunk information
+        chunks: true,
+        // add chunkGroups information
+        chunkGroups: true,
+        colors: true,
     }
 }

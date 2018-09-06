@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 export default class Button extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
     render() {
         return (
@@ -12,10 +12,10 @@ export default class Button extends React.Component {
             >
                 {this.props.children}
             </div>
-        );
+        )
     }
 }
 
 Button.defaultProps = {
     className: ''
-};
+}

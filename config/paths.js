@@ -13,5 +13,7 @@ module.exports = {
     appModules: resolve('node_modules'),
     appRoot: path.resolve(__dirname, '..'),
     appSrc: resolve('src'),
-    appStyles: resolve('src/styles')
+    appStyles: resolve('src/styles'),
+    config: resolve('config'),
+    nodeModules: resolve('node_modules'),
 }
