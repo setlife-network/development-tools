@@ -1,6 +1,7 @@
 const merge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 const common = require('./webpack.common')
 const paths = require('./paths')
 
@@ -12,7 +13,18 @@ module.exports = merge(common, {
     },
     optimization: {
         minimizer: [
-            new UglifyJsPlugin()
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    compress: {
+                        // remove console logs
+                        drop_console: true
+                    },
+                    output: {
+                        // remove comments
+                        comments: false
+                    }
+                }
+            })
         ],
         // extract css to single file
         splitChunks: {
@@ -57,6 +69,10 @@ module.exports = merge(common, {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'css/[name].css'
+        }),
+        new CompressionPlugin({
+            test: /\.(js|css|html)$/,
+            deleteOriginalAssets: false
         })
     ]
 })
