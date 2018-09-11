@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import is from 'styled-is'
 import PropTypes from 'prop-types'
 import media from './media'
-import { dimensionNames, gridSize } from './config'
+import { breakpoints, gridSize } from './theme'
+
+const sizes = Object.keys(breakpoints)
 
 const Col = styled.div`
     display: flex;
@@ -25,14 +27,14 @@ const Col = styled.div`
         flex-basis: ${p => p.basis};
     `}
 
-    /*
+    /**
      * Responsive grid sizing
      * Usage <Col sm={12} md={6} lg={4} xl={12} />
      */
 
     ${p => Object.keys(p)
-        .filter(k => dimensionNames.indexOf(k) !== -1)
-        .sort((a,b) => dimensionNames.indexOf(a) - dimensionNames.indexOf(b))
+        .filter(k => sizes.indexOf(k) !== -1)
+        .sort((a,b) => sizes.indexOf(a) - sizes.indexOf(b))
         .map(size => {
             return media[size]`
                 ${Number.isInteger(p[size]) ? `

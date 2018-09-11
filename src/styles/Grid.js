@@ -2,27 +2,22 @@ import styled from 'styled-components'
 import { isNot } from 'styled-is'
 import PropTypes from 'prop-types'
 import media from './media'
-import {
-    outerMargin,
-    gutterWidth,
-    gridWidth,
-    sizes
-} from './config'
+import { gridMargin, gutterWidth, breakpoints } from './theme'
 
 const Grid = styled.div`
     margin-left: auto;
     margin-right: auto;
     
     ${media.md`
-        padding: ${outerMargin / 2}rem;
+        padding: ${p => gridMargin / 2}rem;
         > * > * {
-            padding: ${gutterWidth / 2}rem;
+            padding: ${p => gutterWidth / 2}rem;
         }
     `}
 
     ${isNot('fluid')`
-        ${Object.keys(sizes).map(size => {
-            return gridWidth && media[size]`
+        ${p => Object.keys(breakpoints).map(size => {
+            return media[size]`
                 width: ${gridWidth[size]}%;
             `
         })}

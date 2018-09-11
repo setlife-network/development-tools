@@ -1,9 +1,9 @@
 import { css } from 'styled-components'
-import { sizes } from './config'
+import { breakpoints } from './theme'
 
-const media = Object.keys(sizes).reduce((acc, label) => {
+const media = Object.keys(breakpoints).reduce((acc, label) => {
     acc[label] = (...args) => css`
-        @media (min-width: ${sizes[label]}px) {
+        @media (min-width: ${breakpoints[label]}px) {
             ${css(...args)};
         }
     `

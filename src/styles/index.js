@@ -1,16 +1,18 @@
-import * as config from './config'
-import colors from './colors'
 import media from './media'
+import spacing from './spacing'
+import * as theme from './theme'
+import * as utils from './utils'
 
 import Flex from './Flex'
 import Col from './Col'
 import Grid from './Grid'
 
 export {
-    config,
     Col,
-    colors,
     Flex,
     Grid,
     media,
+    spacing,
+    theme,
+    utils
 }
