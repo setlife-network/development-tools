@@ -1,24 +1,18 @@
 import { css } from 'styled-components'
 import is from 'styled-is'
-import Color from 'color'
-
-export const border = color => css`
-    border: ${p => `solid ${p.theme.borderWidth} ${p.theme.colors[color]}`};
-`
+import { darken, transitions } from 'polished'
+import { ms } from './utils'
 
 export const clickable = css`
-    transition-duration: ${p => p.theme.durationShort};
-    transition-property: background-color;
-    transition-timing-function: ease-in-out;
+    ${p => transitions(
+        'background-color',
+        `${ms(p.theme.durationShort)} ease-in-out`
+    )}
     &:hover {
-        background-color: ${
-            p => Color(p.theme.colors[p.backgroundColor]).darken(0.1).toString()
-        };
+        background-color: ${p => darken(0.1, p.theme.colors[p.backgroundColor])};
     }
     &:active {
-        background-color: ${
-            p => Color(p.theme.colors[p.backgroundColor]).darken(0.2).toString()
-        };
+        background-color: ${p => darken(0.2, p.theme.colors[p.backgroundColor])};
     }
 `
 
@@ -28,9 +22,10 @@ export const colors = css`
 `
 
 export const link = css`
-    transition-duration: ${p => p.theme.durationShort};
-    transition-property: color;
-    transition-timing-function: ease-in-out;
+    ${p => transitions(
+        'color',
+        `${ms(p.theme.durationShort)} ease-in-out`
+    )}
     &:hover {
         color: ${
             p => Color(p.theme.colors[p.color]).darken(0.1).toString()

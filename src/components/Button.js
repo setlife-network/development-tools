@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import is, { isNot } from 'styled-is'
-import PropTypes from 'prop-types'
+import { border } from 'polished'
 import { propTypes, mixins } from 'styles'
 
 const Button = styled.button`
@@ -15,7 +16,7 @@ const Button = styled.button`
     ${is('transparent')`
         background-color: transparent;
         color: ${p => p.theme.colors[p.color]};
-        ${mixins.border('blue')};
+        ${p => border('1px', 'solid', p.theme.colors[p.color])};
         ${mixins.link};
     `}
 

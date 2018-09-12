@@ -42,7 +42,7 @@ export const colors = {
     yellow: '#F4D163',
     red: '#CF242B',
     facebook: '#32529F',
-    modalBackdrop: 'rgba(0,0,0,0.5)'
+    overlay: 'rgba(0,0,0,0.5)'
 }
 
 // Fonts
@@ -119,7 +119,18 @@ export const gridWidth = {
 
 export const gutterWidth = 2
 
+// Modals
+
+export const zIndexModal = 999
+export const zIndexModalBackdrop = 1000
+
 // Transitions
 
-export const durationShort = '200ms'
-export const durationLong = '450ms'
+export const durationShort = 200
+export const durationLong = 450
+export const transitionOpacity = {
+    entering: 1,
+    entered: 1,
+    exiting: 0,
+    exited: 0
+}

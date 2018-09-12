@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { isNot } from 'styled-is'
 import PropTypes from 'prop-types'
 import media from './media'
-import { gridMargin, gutterWidth, breakpoints } from './theme'
+import { gridMargin, gutterWidth, gridWidth } from './theme'
 
 const Grid = styled.div`
     margin-left: auto;
@@ -16,7 +16,7 @@ const Grid = styled.div`
     `}
 
     ${isNot('fluid')`
-        ${p => Object.keys(breakpoints).map(size => {
+        ${p => Object.keys(gridWidth).map(size => {
             return media[size]`
                 width: ${gridWidth[size]}%;
             `
