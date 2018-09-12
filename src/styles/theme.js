@@ -8,12 +8,26 @@ export const breakpoints = {
 }
 
 export const baseRem = {
-    mobile: 8,
-    desktop: 10
+    mobile: 10,
+    desktop: 8
 }
+
+// Borders
 
 export const borderRadius = '3px'
 export const borderWidth = '1px'
+
+// Box shadows
+
+export const shadows = {
+    1: '0px 1.5px 8px rgba(0,0,0,0.07)',
+    2: '0px 2px 11px rgba(0,0,0,0.10)',
+    3: '0px 3px 16px rgba(0,0,0,0.12)',
+    4: '0px 4px 21px rgba(0,0,0,0.14)',
+    5: '0px 5px 25px rgba(0,0,0,0.14)',
+}
+
+// Colors
 
 export const colors = {
     white: '#ffffff',
@@ -34,7 +48,6 @@ export const colors = {
 // Fonts
 
 export const fontWeights = {
-    light: 300,
     regular: 400,
     italic: 400,
     bold: 700
@@ -105,3 +118,8 @@ export const gridWidth = {
 }
 
 export const gutterWidth = 2
+
+// Transitions
+
+export const durationShort = '200ms'
+export const durationLong = '450ms'

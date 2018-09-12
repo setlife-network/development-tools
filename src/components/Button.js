@@ -1,21 +1,46 @@
-import React from 'react'
+import styled from 'styled-components'
+import is, { isNot } from 'styled-is'
+import PropTypes from 'prop-types'
+import { propTypes, mixins } from 'styles'
 
-export default class Button extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    render() {
-        return (
-            <div
-                className={'Button' + this.props.className}
-                onClick={this.props.onClick}
-            >
-                {this.props.children}
-            </div>
-        )
-    }
+const Button = styled.button`
+    ${mixins.spacing};
+    ${mixins.colors};
+    font-family: 'Inter UI';
+    font-size: 2rem;
+    height: 5rem;
+    padding: 0 2rem;
+    border-radius: ${p => p.theme.borderRadius};
+
+    ${is('transparent')`
+        background-color: transparent;
+        color: ${p => p.theme.colors[p.color]};
+        ${mixins.border('blue')};
+        ${mixins.link};
+    `}
+
+    ${isNot('transparent', 'disabled')`
+        ${mixins.clickable};
+        box-shadow: ${p => p.theme.shadows[1]};
+    `}
+
+    ${is('disabled')`
+        background-color: ${p => p.theme.colors.lightGrey};
+        color: ${p => p.theme.colors.darkGrey};
+    `}
+`
+
+Button.propTypes = {
+    ...propTypes.spacing,
+    ...propTypes.colors,
+    onClick: PropTypes.func,
+    disabled: PropTypes.bool,
+    transparent: PropTypes.bool
 }
 
 Button.defaultProps = {
-    className: ''
+    backgroundColor: 'blue',
+    color: 'white'
 }
+
+export default Button

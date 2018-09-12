@@ -9,9 +9,9 @@ const Grid = styled.div`
     margin-right: auto;
     
     ${media.md`
-        padding: ${p => gridMargin / 2}rem;
+        padding: ${gridMargin / 2}rem;
         > * > * {
-            padding: ${p => gutterWidth / 2}rem;
+            padding: ${gutterWidth / 2}rem;
         }
     `}
 
