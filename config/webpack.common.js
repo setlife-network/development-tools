@@ -28,7 +28,8 @@ module.exports = {
         alias: {
             styles: paths.appStyles,
             components: paths.appComponents,
-            assets: paths.appAssets
+            assets: paths.appAssets,
+            scripts: paths.appScripts
         }
     },
     optimization: {

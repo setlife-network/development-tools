@@ -12,6 +12,9 @@ export const baseRem = {
     desktop: 8
 }
 
+export const baseRemMobile = 10
+export const baseRemDesktop = 8
+
 // Borders
 
 export const borderRadius = '3px'
@@ -61,7 +64,6 @@ export const colors = {
 
 export const fontWeights = {
     regular: 400,
-    italic: 400,
     bold: 700
 }
 

@@ -12,6 +12,7 @@ module.exports = {
     appIndex: resolve('src/index.js'),
     appModules: resolve('node_modules'),
     appRoot: path.resolve(__dirname, '..'),
+    appScripts: resolve('src/scripts'),
     appSrc: resolve('src'),
     appStyles: resolve('src/styles'),
     config: resolve('config'),

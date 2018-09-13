@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import is, { isNot } from 'styled-is'
 import { border } from 'polished'
 import { propTypes, mixins } from 'styles'
-import { theme } from 'styles/utils'
 
 const Button = styled.button`
     ${mixins.spacing};
@@ -11,9 +10,9 @@ const Button = styled.button`
     font-size: 2rem;
     height: 5rem;
     padding: 0 2rem;
-    border-radius: ${theme('borderRadius')};
-    color: ${p => theme(p.color)};
-    background-color: ${p => theme(p.backgroundColor)};
+    border-radius: ${p => p.theme.borderRadius};
+    color: ${p => p.theme[p.color]};
+    background-color: ${p => p.theme[p.backgroundColor[};
     
     ${is('transparent')`
         background-color: transparent;
@@ -23,12 +22,12 @@ const Button = styled.button`
 
     ${isNot('transparent', 'disabled')`
         ${mixins.clickableBg};
-        box-shadow: ${theme('shadow1')}
+        box-shadow: ${p => p.theme.shadow1}
     `}
 
     ${is('disabled')`
-        background-color: ${theme('lightGrey')};
-        color: ${theme('darkGrey')};
+        background-color: ${p => p.theme.lightGrey};
+        color: ${p => p.theme.darkGrey};
     `}
 `
 
