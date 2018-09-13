@@ -1,12 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import is from 'styled-is'
+import { border } from 'polished'
+import { theme } from 'styles/utils'
 
 const StyledInput = styled.input.attrs({
-    type: 'text'
+    type: 'text',
+    placeholder: 'placeholder'
 })`
-    ${is('disabled')`
+    padding: 1rem 2rem;
+    ${p => border('1px', 'solid', p.theme.colors.lightGrey)};
+    border-radius: ${theme('borderRadius')};
+    background-color: ${theme('white')};
 
+    &::placeholder {
+        color: ${theme('lightGrey')}
+    }
+
+    ${is('disabled')`
+        background-color: ${theme('border')};
     `}
 `
 

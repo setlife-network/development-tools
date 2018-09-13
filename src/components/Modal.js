@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
-import is, { css } from 'styled-is'
+import is from 'styled-is'
 import { transitions } from 'polished'
 import Transition from 'react-transition-group/Transition'
-import { Grid, utils } from 'styles'
+import { utils } from 'styles'
+import { theme } from 'styles/utils'
 
 const Backdrop = styled.div`
     position: fixed;
@@ -13,7 +14,7 @@ const Backdrop = styled.div`
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: ${p => p.theme.colors.overlay};
+    background-color: ${theme('overlay')};
 `
 
 const Modal = styled.div`
@@ -22,7 +23,7 @@ const Modal = styled.div`
     right: 0px;
     bottom: 0px;
     left: 0px;
-    z-index: ${p => p.theme.zIndexModal};
+    z-index: ${theme('zIndexModal')};
     visibility: hidden;
     overflow: hidden;
     outline: 0;
@@ -35,7 +36,7 @@ const Modal = styled.div`
         overflow-y: auto;
     `}
 
-    opacity: ${p => p.theme.transitionOpacity[p.state]};
+    opacity: ${theme('transitionOpacity')[p.state]};
     ${p => transitions(
         'opacity',
         `${utils.ms(p.theme.durationShort)} ease-in-out`
@@ -93,10 +94,9 @@ class ModalComponent extends Component {
         const {
             onClose,
             opened,
-            children,
+            children,s
             theme
         } = this.props
-        console.log(theme.durationShort)
 
         if (!this.container) return null
 

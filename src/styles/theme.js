@@ -19,30 +19,42 @@ export const borderWidth = '1px'
 
 // Box shadows
 
-export const shadows = {
-    1: '0px 1.5px 8px rgba(0,0,0,0.07)',
-    2: '0px 2px 11px rgba(0,0,0,0.10)',
-    3: '0px 3px 16px rgba(0,0,0,0.12)',
-    4: '0px 4px 21px rgba(0,0,0,0.14)',
-    5: '0px 5px 25px rgba(0,0,0,0.14)',
-}
+export const shadow1 = '0px 1.5px 8px rgba(0,0,0,0.07)'
+export const shadow2 = '0px 2px 11px rgba(0,0,0,0.10)'
+export const shadow3 = '0px 3px 16px rgba(0,0,0,0.12)'
+export const shadow4 = '0px 4px 21px rgba(0,0,0,0.14)'
+export const shadow5 = '0px 5px 25px rgba(0,0,0,0.14)'
 
 // Colors
 
+export const white = '#ffffff'
+export const background = '#F7F7F9'
+export const border = '#EEEFF2'
+export const lightGrey = '#CFD5DE'
+export const grey = '#718093'
+export const darkGrey = '#344768'
+export const purple = '#C15BEE'
+export const blue = '#00B2FF'
+export const green = '#02BE57'
+export const yellow = '#F4D163'
+export const red = '#CF242B'
+export const facebook = '#32529F'
+export const overlay = 'rgba(0,0,0,0.5)'
+
 export const colors = {
-    white: '#ffffff',
-    background: '#F7F7F9',
-    border: '#EEEFF2',
-    lightGrey: '#CFD5DE',
-    grey: '#718093',
-    darkGrey: '#344768',
-    purple: '#C15BEE',
-    blue: '#00B2FF',
-    green: '#02BE57',
-    yellow: '#F4D163',
-    red: '#CF242B',
-    facebook: '#32529F',
-    overlay: 'rgba(0,0,0,0.5)'
+    white,
+    background,
+    border,
+    lightGrey,
+    grey,
+    darkGrey,
+    purple,
+    blue,
+    green,
+    yellow,
+    red,
+    facebook,
+    overlay
 }
 
 // Fonts

@@ -3,7 +3,7 @@ import is from 'styled-is'
 import { darken, transitions } from 'polished'
 import { ms } from './utils'
 
-export const clickable = css`
+export const clickableBg = css`
     ${p => transitions(
         'background-color',
         `${ms(p.theme.durationShort)} ease-in-out`
@@ -16,7 +16,7 @@ export const clickable = css`
     }
 `
 
-export const link = css`
+export const clickableColor = css`
     ${p => transitions(
         'color',
         `${ms(p.theme.durationShort)} ease-in-out`
