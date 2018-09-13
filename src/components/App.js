@@ -8,7 +8,7 @@ export default class App extends Component {
         return (
             <ThemeProvider theme={theme}>
                 <Fragment>
-                    <Text size='2rem'>Sample text</Text>
+                    <Text variant='display1'>Welcome to Setlife</Text>
                 </Fragment>
             </ThemeProvider>
         )

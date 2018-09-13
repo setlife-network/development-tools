@@ -1,4 +1,3 @@
-import React from 'react';
 import { API_ROOT } from '../constants';
 
 export default {

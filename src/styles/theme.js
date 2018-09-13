@@ -1,3 +1,8 @@
+// Base rem sizing
+
+export const baseRemMobile = 10
+export const baseRemDesktop = 8
+
 // Breakpoints for media queries
 
 export const breakpoints = {
@@ -6,14 +11,6 @@ export const breakpoints = {
     lg: 960,
     xl: 1600
 }
-
-export const baseRem = {
-    mobile: 10,
-    desktop: 8
-}
-
-export const baseRemMobile = 10
-export const baseRemDesktop = 8
 
 // Borders
 
@@ -133,11 +130,6 @@ export const gridWidth = {
 
 export const gutterWidth = 2
 
-// Modals
-
-export const zIndexModal = 999
-export const zIndexModalBackdrop = 1000
-
 // Transitions
 
 export const durationShort = 200
@@ -148,3 +140,8 @@ export const transitionOpacity = {
     exiting: 0,
     exited: 0
 }
+
+// Z Index
+
+export const zIndexModal = 999
+export const zIndexModalBackdrop = 1000
