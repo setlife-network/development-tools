@@ -16,25 +16,16 @@ export const clickable = css`
     }
 `
 
-export const colors = css`
-    color: ${p => p.theme.colors[p.color]};
-    background-color: ${p => p.theme.colors[p.backgroundColor]};
-`
-
 export const link = css`
     ${p => transitions(
         'color',
         `${ms(p.theme.durationShort)} ease-in-out`
     )}
     &:hover {
-        color: ${
-            p => Color(p.theme.colors[p.color]).darken(0.1).toString()
-        };
+        color: ${p => darken(0.1, p.theme.colors[p.color])};
     }
     &:active {
-        color: ${
-            p => Color(p.theme.colors[p.color]).darken(0.2).toString()
-        };
+        color: ${p => darken(0.2, p.theme.colors[p.color])};
     }
 `
 

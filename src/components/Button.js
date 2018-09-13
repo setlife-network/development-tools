@@ -6,13 +6,14 @@ import { propTypes, mixins } from 'styles'
 
 const Button = styled.button`
     ${mixins.spacing};
-    ${mixins.colors};
     font-family: 'Inter UI';
     font-size: 2rem;
     height: 5rem;
     padding: 0 2rem;
     border-radius: ${p => p.theme.borderRadius};
-
+    color: ${p => p.theme.colors[p.color]};
+    background-color: ${p => p.theme.colors[p.backgroundColor]};
+    
     ${is('transparent')`
         background-color: transparent;
         color: ${p => p.theme.colors[p.color]};
