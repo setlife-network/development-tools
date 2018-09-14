@@ -7,8 +7,8 @@ var app = express();
 var isProduction = process.env.NODE_ENV === 'production';
 var port = isProduction ? process.env.PORT : 3000;
 
-// var settings = require('./api/config/settings');
-// app.use(settings.forceHttps);
+var settings = require('./api/config/settings');
+app.use(settings.forceHttps);
 
 app.use(express.static(__dirname + '/public'));
 

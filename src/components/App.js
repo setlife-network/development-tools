@@ -7,6 +7,7 @@ import Text from './Text'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 
+
 const StyledLink = styled(Link)`
     font-size: 2rem;
     padding: 1rem;
@@ -22,7 +23,7 @@ const Home = () => (
                     rates(currency: "USD") {
                         currency
                         rate
-                    } 
+                    }
                 }
             `}
         >
@@ -55,6 +56,31 @@ const Contact = () => (
 )
 
 export default class App extends Component {
+    // componentDidMount() {
+    //     fetch('https://w5xlvm3vzz.lp.gql.zone/graphql', {
+    //         method: 'POST',
+    //         xhrFields: {
+    //             withCredentials: true
+    //         },
+    //         headers: {
+    //             Accept: 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         credentials: 'include',
+    //         body: JSON.stringify({
+    //             query: `
+    //                 query {
+    //                     rates(currency: "USD") {
+    //                         currency
+    //                         rate
+    //                     } 
+    //                 }
+    //             `
+    //         })
+    //     })
+    //     .then(res => res.json())
+    //     .then(json => console.log(json))
+    // }
     render() {
         return (
             <ThemeProvider theme={theme}>

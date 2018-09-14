@@ -18,11 +18,8 @@ import configureStore from './store'
 const store = configureStore()
 
 // Apollo setup
-import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
-const client = new ApolloClient({
-    uri: 'https://w5xlvm3vzz.lp.gql.zone/graphql'
-})
+import client from './apollo/apolloClient'
 
 const appRoot = document.getElementById('app')
 
