@@ -15,7 +15,7 @@ module.exports = {
         ]
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].[hash].bundle.js',
         // where app is built to
         path: paths.appBuild,
         // where app is served from
@@ -33,6 +33,7 @@ module.exports = {
         }
     },
     optimization: {
+        runtimeChunk: 'single',
         splitChunks: {
             cacheGroups: {
                 default: false,

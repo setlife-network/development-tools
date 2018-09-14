@@ -9,7 +9,7 @@ module.exports = {
     appBuild: resolve('public'),
     appComponents: resolve('src/components'),
     appHtml: resolve('src/index.html'),
-    appIndex: resolve('src/index.js'),
+    appIndex: resolve('src/client.js'),
     appModules: resolve('node_modules'),
     appRoot: path.resolve(__dirname, '..'),
     appScripts: resolve('src/scripts'),
@@ -17,4 +17,6 @@ module.exports = {
     appStyles: resolve('src/styles'),
     config: resolve('config'),
     nodeModules: resolve('node_modules'),
+    server: resolve('server'),
+    serverEntry: resolve('server.js')
 }
