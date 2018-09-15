@@ -1,66 +1,48 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+import React from 'react'
+import { Formik, Form, Field } from 'formik'
+import * as yup from 'yup'
 
-import Button from './Button';
-import TextInput from './TextInput';
+import Button from './Button'
+import Input from './Input'
 
-import { submitContactForm } from '../reducers/contact';
+const contactSchema = yup.object().shape({
+    name: yup.string().required('Required'),
+    email: yup.string().email('Invalid email').required('Required'),
+    password: yup.string().required('Required')
+})
 
-class ContactForm extends React.Component {
-    handleSubmit = (values) => {
-        this.props.submitContactForm(values)
+export default class ContactForm extends React.Component {
+    onSubmit = values => {
+        console.log(values)
     }
     render() {
-        const { handleSubmit } = this.props
-
         return (
-            <div className='ContactForm'>
-                <p>This is the ContactForm component</p>
-                <form onSubmit={handleSubmit(this.handleSubmit)}>
-                    <Field
-                        component={TextInput}
-                        name='name'
-                        label='Name'
-                        type='text'
-                    />
-                    <Field
-                        component={TextInput}
-                        name='email'
-                        label='Email'
-                        type='text'
-                    />
-                    <Field
-                        component={TextInput}
-                        name='message'
-                        label='Message'
-                        type='text'
-                    />
-
-                    <Button onClick={handleSubmit(this.handleSubmit)}>
-                        <p>Submit</p>
-                    </Button>
-                </form>
-            </div>
-            
-        );
+            <Formik
+                onSubmit={this.onSubmit}
+                validationSchema={contactSchema}
+            >
+                {({ errors, touched }) => (
+                    <Form>
+                        <Field
+                            name='name'
+                            placeholder='Name'
+                            component={Input}
+                        />
+                        <Field
+                            name='email'
+                            placeholder='Email'
+                            component={Input}
+                        />
+                        <Field
+                            name='message'
+                            placeholder='Message'
+                            component={Input}
+                            as='textarea'
+                        />
+                        <Button type='submit'>Submit</Button>
+                    </Form>
+                )}
+            </Formik>
+        )
     }
 }
-
-ContactForm = reduxForm({
-    form: 'contact-form'
-})(ContactForm)
-
-const mapStateToProps = ({ contact }) => {
-    return {
-        ...contact
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        submitContactForm: (data) => dispatch(submitContactForm(data))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

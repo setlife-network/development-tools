@@ -12,7 +12,7 @@ const Button = styled.button`
     padding: 0 2rem;
     border-radius: ${p => p.theme.borderRadius};
     color: ${p => p.theme[p.color]};
-    background-color: ${p => p.theme[p.backgroundColor[};
+    background-color: ${p => p.theme[p.backgroundColor]};
     
     ${is('transparent')`
         background-color: transparent;

@@ -67,7 +67,8 @@
     "redux-thunk": "^2.1.0",
     "styled-components": "^4.0.0-beta.1",
     "styled-icons": "^3.0.0",
-    "styled-is": "^1.1.5"
+    "styled-is": "^1.1.5",
+    "yup": "^0.26.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

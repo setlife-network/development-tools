@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { Link, Switch, Route } from 'react-router-dom'
-import { theme, Flex } from 'styles'
-import Text from './Text'
 
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 
+import { theme, Flex } from 'styles'
+import Text from './Text'
+import ContactForm from './ContactForm'
 
 const StyledLink = styled(Link)`
     font-size: 2rem;
@@ -52,35 +53,11 @@ const Contact = () => (
     <div>
         <Text variant='h1'>Contact</Text>
         <Text>This is the contact page</Text>
+        <ContactForm />
     </div>
 )
 
 export default class App extends Component {
-    // componentDidMount() {
-    //     fetch('https://w5xlvm3vzz.lp.gql.zone/graphql', {
-    //         method: 'POST',
-    //         xhrFields: {
-    //             withCredentials: true
-    //         },
-    //         headers: {
-    //             Accept: 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         credentials: 'include',
-    //         body: JSON.stringify({
-    //             query: `
-    //                 query {
-    //                     rates(currency: "USD") {
-    //                         currency
-    //                         rate
-    //                     } 
-    //                 }
-    //             `
-    //         })
-    //     })
-    //     .then(res => res.json())
-    //     .then(json => console.log(json))
-    // }
     render() {
         return (
             <ThemeProvider theme={theme}>

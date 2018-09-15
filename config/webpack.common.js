@@ -29,6 +29,7 @@ module.exports = {
             styles: paths.appStyles,
             components: paths.appComponents,
             assets: paths.appAssets,
+            reducers: paths.appReducers,
             scripts: paths.appScripts
         }
     },
