@@ -4,8 +4,6 @@ import { AppContainer } from 'react-hot-loader'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider as ReduxProvider } from 'react-redux'
 
-const isProduction = process.env.NODE_ENV === 'production'
-
 // global stylesheets
 import 'assets/css/normalize.less'
 import 'assets/css/fonts.less'
@@ -22,6 +20,7 @@ import { ApolloProvider } from 'react-apollo'
 import client from './apollo/apolloClient'
 
 const appRoot = document.getElementById('app')
+const isProduction = process.env.NODE_ENV === 'production'
 
 // Hot reloading setup for development mode only
 const render = Component => {
@@ -40,7 +39,7 @@ const render = Component => {
 }
 
 if (isProduction) {
-    // Redux SSR
+    // React SSR
     const store = createStore(window.REDUX_DATA)
     ReactDOM.hydrate(
         <ApolloProvider client={client}>

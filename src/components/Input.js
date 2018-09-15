@@ -27,16 +27,11 @@ const StyledInput = styled.input.attrs({
     `}
 `
 
-const Error = styled(Text)`
-    opacity: ${p => p.showError ? 1 : 0};
-`
-
 const Input = ({
     field,
     form: { touched, errors },
     ...props
 }) => {
-    // const showError = errors[field.name] && errors[field.name]
     return (
         <div>
             <StyledInput
