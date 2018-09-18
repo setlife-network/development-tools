@@ -1,71 +1,73 @@
-var express = require('express');
-var path = require('path');
-var fs = require('fs');
+import express from 'express'
+import { ApolloServer, gql } from 'apollo-server-express'
 
-var app = express();
+// React
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import { StaticRouter } from 'react-router-dom'
 
-var isProduction = process.env.NODE_ENV === 'production';
-var port = isProduction ? process.env.PORT : 3000;
+// Redux
+import { Provider as ReduxProvider } from 'react-redux'
+import createStore from './src/store'
 
-var settings = require('./api/config/settings');
-app.use(settings.forceHttps);
+// TODO fix 'styles' not showing up
+// Components
+// import App from './src/components/App'
+// import Html from './src/Html'
 
-app.use(express.static(__dirname + '/public'));
+const app = express()
 
-app.get('*', function(req, res, next) {
+const isProduction = process.env.NODE_ENV === 'production'
+const port = isProduction ? process.env.PORT : 3000
 
-    // Prevents an HTML response for API calls
-    if (req.path.indexOf('/api/') != -1) {
-        return next();
-    }
+// app.use(express.static(__dirname + '/public'))
+// app.use(express.static('public'))
 
-    fs.readFile(__dirname + '/public/index.html', 'utf8', function(err, text) {
-        res.send(text);
-    });
-});
+// Graphql server setup
+import { importSchema } from 'graphql-import'
+import resolvers from './api/resolvers'
+// const typeDefs = importSchema('./api/schema.graphql')
+import typeDefs from './api/schema.graphql'
 
-app.get('*.js', function(req, res, next) {
-    req.url = req.url + '.gz';
-    res.set('Content-Encoding', 'gzip');
-    next();
-});
+const server = new ApolloServer({ typeDefs, resolvers })
+server.applyMiddleware({ app })
 
-var cors = require('cors');
+app.listen({ port }, () => {
+    console.log(`Server ready at http://localhost:${port}${server.graphqlPath}`)
+})
 
-var whitelist = [
-    'http://localhost:8080',
-    'http://localhost:3000'
-];
-var corsOptions = {
-    origin: function(origin, callback) {
-        var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
-        callback(null, originIsWhitelisted);
-    },
-    credentials: true,
-    methods: ['GET,PUT,POST,DELETE,OPTIONS'],
-    allowedHeaders: ['Access-Control-Allow-Headers', 'Origin', 'Access-Control-Allow-Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Cache-Control']
-};
-app.use(cors(corsOptions));
+// TODO Fix universal rendering
+// app.get('/*', (req, res, next) => {
+//     const context = {}
+//     const store = createStore()
+//     const reduxState = store.getState()
 
-// GraphiQL Docs
-// TODO add Apollo Server
-// TODO add graphql playground
-var graphqlHTTP = require('express-graphql');
-var apiSchema = require('./api/schema');
+//     // Prevent HTML response for API calls
+//     if (req.path.indexOf('/api/' !== -1)) {
+//         return next()
+//     }
 
-app.use('/api/v/:vid/graph', graphqlHTTP(function(req, res) {
-    return {
-        schema: apiSchema,
-        rootValue: {
-            req: req,
-            res: res
-        },
-        pretty: true,
-        graphiql: true
-    };
-}));
+//     const jsx = (
+//         <Html reduxState={reduxState}>
+//             <ReduxProvider store={store}>
+//                 <StaticRouter context={context} location={req.url}>
+//                     <App />
+//                 </StaticRouter>
+//             </ReduxProvider>
+//         </Html>
+//     )
+//     const reactDom = renderToString(jsx)
 
+//     res.writeHead(200, { 'Content-Type': 'text/html'})
+//     res.end(reactDom)
+// })
 
-app.listen(port, function() {
-    console.log('SetLife-ReactWithApi: Server running on port ' + port);
-});
+// app.get('*.js', (req, res, next) => {
+//     req.url = `${req.url}.gz`
+//     res.set('Content-Encoding', 'gzip')
+//     next()
+// })
+
+// app.listen(port, () => {
+//     console.log(`Setlife React Universal: Server running on port ${port}`)
+// })

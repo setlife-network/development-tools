@@ -1,5 +1,6 @@
-import Flex from './Flex'
+import Box from './Box'
 import Col from './Col'
+import Flex from './Flex'
 import Grid from './Grid'
 
 import media from './media'
@@ -9,6 +10,7 @@ import * as theme from './theme'
 import * as utils from './utils'
 
 export {
+    Box,
     Col,
     Flex,
     Grid,

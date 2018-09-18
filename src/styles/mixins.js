@@ -1,7 +1,8 @@
 import { css } from 'styled-components'
 import is from 'styled-is'
 import { darken, transitions } from 'polished'
-import { ms } from './utils'
+import { ms, px } from './utils'
+import { num } from '../scripts/helpers'
 
 export const clickableBg = css`
     ${p => transitions(
@@ -27,6 +28,11 @@ export const clickableColor = css`
     &:active {
         color: ${p => darken(0.2, p.theme.colors[p.color])};
     }
+`
+
+export const size = css`
+    height: ${p => num(p.height) ? px(p.height) : p.height};
+    width: ${p => num(p.width) ? px(p.width) : p.width};
 `
 
 export const spacing = css`

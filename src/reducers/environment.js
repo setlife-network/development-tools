@@ -1,19 +1,19 @@
 import api from '../scripts/api'
 
 // Index of Action Types
-const ACTION_NAME = 'ACTION_NAME'
+const SAMPLE_ACTION = 'SAMPLE_ACTION'
 
-// Reducer
+// Initial state
 const initialState = {
-    setLife: true
+    sampleState: true
 }
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case ACTION_NAME:
+        case SAMPLE_ACTION:
             return {
                 ...state,
-                setLife: action.setLife
+                sampleState: action.sampleState
             }
         default:
             return state
@@ -38,9 +38,9 @@ export function sampleAsyncAction(params) {
     }
 }
 
-export function sampleAction(setLife) {
+export function sampleAction(sampleState) {
     return {
-        type: ACTION_NAME,
-        setLife
+        type: SAMPLE_ACTION,
+        sampleState
     }
 }

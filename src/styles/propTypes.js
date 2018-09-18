@@ -10,6 +10,17 @@ export const shadows = {
     depth: PropTypes.oneOf([1,2,3,4,5])
 }
 
+export const size = {
+    height: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string
+    ]),
+    width: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string
+    ])
+}
+
 export const spacing = {
     margin: PropTypes.string,
     marginTop: PropTypes.string,

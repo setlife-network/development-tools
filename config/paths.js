@@ -5,6 +5,7 @@ const projectDirectory = fs.realpathSync(process.cwd())
 const resolve = relativePath => path.resolve(projectDirectory, relativePath)
 
 module.exports = {
+    api: resolve('api'),
     appAssets: resolve('assets'),
     appBuild: resolve('public'),
     appComponents: resolve('src/components'),
@@ -20,5 +21,5 @@ module.exports = {
     config: resolve('config'),
     nodeModules: resolve('node_modules'),
     server: resolve('server'),
-    serverEntry: resolve('server.js')
+    serverEntry: resolve('server.js'),
 }

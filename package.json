@@ -5,14 +5,19 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "clean": "rm -rf node_modules && rm -rf public",
-    "prebuild": "rm -rf public",
-    "build": "webpack -p --config config/webpack.config.prod.js",
+    "clean": "rm -rf node_modules && rm -rf public && rm -rf server",
+    "prebuild:client": "rm -rf public",
+    "prebuild:server": "rm -rf server",
+    "build:client": "webpack -p --config config/webpack.config.prod.js",
+    "build:server": "NODE_ENV=development webpack --config config/webpack.config.server.js",
+    "dev:client": "webpack-dev-server --progress --config config/webpack.config.client.js",
+    "dev:server": "yarn run build:server && npm-run-all --parallel runServer watch:server",
     "inspect": "webpack --config config/webpack.config.inspect.js",
-    "dev": "webpack-dev-server --progress --config config/webpack.config.dev.js",
     "lint": "eslint src",
-    "start": "node server.js",
-    "test": "jest"
+    "runServer": "NODE_ENV=development node-dev server/server.bundle.js",
+    "start": "node server/server.bundle.js",
+    "test": "jest",
+    "watch:server": "NODE_ENV=development webpack --config config/webpack.config.server.js --watch"
   },
   "bin": {
     "setlife": "./setlife.js"
@@ -36,6 +41,8 @@
     "apollo-link": "^1.2.2",
     "apollo-link-error": "^1.1.0",
     "apollo-link-http": "^1.5.4",
+    "apollo-server": "^2.0.8",
+    "apollo-server-express": "^2.0.7",
     "bookshelf": "^0.10.2",
     "commander": "^2.9.0",
     "copy-webpack-plugin": "^4.5.2",
@@ -48,6 +55,7 @@
     "fs-extra": "^2.0.0",
     "graphql": "^14.0.2",
     "graphql-bookshelf": "github:otech47/graphql-bookshelf",
+    "graphql-import": "^0.7.1",
     "graphql-tag": "^2.9.2",
     "knex": "^0.12.6",
     "lodash": "^4.16.4",
