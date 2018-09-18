@@ -41,3 +41,6 @@ public/**
 
 # Hide Environment Variables
 .env
+
+# Server build
+server/**

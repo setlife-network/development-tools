@@ -3,24 +3,16 @@ const nodeExternals = require('webpack-node-externals')
 const paths = require('./paths')
 
 const nodeEnv = process.env.NODE_ENV
-console.log(nodeEnv)
 const isProduction = nodeEnv !== 'development'
-
-// const entry = isProduction ? [
-//     paths.serverEntry
-// ] : [
-//     paths.serverEntry
-// ]
 
 module.exports = {
     target: 'node',
     context: paths.appRoot,
     mode: isProduction ? 'production' : 'development',
     entry: [
-        // '@babel/register',
+        '@babel/polyfill',
         paths.serverEntry
     ],
-    // devtool: false,
     output: {
         path: paths.server,
         filename: 'server.bundle.js',

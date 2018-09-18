@@ -9,15 +9,15 @@
     "prebuild:client": "rm -rf public",
     "prebuild:server": "rm -rf server",
     "build:client": "webpack -p --config config/webpack.config.prod.js",
-    "build:server": "NODE_ENV=development webpack --config config/webpack.config.server.js",
+    "build:server": "NODE_ENV=production webpack --config config/webpack.config.server.js",
     "dev:client": "webpack-dev-server --progress --config config/webpack.config.client.js",
-    "dev:server": "yarn run build:server && npm-run-all --parallel runServer watch:server",
+    "dev:server": "npm-run-all --parallel server server:watch",
     "inspect": "webpack --config config/webpack.config.inspect.js",
     "lint": "eslint src",
-    "runServer": "NODE_ENV=development node-dev server/server.bundle.js",
+    "server": "NODE_ENV=development node-dev server/server.bundle.js",
+    "server:watch": "NODE_ENV=development webpack --config config/webpack.config.server.js --watch",
     "start": "node server/server.bundle.js",
-    "test": "jest",
-    "watch:server": "NODE_ENV=development webpack --config config/webpack.config.server.js --watch"
+    "test": "jest"
   },
   "bin": {
     "setlife": "./setlife.js"
@@ -84,7 +84,6 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "babel-loader": "^8.0.0",
     "babel-plugin-styled-components": "^1.6.3",

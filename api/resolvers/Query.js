@@ -1,3 +1,3 @@
 export default {
-    hello: () => 'Hello world ayy lmao'
+    hello: () => 'Hello world'
 }

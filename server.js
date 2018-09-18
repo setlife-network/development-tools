@@ -24,9 +24,7 @@ const port = isProduction ? process.env.PORT : 3000
 // app.use(express.static('public'))
 
 // Graphql server setup
-import { importSchema } from 'graphql-import'
 import resolvers from './api/resolvers'
-// const typeDefs = importSchema('./api/schema.graphql')
 import typeDefs from './api/schema.graphql'
 
 const server = new ApolloServer({ typeDefs, resolvers })
