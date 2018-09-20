@@ -33,6 +33,9 @@
     "url": "https://github.com/quinnstonchurchill/setlife-react-node-boilerplate/issues"
   },
   "homepage": "https://github.com/quinnstonchurchill/setlife-react-node-boilerplate#readme",
+  "resolutions": {
+    "hoist-non-react-statics": "3.0.0"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@sendgrid/mail": "^6.3.1",
