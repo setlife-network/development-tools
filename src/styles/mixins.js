@@ -30,6 +30,15 @@ export const clickableColor = css`
     }
 `
 
+export const colors = css`
+    ${is('color')`
+        color: ${p => p.theme.colors[p.color]};
+    `}
+    ${is('backgroundColor')`
+        background-color: ${p => p.theme.colors[p.backgroundColor]};
+    `}
+`
+
 export const size = css`
     height: ${p => num(p.height) ? px(p.height) : p.height};
     width: ${p => num(p.width) ? px(p.width) : p.width};

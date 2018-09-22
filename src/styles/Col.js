@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import is from 'styled-is'
 import PropTypes from 'prop-types'
 import media from './media'
 import { breakpoints, gridSize } from './theme'
@@ -10,22 +9,6 @@ const Col = styled.div`
     display: flex;
     flex-basis: auto;
     flex-direction: column;
-
-    ${is('order')`
-        order: ${p => p.order};
-    `}
-
-    ${is('grow')`
-        flex-grow: ${p => p.grow};
-    `}
-    
-    ${is('shrink')`
-        flex-shrink: ${p => p.shrink};
-    `}
-
-    ${is('basis')`
-        flex-basis: ${p => p.basis};
-    `}
 
     /**
      * Responsive grid sizing
@@ -51,10 +34,22 @@ const Col = styled.div`
 `
 
 Col.propTypes = {
-    order: PropTypes.number,
-    grow: PropTypes.number,
-    shrink: PropTypes.number,
-    basis: PropTypes.number,
+    sm: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.number
+    ]),
+    md: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.number
+    ]),
+    lg: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.number
+    ]),
+    xl: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.number
+    ]),
 }
 
 export default Col

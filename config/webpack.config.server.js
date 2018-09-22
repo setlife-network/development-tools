@@ -5,6 +5,12 @@ const paths = require('./paths')
 const nodeEnv = process.env.NODE_ENV
 const isProduction = nodeEnv !== 'development'
 
+const plugins = isProduction ? [
+
+] : [
+    new webpack.HotModuleReplacementPlugin() 
+]
+
 module.exports = {
     target: 'node',
     context: paths.appRoot,
@@ -42,9 +48,7 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        !isProduction && new webpack.HotModuleReplacementPlugin()
-    ],
+    plugins,
     externals: [nodeExternals()],
     // don't replace node specific variable names
     node: {

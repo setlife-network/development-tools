@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import is from 'styled-is'
+import { spacing } from './mixins'
 
-export default styled.div`
+const Flex = styled.div`
+    ${spacing};
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
 
     /* wrap */
     ${is('wrap')`
@@ -96,9 +98,45 @@ export default styled.div`
         align-items: stretch;
     `}
 
-    /* utilities */
+    /* absolute centering */
     ${is('center')`
         align-items: center;
         justify-content: center;
     `}
+
+    /* Flex sizing */
+    ${is('order')`
+        order: ${p => p.order};
+    `}
+
+    ${is('grow')`
+        flex-grow: ${p => p.grow};
+    `}
+    
+    ${is('shrink')`
+        flex-shrink: ${p => p.shrink};
+    `}
+
+    ${is('basis')`
+        flex-basis: ${p => p.basis};
+    `}
+
+    ${is('maxWidth')`
+        max-width: ${p => p.maxWidth};
+    `}
+
+    ${is('minWidth')`
+        min-width: ${p => p.minWidth};
+    `}
 `
+
+Flex.propTypes = {
+    order: PropTypes.number,
+    grow: PropTypes.number,
+    shrink: PropTypes.number,
+    basis: PropTypes.string,
+    minWidth: PropTypes.string,
+    maxWidth: PropTypes.string,
+}
+
+export default Flex

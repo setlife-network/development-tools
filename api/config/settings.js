@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     // Database configuration
     // Custom config functions
     db: {
@@ -40,4 +40,4 @@ module.exports = {
             next();
         }
     }
-};
+}

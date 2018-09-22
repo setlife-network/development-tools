@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import is from 'styled-is'
 
 import media from './media'
-import { spacing, size } from './mixins'
+import { spacing, size, colors } from './mixins'
 import { spacing as spacingTypes, size as sizeTypes } from './propTypes'
 
 const Box = styled.div`
+    ${colors};
     ${spacing};
     ${size};
 

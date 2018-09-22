@@ -1,3 +1,3 @@
-module.exports = {
-    // CONSTANTS: 'GO_HERE'
-};
+export default {
+    // constants go here
+}
