@@ -5,7 +5,7 @@ const SAMPLE_ACTION = 'SAMPLE_ACTION'
 
 // Initial state
 const initialState = {
-    sampleState: true
+    sampleState: 'setlife'
 }
 
 export default function reducer(state = initialState, action) {
