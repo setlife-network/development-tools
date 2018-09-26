@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider as ReduxProvider } from 'react-redux'
 
 // global stylesheets
-import 'assets/css/normalize.less'
-import 'assets/css/fonts.less'
+import 'assets/css/normalize.css'
+import 'assets/css/fonts.css'
 
 // Main App component
 import App from 'components/App'

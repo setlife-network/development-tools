@@ -5,18 +5,10 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "clean": "rm -rf node_modules && rm -rf public && rm -rf server",
-    "prebuild": "rm -rf public && rm -rf server",
-    "build": "NODE_ENV=production node scripts/build.js",
-    "dev": "npm-run-all --parallel client server",
-    "client": "webpack-dev-server --progress --config config/webpack.config.client.js",
-    "server": "npm-run-all --parallel server:watch server:run",
-    "server:run": "NODE_ENV=development node-dev server/server.bundle.js",
-    "server:watch": "NODE_ENV=development webpack --config config/webpack.config.server.js --watch",
-    "inspect": "webpack --config config/webpack.config.inspect.js",
-    "lint": "eslint src",
-    "start": "node server/server.bundle.js",
-    "test": "jest"
+    "clean": "rm -rf public",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "bin": {
     "setlife": "./setlife.js"
@@ -38,6 +30,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@sendgrid/mail": "^6.3.1",
+    "@zeit/next-css": "^1.0.1",
     "apollo-cache-inmemory": "^1.2.10",
     "apollo-client": "^2.4.2",
     "apollo-link": "^1.2.2",
@@ -58,10 +51,12 @@
     "graphql": "^14.0.2",
     "graphql-bookshelf": "github:otech47/graphql-bookshelf",
     "graphql-tag": "^2.9.2",
+    "isomorphic-fetch": "^2.2.1",
     "knex": "^0.12.6",
     "lodash": "^4.16.4",
     "moment": "^2.15.1",
     "mysql": "^2.11.1",
+    "next": "^7.0.0",
     "node-ses": "^2.1.0",
     "pluralize": "^3.1.0",
     "polished": "^2.0.3",
