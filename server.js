@@ -12,8 +12,8 @@ import createStore from './src/store'
 
 // TODO fix 'styles' not showing up
 // Components
-// import App from './src/components/App'
-// import Html from './src/Html'
+import App from './src/components/App'
+import Html from './src/Html'
 
 const app = express()
 

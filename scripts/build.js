@@ -13,18 +13,23 @@ if (argv.client) {
         const compiler = webpack(clientConfig)
         compiler.run((err, stats) => {
             if (err) throw err            
-            console.log(stats)
+            console.log(stats.toString({
+                chunks: false,
+                colors: true 
+            }))
         })
     })
 } else if (argv.server) {
-    process.env.NODE_ENV = 'production'
     rimraf('server', err => {
         if (err) throw err
 
         const compiler = webpack(serverConfig)
         compiler.run((err, stats) => {
             if (err) throw err            
-            console.log(stats)
+            console.log(stats.toString({
+                chunks: false,
+                colors: true 
+            }))
         })
     })
 } else {

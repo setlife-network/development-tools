@@ -2,19 +2,9 @@ const webpack = require('webpack')
 const nodeExternals = require('webpack-node-externals')
 const paths = require('./paths')
 
-const nodeEnv = process.env.NODE_ENV
-const isProduction = nodeEnv !== 'development'
-
-const plugins = isProduction ? [
-
-] : [
-    new webpack.HotModuleReplacementPlugin() 
-]
-
 module.exports = {
     target: 'node',
     context: paths.appRoot,
-    mode: isProduction ? 'production' : 'development',
     entry: [
         '@babel/polyfill',
         paths.serverEntry
@@ -50,7 +40,6 @@ module.exports = {
             }
         ]
     },
-    plugins,
     externals: [nodeExternals()],
     // don't replace node specific variable names
     node: {
