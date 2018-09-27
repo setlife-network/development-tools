@@ -5,8 +5,8 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "clean": "rm -rf public",
-    "dev": "next",
+    "clean": "rm -rf public && rm -rf node_modules",
+    "dev": "node index.js",
     "build": "next build",
     "start": "next start"
   },
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "@sendgrid/mail": "^6.3.1",
     "@zeit/next-css": "^1.0.1",
     "apollo-cache-inmemory": "^1.2.10",
@@ -50,6 +51,7 @@
     "fs-extra": "^2.0.0",
     "graphql": "^14.0.2",
     "graphql-bookshelf": "github:otech47/graphql-bookshelf",
+    "graphql-import": "^0.7.1",
     "graphql-tag": "^2.9.2",
     "isomorphic-fetch": "^2.2.1",
     "knex": "^0.12.6",

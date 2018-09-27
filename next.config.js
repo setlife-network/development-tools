@@ -3,9 +3,6 @@ const path = require('path')
 
 module.exports = withCSS({
     distDir: 'public',
-    // publicRuntimeConfig: {
-    //     staticFolder: '/assets'
-    // },
     webpack: (config, { dev, isServer, defaultLoaders }) => {
         // TODO customized webpack config)
         config.resolve = {
