@@ -4,15 +4,18 @@ const path = require('path')
 module.exports = withCSS({
     distDir: 'public',
     webpack: (config, { dev, isServer, defaultLoaders }) => {
-        // TODO customized webpack config)
+        if (dev) {
+            config.devtool = 'cheap-module-eval-source-map'
+        }
+
         config.resolve = {
             extensions: ['.js', '.graphql', '.css'],
             alias: {
-                styles: path.resolve(__dirname, 'styles'),
-                components: path.resolve(__dirname, 'components'),
                 assets: path.resolve(__dirname, 'assets'),
+                components: path.resolve(__dirname, 'components'),
                 reducers: path.resolve(__dirname, 'reducers'),
-                scripts: path.resolve(__dirname, 'scripts')
+                scripts: path.resolve(__dirname, 'scripts'),
+                styles: path.resolve(__dirname, 'styles'),
             }
         }
         
@@ -23,8 +26,7 @@ module.exports = withCSS({
                 loader: 'graphql-tag/loader'
             }
         )
-
-        console.log(config)
+        
         return config
     }
 })

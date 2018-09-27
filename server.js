@@ -12,9 +12,18 @@ import { importSchema } from 'graphql-import'
 import resolvers from './api/resolvers'
 const typeDefs = importSchema('./api/schema.graphql')
 
+// REST data sources
+import Coinbase from './api/handlers/Coinbase'
+
 app.prepare().then(() => {
     const server = express()
-    const apolloServer = new ApolloServer({ typeDefs, resolvers })
+    const apolloServer = new ApolloServer({
+        typeDefs,
+        resolvers,
+        dataSources: () => ({
+            coinbase: new Coinbase()
+        })
+    })
     apolloServer.applyMiddleware({ app: server })
 
     server.get('*', (req, res) => {
@@ -24,5 +33,6 @@ app.prepare().then(() => {
     server.listen(port, err => {
         if (err) throw err
         console.log(`> Ready on http://localhost:${port}`)
+        console.log(`> GraphQL Playground ready on http://localhost:${port}/graphql`)
     })
 })

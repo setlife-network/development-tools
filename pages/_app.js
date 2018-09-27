@@ -28,11 +28,14 @@ class MyApp extends App {
                                 <Link href='/'>
                                     <Text padding='1rem'>Home</Text>
                                 </Link>
-                                <Link href='/about'>
-                                    <Text padding='1rem'>About</Text>
+                                <Link href='/redux'>
+                                    <Text padding='1rem'>Redux</Text>
                                 </Link>
-                                <Link href='/contact'>
-                                    <Text padding='1rem'>Contact</Text>
+                                <Link href='/apollo'>
+                                    <Text padding='1rem'>Apollo</Text>
+                                </Link>
+                                <Link href='/rest'>
+                                    <Text padding='1rem'>REST Data Source</Text>
                                 </Link>
                             </Flex>
                             <Component {...pageProps} />

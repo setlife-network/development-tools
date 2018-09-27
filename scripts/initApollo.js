@@ -12,7 +12,8 @@ if (!process.browser) {
     global.fetch = fetch
 }
 
-const API_ROOT = 'https://w5xlvm3vzz.lp.gql.zone/graphql'
+// const API_ROOT = 'https://w5xlvm3vzz.lp.gql.zone/graphql'
+const { API_ROOT } = process.env
 
 function create(initialState) {
     return new ApolloClient({

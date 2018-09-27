@@ -1,4 +1,4 @@
-import { API_ROOT } from '../constants';
+const { API_ROOT } = process.env
 
 export default {
     graphStringify(json) {
