@@ -12,8 +12,8 @@ import createStore from './src/store'
 
 // TODO fix 'styles' not showing up
 // Components
-import App from './src/components/App'
-import Html from './src/Html'
+// import App from './src/components/App'
+// import Html from './src/Html'
 
 const app = express()
 
@@ -26,8 +26,17 @@ const port = isProduction ? process.env.PORT : 3000
 // Graphql server setup
 import resolvers from './api/resolvers'
 import typeDefs from './api/schema.graphql'
+import Coinbase from './api/handlers/Coinbase'
 
-const server = new ApolloServer({ typeDefs, resolvers })
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    dataSources: () => {
+        return {
+            coinbase: new Coinbase()
+        }
+    }
+})
 server.applyMiddleware({ app })
 
 app.listen({ port }, () => {

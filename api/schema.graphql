@@ -1,3 +1,9 @@
 type Query {
     hello: String
+    price(currency: String): Price
+}
+
+type Price {
+    amount: String
+    currency: String
 }
