@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf public && rm -rf node_modules",
-    "dev": "node index.js",
+    "dev": "node --inspect index.js",
     "build": "next build",
     "start": "next start"
   },
@@ -81,7 +81,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "babel-plugin-styled-components": "^1.6.3",

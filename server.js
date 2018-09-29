@@ -20,9 +20,11 @@ app.prepare().then(() => {
     const apolloServer = new ApolloServer({
         typeDefs,
         resolvers,
-        dataSources: () => ({
-            coinbase: new Coinbase()
-        })
+        dataSources: () => {
+            return {
+                coinbase: new Coinbase()
+            }
+        }
     })
     apolloServer.applyMiddleware({ app: server })
 
