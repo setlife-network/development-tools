@@ -6,6 +6,9 @@ export default class Coinbase extends RESTDataSource {
         super()
         this.baseURL = 'https://api.coinbase.com/v2/'
     }
+    willSendRequest(req) {
+        req.headers.set('Authorization', 'Bearer ' + this.context.token)
+    }
     async getPrice(currency) {
         return this.get(`prices/spot?currency=${currency}`)
     }

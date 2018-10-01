@@ -1,6 +1,6 @@
 type Query {
     hello: String
-    price: Price
+    price(currency: String): Price
 }
 
 type Planet {
