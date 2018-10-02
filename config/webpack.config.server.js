@@ -1,63 +1,24 @@
 const webpack = require('webpack')
+const merge = require('webpack-merge')
 const nodeExternals = require('webpack-node-externals')
+const common = require('./webpack.common.server')
 const paths = require('./paths')
 
-const nodeEnv = process.env.NODE_ENV
-const isProduction = nodeEnv !== 'development'
+const { NODE_ENV = 'development' } = process.env
 
-const plugins = isProduction ? [
+const development = merge(common, {
+    mode: 'development',
+    plugins: [
+        new webpack.HotModuleReplacementPlugin() 
+    ]
+})
 
-] : [
-    new webpack.HotModuleReplacementPlugin() 
-]
+const production = merge(common, {
+    mode: 'production'
+})
 
-module.exports = {
-    target: 'node',
-    context: paths.appRoot,
-    mode: isProduction ? 'production' : 'development',
-    entry: [
-        '@babel/polyfill',
-        paths.serverEntry
-    ],
-    output: {
-        path: paths.server,
-        filename: 'server.bundle.js',
-        publicPath: '/'
-    },
-    resolve: {
-        extensions: ['.js', '.graphql'],
-        alias: {
-            styles: paths.appStyles,
-            components: paths.appComponents,
-            assets: paths.appAssets,
-            reducers: paths.appReducers,
-            scripts: paths.appScripts
-        }
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                include: paths.api,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.(graphql|gql)$/,
-                include: paths.api,
-                exclude: /node_modules/,
-                loader: 'graphql-tag/loader'
-            }
-        ]
-    },
-    plugins,
-    externals: [nodeExternals()],
-    // don't replace node specific variable names
-    node: {
-        global: false,
-        process: false,
-        Buffer: false,
-        __filename: false,
-        __dirname: false
-    }
+if (NODE_ENV === 'development') {
+    module.exports = development
+} else {
+    module.exports = production
 }
