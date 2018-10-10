@@ -1,9 +1,8 @@
-const withCSS = require('@zeit/next-css')
 const path = require('path')
 
-module.exports = withCSS({
-    distDir: 'public',
-    webpack: (config, { dev, isServer, defaultLoaders }) => {
+module.exports = {
+    distDir: '../public',
+    webpack: (config, { dev }) => {
         if (dev) {
             config.devtool = 'cheap-module-eval-source-map'
         }
@@ -11,11 +10,11 @@ module.exports = withCSS({
         config.resolve = {
             extensions: ['.js', '.graphql', '.css'],
             alias: {
-                assets: path.resolve(__dirname, 'assets'),
-                components: path.resolve(__dirname, 'components'),
-                reducers: path.resolve(__dirname, 'reducers'),
-                scripts: path.resolve(__dirname, 'scripts'),
-                styles: path.resolve(__dirname, 'styles'),
+                components: path.resolve(__dirname, 'src', 'components'),
+                reducers: path.resolve(__dirname, 'src', 'reducers'),
+                scripts: path.resolve(__dirname, 'src', 'scripts'),
+                static: path.resolve(__dirname, 'src', 'static'),
+                styles: path.resolve(__dirname, 'src', 'styles'),
             }
         }
         
@@ -29,4 +28,4 @@ module.exports = withCSS({
         
         return config
     }
-})
+}

@@ -1,29 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { themeGet, space } from 'styled-system'
 import is from 'styled-is'
 import { border } from 'polished'
-
 import Text from './Text'
-import { mixins, propTypes } from 'styles'
 
 const StyledInput = styled.input.attrs({
     type: 'text'
 })`
-    ${mixins.spacing};
     padding: 1rem;
+    margin-bottom: 1rem;
     ${p => border('1px', 'solid', p.theme.colors.lightGrey)};
-    border-radius: ${p => p.theme.borderRadius};
-    background-color: ${p => p.theme.white};
-    color: ${p => p.theme.darkGrey};
+    border-radius: ${themeGet('borderRadius')};
+    background-color: ${themeGet('colors.white')};
+    color: ${themeGet('colors.charcoal')};
     font-size: 2rem;
 
     &::placeholder {
-        color: ${p => p.theme.lightGrey}
+        color: ${themeGet('colors.lightGrey')}
     }
 
     ${is('disabled')`
-        background-color: ${p => p.theme.border};
+        background-color: ${themeGet('colors.border')};
     `}
 `
 
@@ -33,7 +32,7 @@ const Input = ({
     ...props
 }) => {
     return (
-        <div>
+        <>
             <StyledInput
                 {...field}
                 {...props}
@@ -41,18 +40,18 @@ const Input = ({
             {touched[field.name] && errors[field.name] && (
                 <Text
                     color='red'
-                    size={10}
-                    marginVertical='1rem'
+                    fontSize={10}
+                    mb='2rem'
                 >
                     {errors[field.name]}
                 </Text>
             )}
-        </div>
+        </>
     )
 }
 
 Input.propTypes = {
-    ...propTypes.spacing,
+    ...space.propTypes,
     field: PropTypes.object.isRequired,
     form: PropTypes.object.isRequired
 }

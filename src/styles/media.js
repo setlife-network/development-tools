@@ -1,9 +1,9 @@
 import { css } from 'styled-components'
-import { breakpoints } from './theme'
+import theme from './theme'
 
-const media = Object.keys(breakpoints).reduce((acc, label) => {
+const media = Object.keys(theme.breakpointMap).reduce((acc, label) => {
     acc[label] = (...args) => css`
-        @media (min-width: ${breakpoints[label]}px) {
+        @media (min-width: ${theme.breakpointMap[label]}px) {
             ${css(...args)};
         }
     `

@@ -1,17 +1,19 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import media from './media'
-import { breakpoints, gridSize } from './theme'
+import { theme, media } from 'styles'
+import Box from './Box'
 
-const sizes = Object.keys(breakpoints)
+const { gridSize, breakpointMap } = theme
+const sizes = Object.keys(breakpointMap)
 
-const Col = styled.div`
+const Col = styled(Box)`
     display: flex;
     flex-basis: auto;
     flex-direction: column;
 
     /**
      * Responsive grid sizing
+     *
      * Usage <Col sm={12} md={6} lg={4} xl={12} />
      */
 

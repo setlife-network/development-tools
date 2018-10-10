@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import styled, { withTheme } from 'styled-components'
+import { themeGet } from 'styled-system'
 import is from 'styled-is'
 import { transitions } from 'polished'
 import Transition from 'react-transition-group/Transition'
-import { utils } from 'styles'
-import { theme } from 'styles/utils'
+import Router from 'next/router'
 
 const Backdrop = styled.div`
     position: fixed;
@@ -14,7 +14,11 @@ const Backdrop = styled.div`
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: ${theme('overlay')};
+    background-color: ${themeGet('colors.overlay')};
+    ${p => transitions(
+        'background-color',
+        `${p.theme.durationShort} ease-in-out`
+    )}
 `
 
 const Modal = styled.div`
@@ -23,7 +27,7 @@ const Modal = styled.div`
     right: 0px;
     bottom: 0px;
     left: 0px;
-    z-index: ${theme('zIndexModal')};
+    z-index: ${themeGet('zIndexModal')};
     visibility: hidden;
     overflow: hidden;
     outline: 0;
@@ -36,11 +40,12 @@ const Modal = styled.div`
         overflow-y: auto;
     `}
 
-    opacity: ${theme('transitionOpacity')[p.state]};
+    opacity: ${p => p.theme.transitionOpacity[p.state]};
     ${p => transitions(
         'opacity',
-        `${utils.ms(p.theme.durationShort)} ease-in-out`
+        `${p.theme.durationShort} ease-in-out`
     )}
+
 `
 
 const ModalContent = styled.div`
@@ -48,12 +53,12 @@ const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     width: auto;
-    max-width: 90%;
+    ${'' /* max-width: 90%; */}
     margin: auto;
     pointer-events: auto;
-    background-color: ${p => p.theme.colors.white};
-    border-radius: ${p => p.theme.borderRadius};
-    box-shadow: ${p => p.theme.shadows[5]};
+    background-color: ${themeGet('colors.white')};
+    border-radius: ${themeGet('borderRadius')};
+    box-shadow: ${themeGet('shadow5')};
     outline: 0;
 `
 
@@ -71,6 +76,7 @@ class ModalComponent extends Component {
     }
     componentDidMount() {
         this.attachEventHandlers()
+        Router.events.on('routeChangeStart', this.props.onClose.bind(null, false))
     }
     componentDidUpdate() {
         this.attachEventHandlers()
@@ -83,18 +89,19 @@ class ModalComponent extends Component {
         } else {
             document.body.style.overflow = null
             document.removeEventListener('keyup', this.onKeyUp)
+            Router.events.off('routeChangeStart', this.props.onClose.bind(null, false))
         }
     }
     onKeyUp = ({ keyCode }) => {
         if (keyCode === 27) {
-            this.this.props.onClose()
+            this.props.onClose()
         }
     }
     render() {
         const {
             onClose,
             opened,
-            children,s
+            children,
             theme
         } = this.props
 
@@ -102,7 +109,7 @@ class ModalComponent extends Component {
 
         return createPortal(
             <Transition
-                timeout={theme.durationShort}
+                timeout={200}
                 in={opened}
             >
                 {state => (
@@ -110,12 +117,10 @@ class ModalComponent extends Component {
                         opened={opened || state === 'exiting'}
                         state={state}
                     >
-                        <Backdrop onClick={onClose} />
-                        {/* <ModalDialog> */}
-                            <ModalContent>
-                                {children}
-                            </ModalContent>
-                        {/* </ModalDialog> */}
+                        {<Backdrop onClick={onClose} />}
+                        <ModalContent>
+                            {children}
+                        </ModalContent>
                     </Modal>
                 )}
             </Transition>,
