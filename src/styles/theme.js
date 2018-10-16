@@ -1,17 +1,18 @@
 export default {
-    // Breakpoints for media queries
-    breakpoints: ['420px', '768px', '960px', '1600px'],
-    breakpointMap: {
-        xs: 320,
-        sm: 400,
-        md: 768,
-        lg: 960,
-        xl: 1600
+    // styled-system breakpoints
+    breakpoints: ['600px', '900px', '1200px', '1800px'],
+    // breakpoints for media.js
+    devices: {
+        mobile: 599,
+        tabletPortrait: 600,
+        tabletLandscape: 900,
+        desktop: 1200,
+        desktopBig: 1800
     },
     // Borders
     borderRadius: '3px',
     borderWidth: '1px',
-    // Box shadows
+    // Box shadows (used in Card component)
     shadows: {
         1: '0px 1.5px 8px rgba(0,0,0,0.07)',
         2: '0px 2px 11px rgba(0,0,0,0.10)',
@@ -19,7 +20,7 @@ export default {
         4: '0px 4px 21px rgba(0,0,0,0.14)',
         5: '0px 5px 25px rgba(0,0,0,0.14)',
     },
-    // Colors
+    // Colors (styled-system)
     colors: {
         white: '#ffffff',
         background: '#F7F7F9',
@@ -40,7 +41,7 @@ export default {
         vertical: `linear-gradient(#4481EB, #04BEFE)`,
         horizontal: `linear-gradient(90deg, #4481EB, #04BEFE)`,
     },
-    // Fonts
+    // Fonts (styled-system)
     fonts: {
         display1: {
             fontSize: '12rem',
@@ -83,6 +84,7 @@ export default {
             fontWeight: 700,
         }
     },
+    // tags for styled-components `as` polymorphic prop
     tags: {
         h1: 'h1',
         h2: 'h2',
@@ -95,17 +97,7 @@ export default {
         display3: 'h3',
         display4: 'h4',
     },
-    // Grid
-    gridMargin: 2,
-    gridSize: 12,
-    gridWidth: {
-        sm: 100,
-        md: 90,
-        lg: 80,
-        xl: 70
-    },
-    gutterWidth: 2,
-    // Spacing
+    // Spacing (styled-system)
     space: [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80],
     // Transitions
     durationShort: '200ms',

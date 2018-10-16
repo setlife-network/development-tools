@@ -20,7 +20,6 @@ const flexBasis = style({
 })
 
 const Flex = styled(Box)`
-    display: flex;
     ${flexDirection};
     ${flexBasis};
     ${alignItems};
@@ -69,6 +68,10 @@ Flex.propTypes = {
     reverse: PropTypes.bool,
     center: PropTypes.bool,
     order: PropTypes.number,
+}
+
+Flex.defaultProps = {
+    display: 'flex'
 }
 
 export default Flex

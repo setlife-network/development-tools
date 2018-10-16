@@ -7,16 +7,10 @@ const isProduction = process.env.NODE_ENV === 'production'
 export default function configureStore(initialState) {
     const composeEnhancers = global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-    const store = isProduction ? createStore(
+    const store = createStore(
         rootReducer,
         initialState,
-        applyMiddleware(thunk)
-    ) : createStore(
-        rootReducer,
-        initialState,
-        composeEnhancers(
-            applyMiddleware(thunk)
-        )
+        isProduction ? applyMiddleware(thunk) : composeEnhancers(applyMiddleware(thunk))
     )
 
     // if (!isProduction && module.hot) {

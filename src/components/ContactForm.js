@@ -4,6 +4,8 @@ import * as yup from 'yup'
 
 import Button from './Button'
 import Input from './Input'
+import Toggle from './Toggle'
+import Modal from './Modal'
 
 const contactSchema = yup.object().shape({
     name: yup.string().required('Required'),
@@ -12,8 +14,9 @@ const contactSchema = yup.object().shape({
 })
 
 export default class ContactForm extends React.Component {
-    onSubmit = values => {
+    onSubmit = (values, formik) => {
         console.log(values)
+        formik.resetForm()
     }
     render() {
         return (
@@ -21,7 +24,7 @@ export default class ContactForm extends React.Component {
                 onSubmit={this.onSubmit}
                 validationSchema={contactSchema}
             >
-                {({ errors, touched }) => (
+                {({ isValid }) => (
                     <Form>
                         <Field
                             name='name'
@@ -39,7 +42,28 @@ export default class ContactForm extends React.Component {
                             component={Input}
                             as='textarea'
                         />
-                        <Button type='submit'>Submit</Button>
+                        <Toggle>
+                            {({ toggled, onToggle }) => (
+                                <>
+                                    <Button
+                                        type='submit'
+                                        onClick={onToggle}
+                                        disabled={!isValid}
+                                    >
+                                        Submit
+                                    </Button>
+                                    <Modal
+                                        opened={toggled}
+                                        onClose={onToggle}
+                                    >
+                                        <Flex p='2rem' column alignItems='center'>
+                                            <Text textAlign='center'>Contact form submitted</Text>
+                                            <Button minWidth='50%' onClick={onToggle}>Close</Button>
+                                        </Flex>
+                                    </Modal>
+                                </>
+                            )}
+                        </Toggle>
                     </Form>
                 )}
             </Formik>

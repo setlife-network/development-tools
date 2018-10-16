@@ -6,8 +6,7 @@ import Box from './Box'
 
 const Image = styled(Box)(
     {
-        maxWidth: '100%',
-        height: 'auto'
+        maxWidth: '100%'
     },
     borderRadius
 )
@@ -17,7 +16,8 @@ Image.propTypes = {
 }
 
 Image.defaultProps = {
-    as: 'img'
+    as: 'img',
+    height: 'auto'
 }
 
 export default Image
