@@ -9,7 +9,12 @@ import {
     maxWidth,
     minHeight,
     maxHeight,
-    display
+    display,
+    position,
+    top,
+    right,
+    bottom,
+    left
 } from 'styled-system'
 
 const css = props => props.css
@@ -25,6 +30,11 @@ const Box = styled('div')(
     minHeight,
     maxHeight,
     display,
+    position,
+    top,
+    right,
+    bottom,
+    left,
     css
 )
 
@@ -39,6 +49,11 @@ Box.propTypes = {
     ...minHeight.propTypes,
     ...maxHeight.propTypes,
     ...display.propTypes,
+    ...position.propTypes,
+    ...top.propTypes,
+    ...right.propTypes,
+    ...bottom.propTypes,
+    ...left.propTypes
 }
 
 export default Box

@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import is from 'styled-is'
 import {
     alignItems,
+    alignSelf,
     justifyContent,
+    justifySelf,
     alignContent,
     style
 } from 'styled-system'
@@ -20,10 +22,13 @@ const flexBasis = style({
 })
 
 const Flex = styled(Box)`
+    display: flex;
     ${flexDirection};
     ${flexBasis};
     ${alignItems};
+    ${alignSelf};
     ${justifyContent};
+    ${justifySelf};
     ${alignContent};
     
     ${is('wrap')`
@@ -59,19 +64,19 @@ const Flex = styled(Box)`
 
 Flex.propTypes = {
     ...alignItems.propTypes,
+    ...alignSelf.propTypes,
     ...alignContent.propTypes,
     ...justifyContent.propTypes,
+    ...justifySelf.propTypes,
     ...flexDirection.propTypes,
     ...flexBasis.propTypes,
     row: PropTypes.bool,
     column: PropTypes.bool,
     reverse: PropTypes.bool,
+    wrap: PropTypes.bool,
     center: PropTypes.bool,
     order: PropTypes.number,
-}
-
-Flex.defaultProps = {
-    display: 'flex'
+    center: PropTypes.bool
 }
 
 export default Flex

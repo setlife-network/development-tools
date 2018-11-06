@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 import {
+    style,
     space,
     color,
-    textAlign,
     lineHeight,
     letterSpacing,
-    fontWeight,
     fontFamily,
-    fontSize,
     variant
 } from 'styled-system'
 
@@ -15,13 +13,28 @@ const variants = variant({
     key: 'fonts'
 })
 
+const align = style({
+    prop: 'align',
+    cssProperty: 'textAlign'
+})
+
+const weight = style({
+    prop: 'weight',
+    cssProperty: 'fontWeight'
+})
+
+const size = style({
+    prop: 'size',
+    cssProperty: 'fontSize'
+})
+
 const Text = styled.p.attrs({
     as: p => p.theme.tags[p.variant]
 })`
+    ${align};
+    ${weight};
     ${fontFamily};
-    ${fontSize};
-    ${fontWeight};
-    ${textAlign};
+    ${size};
     ${lineHeight};
     ${letterSpacing};
     ${color};
@@ -30,22 +43,24 @@ const Text = styled.p.attrs({
 `
 
 Text.propTypes = {
+    ...align.propTypes,
+    ...weight.propTypes,
     ...color.propTypes,
     ...space.propTypes,
     ...fontFamily.propTypes,
-    ...fontSize.propTypes,
-    ...fontWeight.propTypes,
-    ...textAlign.propTypes,
     ...lineHeight.propTypes,
     ...letterSpacing.propTypes,
+    ...size.propTypes,
+    ...weight.propTypes,
+    ...align.propTypes
 }
 
 Text.defaultProps = {
     color: 'charcoal',
     fontSize: 16,
-    fontWeight: 400,
+    weight: 400,
     lineHeight: 1.6,
-    letterSpacing: '0.06rem'
+    letterSpacing: '0.025rem'
 }
 
 export default Text
