@@ -1,0 +1,29 @@
+{
+  "name": "tools",
+  "version": "0.0.0",
+  "description": "Setlife cli tools and devDependencies",
+  "author": "Quinn Pruitt <qpruitt93@gmail.com>",
+  "homepage": "https://github.com/quinnstonchurchill/setlife#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinnstonchurchill/setlife.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/quinnstonchurchill/setlife/issues"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0"
+  }
+}

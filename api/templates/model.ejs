@@ -1,8 +1,0 @@
-var Bookshelf = require('./bookshelf');
-
-var <%- name %> = Bookshelf.Model.extend({
-    tableName: '<%- databaseTableName %>'
-});
-
-
-module.exports = Bookshelf.model('<%- name %>', <%- name %>);
