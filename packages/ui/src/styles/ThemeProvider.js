@@ -13,13 +13,13 @@ const ThemeProvider = ({
 }) => {
     const breakpoints = customBreakpoints || defaultTheme.breakpoints
     const colors = customColors || defaultTheme.colors
-    const newTheme = theme ? theme : {
+    const newTheme = {
         ...defaultTheme,
         breakpoints,
         colors: {
-            ...defaultTheme.colors,
             ...colors
-        }
+        },
+        ...theme
     }
 
     return (
