@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Flex, Button, Text, Modal, Toggle } from '../src/components'
 
-storiesOf('Modal', module)
+storiesOf('Components|Modal', module)
     .addParameters({
         info: {
             propTablesExclude: [Flex, Button, Text],
@@ -18,7 +18,7 @@ storiesOf('Modal', module)
                         <>
                             <Button onClick={onToggle}>Open the Modal</Button>
                             <Modal open={toggled} onClose={onToggle}>
-                                <Flex direction='column' alignItems='center' p='2rem' bg='white'>
+                                <Flex direction='column' alignItems='center'>
                                     <Text variant='h1' mb='1rem'>Hey, I'm a modal!</Text>
                                     <Text mb='2rem'>Click the button or anywhere outside the modal to close me.</Text>
                                     <Button fullWidth onClick={onToggle}>Close</Button>
@@ -40,7 +40,7 @@ storiesOf('Modal', module)
                     <>
                         <Button onClick={onToggle}>Open the Modal</Button>
                         <Modal open={toggled} onClose={onToggle}>
-                            <Flex direction='column' alignItems='center' p='2rem' bg='white'>
+                            <Flex direction='column' alignItems='center'>
                                 <Text variant='h1' mb='1rem'>Hey, I'm a modal!</Text>
                                 <Text mb='2rem'>Click the button or anywhere outside the modal to close me.</Text>
                                 <Button fullWidth onClick={onToggle}>Close</Button>

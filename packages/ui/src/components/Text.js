@@ -7,6 +7,7 @@ import {
     variant
 } from 'styled-system'
 import Box from './Box'
+import { utils } from '../styles'
 
 const tags = {
     h1: 'h1',
@@ -21,17 +22,17 @@ const tags = {
     display4: 'h4',
 }
 
-const align = style({
+const textAlign = style({
     prop: 'align',
     cssProperty: 'textAlign'
 })
 
-const weight = style({
+const fontWeight = style({
     prop: 'weight',
     cssProperty: 'fontWeight'
 })
 
-const size = style({
+const fontSize = style({
     prop: 'size',
     cssProperty: 'fontSize',
     transformValue: n => n + 'px'
@@ -44,33 +45,31 @@ const textStyle = variant({
 const Text = styled(Box).attrs({
     as: p => p.variant ? tags[p.variant] : 'p',
 })`
+    ${utils.themed('Text')};
     ${fontFamily};
-    ${align};
-    ${weight};
-    ${size};
+    ${textAlign};
+    ${fontWeight};
+    ${fontSize};
     ${lineHeight};
     ${letterSpacing};
     ${textStyle};
 `
 
+Text.displayName = 'Text'
+
 Text.propTypes = {
-    ...align.propTypes,
-    ...weight.propTypes,
+    ...textAlign.propTypes,
+    ...fontWeight.propTypes,
     ...fontFamily.propTypes,
+    ...fontSize.propTypes,
     ...lineHeight.propTypes,
     ...letterSpacing.propTypes,
-    ...size.propTypes,
-    ...weight.propTypes,
-    ...align.propTypes,
     ...textStyle.propTypes
 }
 
 Text.defaultProps = {
     color: 'darkGrey',
-    size: 16,
-    lineHeight: 1.6,
-    letterSpacing: '0.025rem',
-    align: 'left'
+    size: 16
 }
 
 export default Text

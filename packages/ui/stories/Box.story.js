@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Box, Text } from '../src/components'
 
-storiesOf('Box', module)
+storiesOf('Components|Box', module)
     .addParameters({
         info: {
             propTablesExclude: [Text]
@@ -43,7 +43,7 @@ storiesOf('Box', module)
     .add('Spacing', () => (
         <>
             <Box
-                height={100}
+                minHeight={100}
                 bg='purple'
                 my='2rem'
                 mr='50%'
@@ -52,7 +52,7 @@ storiesOf('Box', module)
                 <Text color='white'>Spacing is easy!</Text>
             </Box>
             <Box
-                height={100}
+                minHeight={100}
                 bg='blue'
                 my='2rem'
                 ml='25%'
@@ -69,7 +69,7 @@ storiesOf('Box', module)
                 height={200}
                 width={200}
                 bg='purple'
-                css='cursor: pointer;'
+                css='cursor: pointer; transform: skewX(3deg);'
             />
         ),
         {

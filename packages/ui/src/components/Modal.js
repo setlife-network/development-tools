@@ -6,6 +6,7 @@ import { themeGet } from 'styled-system'
 import is from 'styled-is'
 import { transitions } from 'polished'
 import Transition from 'react-transition-group/Transition'
+import { utils } from '../styles'
 
 const transitionOpacity = {
     entering: 1,
@@ -20,9 +21,6 @@ const Backdrop = styled.div`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    /* position: absolute;
-    height: 100%;
-    width: 100%; */
     background-color: ${themeGet('colors.overlay')};
     ${transitions(
         'background-color',
@@ -42,6 +40,7 @@ const Modal = styled.div`
     outline: 0;
     display: flex;
     align-items: center;
+    opacity: ${p => transitionOpacity[p.state]};
 
     ${is('open')`
         visibility: visible;
@@ -49,7 +48,6 @@ const Modal = styled.div`
         overflow-y: auto;
     `}
 
-    opacity: ${p => transitionOpacity[p.state]};
     ${transitions(
         'opacity',
         `200ms ease-in-out`
@@ -60,16 +58,15 @@ const ModalContent = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    width: auto;
-    max-width: 90%;
     margin: auto;
     pointer-events: auto;
-    background-color: ${themeGet('colors.white')};
-    border-radius: 4px;
-    box-shadow: ${themeGet('shadow5')};
+    background-color: white;
+    box-shadow: ${themeGet('shadows.5')};
+    ${utils.themed('Modal')};
 `
 
 export default class ModalComponent extends Component {
+    static displayName = 'Modal'
     static propTypes = {
         open: PropTypes.bool,
         onClose: PropTypes.func

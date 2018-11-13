@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Text } from '../src/components'
 
-storiesOf('Text', module)
+storiesOf('Components|Text', module)
     .add(
         'Text Component',
         () => (
@@ -13,6 +13,7 @@ storiesOf('Text', module)
                     weight='bold'
                     my='1rem'
                     color='purple'
+                    lineHeight={2}
                 >
                     I can be customized in all sorts of ways.
                 </Text>

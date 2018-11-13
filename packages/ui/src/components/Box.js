@@ -17,8 +17,7 @@ import {
     left,
     opacity
 } from 'styled-system'
-
-const css = props => props.css
+import { utils } from '../styles'
 
 const Box = styled('div')(
     color,
@@ -37,7 +36,8 @@ const Box = styled('div')(
     bottom,
     left,
     opacity,
-    css
+    utils.css,
+    utils.themed('Box')
 )
 
 Box.displayName = 'Box'

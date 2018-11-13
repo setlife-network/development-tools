@@ -20,13 +20,14 @@
   "devDependencies": {
     "@storybook/addon-info": "^4.0.4",
     "@storybook/addon-notes": "^4.0.4",
-    "@storybook/react": "^4.0.4",
-    "babel-plugin-styled-components": "^1.8.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "@storybook/addon-options": "^4.0.4",
+    "@storybook/addon-viewport": "^4.0.4",
+    "@storybook/react": "^4.0.4"
   },
   "dependencies": {
     "polished": "^2.3.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-transition-group": "^2.5.0",
     "styled-components": "^4.0.3",
     "styled-is": "^1.1.5",

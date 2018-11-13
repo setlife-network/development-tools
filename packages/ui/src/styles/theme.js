@@ -1,3 +1,21 @@
+const colors = {
+    white: '#ffffff',
+    background: '#F7F7F9',
+    border: '#EEEFF2',
+    lightGrey: '#CFD5DE',
+    grey: '#718093',
+    darkGrey: '#344768',
+    purple: '#C15BEE',
+    blue: '#00B2FF',
+    green: '#02BE57',
+    yellow: '#F4D163',
+    red: '#CF242B',
+    facebook: '#32529F',
+    twitter: '#38A1F3',
+    overlay: 'rgba(0,0,0,0.5)',
+    transparent: 'transparent'
+}
+
 export default {
     // 1 rem equals...
     baseRem: 8,
@@ -13,20 +31,8 @@ export default {
     },
     // Colors (styled-system)
     colors: {
-        white: '#ffffff',
-        background: '#F7F7F9',
-        border: '#EEEFF2',
-        lightGrey: '#CFD5DE',
-        grey: '#718093',
-        darkGrey: '#344768',
-        purple: '#C15BEE',
-        blue: '#00B2FF',
-        green: '#02BE57',
-        yellow: '#F4D163',
-        red: '#CF242B',
-        facebook: '#32529F',
-        overlay: 'rgba(0,0,0,0.5)',
-        transparent: 'transparent'
+        ...colors,
+        primary: colors.blue
     },
     // Fonts
     fonts: 'Open Sans, sans-serif',
@@ -75,6 +81,19 @@ export default {
             fontWeight: 600,
         }
     },
-    // Spacing scale
-    space: [0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80]
+    // Component theming
+    Button: {
+        fontSize: '1.5rem',
+        height: '4rem',
+        padding: '0 1.5rem'
+    },
+    Text: {
+        letterSpacing: '0.025rem',
+        lineHeight: 1.6
+    },
+    Modal: {
+        maxWidth: '90%',
+        borderRadius: '4px',
+        padding: '2rem'
+    }
 }

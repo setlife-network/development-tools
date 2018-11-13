@@ -13,10 +13,13 @@ const ThemeProvider = ({
 }) => {
     const breakpoints = customBreakpoints || defaultTheme.breakpoints
     const colors = customColors || defaultTheme.colors
-    const newTheme = theme ? theme :{
+    const newTheme = theme ? theme : {
         ...defaultTheme,
         breakpoints,
-        colors
+        colors: {
+            ...defaultTheme.colors,
+            ...colors
+        }
     }
 
     return (
@@ -28,6 +31,7 @@ const ThemeProvider = ({
 
 ThemeProvider.propTypes = {
     customBreakpoints: PropTypes.array,
+    customColors: PropTypes.object,
     theme: PropTypes.shape({
         breakpoints: PropTypes.array,
         shadows: PropTypes.object,

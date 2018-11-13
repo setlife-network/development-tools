@@ -3,12 +3,14 @@ import {
     borderRadius
 } from 'styled-system'
 import Box from './Box'
+import { utils } from '../styles'
 
 const Image = styled(Box)(
     {
         maxWidth: '100%'
     },
-    borderRadius
+    borderRadius,
+    utils.themed('Image')
 )
 
 Image.displayName='Image'

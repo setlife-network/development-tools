@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Card, Text } from '../src/components'
 
-storiesOf('Card', module)
+storiesOf('Components|Card', module)
     .addParameters({
         info: {
             propTablesExclude: [Text]
@@ -19,15 +19,15 @@ storiesOf('Card', module)
         ),
         {
             info: {
-                text: 'Extended <Box/> component for adding box shadows and background images',
-                inline: true
+                inline: true,
+                text: 'Extended `Box` component for adding box shadows and background images'
             }
         }
     )
     .add(
         'Box Shadows',
         () => (
-            <>
+            <div>
                 <Card mb='4rem' p='2rem' bg='white' depth={1}>
                     <Text>Shadow 1</Text>
                 </Card>
@@ -43,6 +43,11 @@ storiesOf('Card', module)
                 <Card mb='4rem' p='2rem' bg='white' depth={5}>
                     <Text>Shadow 5</Text>
                 </Card>
-            </>
-        )
+            </div>
+        ),
+        {
+            notes: {
+                markdown: 'Pass a `depth` prop to apply box shadows defined in `theme.shadows`'
+            }
+        }
     )

@@ -3,13 +3,12 @@ import styled from 'styled-components'
 import is, { isNot } from 'styled-is'
 import { themeGet } from 'styled-system'
 import { border, tint } from 'polished'
-import { mixins } from '../styles'
+import { mixins, utils } from '../styles'
 import Card from './Card'
 
+/** Button component description */
 const Button = styled(Card)`
-    font-size: 1.5rem;
-    height: 4rem;
-    padding: 0 1.5rem;
+    ${utils.themed('Button')};
     cursor: pointer;
     
     ${is('transparent')`
@@ -29,10 +28,12 @@ const Button = styled(Card)`
 
     ${is('disabled')`
         background-color: ${p => tint(0.5, p.theme.colors[p.bg])};
-        color: ${themeGet('colors.white')};
+        color: white;
         cursor: default;
     `}
 `
+
+Button.displanName = 'Button'
 
 Button.propTypes = {
     onClick: PropTypes.func,

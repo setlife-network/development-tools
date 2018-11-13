@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Button } from '../src/components'
 
-storiesOf('Button', module)
+storiesOf('Components|Button', module)
     .add(
         'Button Component',
         () => (
@@ -23,7 +23,12 @@ storiesOf('Button', module)
                 <Button bg='green' mr='2rem'>Green Button</Button>
                 <Button transparent color='purple' mr='2rem'>Purple Button</Button>
             </>
-        )
+        ),
+        {
+            notes: {
+                markdown: 'Pass a `bg` prop to change the background color. You can also render a transparent button by setting the `transparent` and `color` props'
+            }
+        }
     )
     .add(
         'Disabled',

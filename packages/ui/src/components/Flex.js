@@ -10,6 +10,7 @@ import {
     style
 } from 'styled-system'
 import Box from './Box'
+import { utils } from '../styles'
 
 const flexDirection = style({
     prop: 'direction',
@@ -30,6 +31,7 @@ const Flex = styled(Box)`
     ${justifyContent};
     ${justifySelf};
     ${alignContent};
+    ${utils.themed('Flex')};
     
     ${is('wrap')`
         flex-wrap: wrap;

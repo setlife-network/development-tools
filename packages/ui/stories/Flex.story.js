@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Box, Flex, Text } from '../src/components'
 
-storiesOf('Flex', module)
+storiesOf('Components|Flex', module)
     .addParameters({
         info: {
             propTablesExclude: [Box, Text]

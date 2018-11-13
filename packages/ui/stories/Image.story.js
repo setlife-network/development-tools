@@ -2,7 +2,13 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Image } from '../src/components'
 
-storiesOf('Image', module)
+storiesOf('Components|Image', module)
+    .addParameters({
+        info: {
+            inline: true,
+            text: 'Image component with 100% max-width and auto height for maintaining aspect ratio and responsiveness. Extends `Box`'
+        }
+    })
     .add(
         'Image Component',
         () => (

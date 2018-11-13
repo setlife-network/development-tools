@@ -10,6 +10,7 @@ import {
     style
 } from 'styled-system'
 import Box from './Box'
+import { utils } from '../styles'
 
 const depth = style({
     prop: 'depth',
@@ -25,7 +26,8 @@ const Card = styled(Box)(
     backgroundSize,
     backgroundPosition,
     backgroundRepeat,
-    depth
+    depth,
+    utils.themed('Card')
 )
 
 Card.displayName = 'Card'
