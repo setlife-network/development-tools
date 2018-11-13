@@ -7,7 +7,7 @@ import {
     variant
 } from 'styled-system'
 import Box from './Box'
-import { utils } from '../styles'
+import utils from '../styles/utils'
 
 const tags = {
     h1: 'h1',
@@ -45,7 +45,6 @@ const textStyle = variant({
 const Text = styled(Box).attrs({
     as: p => p.variant ? tags[p.variant] : 'p',
 })`
-    ${utils.themed('Text')};
     ${fontFamily};
     ${textAlign};
     ${fontWeight};
@@ -53,6 +52,7 @@ const Text = styled(Box).attrs({
     ${lineHeight};
     ${letterSpacing};
     ${textStyle};
+    ${utils.themed('Text')};
 `
 
 Text.displayName = 'Text'
@@ -69,7 +69,9 @@ Text.propTypes = {
 
 Text.defaultProps = {
     color: 'darkGrey',
-    size: 16
+    size: 16,
+    letterSpacing: '0.025rem',
+    lineHeight: 1.6
 }
 
 export default Text

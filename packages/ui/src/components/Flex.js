@@ -10,7 +10,7 @@ import {
     style
 } from 'styled-system'
 import Box from './Box'
-import { utils } from '../styles'
+import utils from '../styles/utils'
 
 const flexDirection = style({
     prop: 'direction',

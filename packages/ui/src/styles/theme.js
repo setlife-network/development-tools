@@ -12,8 +12,7 @@ const colors = {
     red: '#CF242B',
     facebook: '#32529F',
     twitter: '#38A1F3',
-    overlay: 'rgba(0,0,0,0.5)',
-    transparent: 'transparent'
+    overlay: 'rgba(0,0,0,0.5)'
 }
 
 export default {
@@ -36,6 +35,10 @@ export default {
     },
     // Fonts
     fonts: 'Open Sans, sans-serif',
+    fontWeights: {
+        normal: 400,
+        bold: 600
+    },
     fontVariants: {
         caps: {
             textTransform: 'uppercase'
@@ -83,13 +86,7 @@ export default {
     },
     // Component theming
     Button: {
-        fontSize: '1.5rem',
-        height: '4rem',
-        padding: '0 1.5rem'
-    },
-    Text: {
-        letterSpacing: '0.025rem',
-        lineHeight: 1.6
+        fontSize: '1.5rem'
     },
     Modal: {
         maxWidth: '90%',

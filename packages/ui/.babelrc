@@ -1,7 +1,21 @@
 {
+    "presets": [
+        "@babel/env",
+        "@babel/react"
+    ],
     "plugins": [
         ["babel-plugin-styled-components", {
             "displayName": true
-        }]
-    ]
+        }],
+        "@babel/proposal-class-properties"
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                ["transform-react-remove-prop-types", {
+                    "mode": "wrap"
+                }]
+            ]
+        }
+    }
 }

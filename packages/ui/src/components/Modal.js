@@ -6,7 +6,7 @@ import { themeGet } from 'styled-system'
 import is from 'styled-is'
 import { transitions } from 'polished'
 import Transition from 'react-transition-group/Transition'
-import { utils } from '../styles'
+import utils from '../styles/utils'
 
 const transitionOpacity = {
     entering: 1,

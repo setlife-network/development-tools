@@ -1,7 +1,8 @@
 {
   "name": "ui",
   "version": "0.0.0",
-  "description": "Reusable UI components used across all Setlife projects",
+  "description": "React UI components used across all Setlife projects",
+  "main": "build/index.js",
   "author": "Quinn Pruitt <qpruitt93@gmail.com>",
   "homepage": "https://github.com/quinnstonchurchill/setlife#readme",
   "license": "ISC",
@@ -9,20 +10,36 @@
     "type": "git",
     "url": "git+https://github.com/quinnstonchurchill/setlife.git"
   },
+  "keywords": [
+    "components",
+    "react",
+    "ui",
+    "design-system",
+    "styled-system",
+    "styled-components"
+  ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "babel src/ --out-dir build/",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "prepare": "yarn clean && yarn build",
+    "clean": "rm -rf build",
+    "build": "NODE_ENV=production && babel src --out-dir build",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "size": "bundlesize"
   },
   "bugs": {
     "url": "https://github.com/quinnstonchurchill/setlife/issues"
   },
+  "bundlesize": [
+    {
+      "path": "./build/*/*.js"
+    }
+  ],
   "devDependencies": {
     "@storybook/addon-info": "^4.0.4",
     "@storybook/addon-notes": "^4.0.4",
     "@storybook/addon-options": "^4.0.4",
     "@storybook/addon-viewport": "^4.0.4",
-    "@storybook/react": "^4.0.4"
+    "@storybook/react": "^4.0.4",
+    "tools": "^0.0.0"
   },
   "dependencies": {
     "polished": "^2.3.0",

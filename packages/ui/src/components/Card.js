@@ -10,12 +10,12 @@ import {
     style
 } from 'styled-system'
 import Box from './Box'
-import { utils } from '../styles'
+import utils from '../styles/utils'
 
 const depth = style({
     prop: 'depth',
     cssProperty: 'boxShadow',
-    key: 'shadows',
+    key: 'shadows'
 })
 
 const Card = styled(Box)(

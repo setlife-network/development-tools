@@ -17,7 +17,7 @@ import {
     left,
     opacity
 } from 'styled-system'
-import { utils } from '../styles'
+import utils from '../styles/utils'
 
 const Box = styled('div')(
     color,

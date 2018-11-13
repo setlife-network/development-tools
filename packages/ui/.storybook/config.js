@@ -4,8 +4,7 @@ import { withInfo } from '@storybook/addon-info'
 import { withNotes } from '@storybook/addon-notes'
 import { withOptions } from '@storybook/addon-options'
 import { withViewport } from '@storybook/addon-viewport'
-import { ThemeProvider, GlobalStyle, theme } from '../src/styles'
-import { Box } from '../src/components'
+import { ThemeProvider, GlobalStyle, Box } from '../src'
 
 addDecorator(withInfo)
 addDecorator(withNotes)

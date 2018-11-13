@@ -45,20 +45,6 @@ const GlobalStyle = createGlobalStyle`
         -webkit-margin-end: 0px;
         font: inherit;
     }
-
-    a,
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-        color: inherit;
-        font-family: inherit;
-        font-size: 100%;
-        margin: 0;
-        border: none;
-        outline: 0;
-    }
 `
 
 export default GlobalStyle

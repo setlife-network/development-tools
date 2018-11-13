@@ -3,13 +3,15 @@ import styled from 'styled-components'
 import is, { isNot } from 'styled-is'
 import { themeGet } from 'styled-system'
 import { border, tint } from 'polished'
-import { mixins, utils } from '../styles'
+import utils from '../styles/utils'
+import mixins from '../styles/mixins'
 import Card from './Card'
 
 /** Button component description */
 const Button = styled(Card)`
     ${utils.themed('Button')};
     cursor: pointer;
+    outline: 0;
     
     ${is('transparent')`
         ${mixins.link};
@@ -46,8 +48,11 @@ Button.defaultProps = {
     as: 'button',
     bg: 'blue',
     color: 'white',
+    border: 'none',
     borderRadius: 3,
-    fullWidth: false
+    fullWidth: false,
+    p: '0 1.5rem',
+    height: '4rem',
 }
 
 export default Button

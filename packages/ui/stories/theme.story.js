@@ -1,7 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Card, Text, Box, Flex } from '../src/components'
-import { ThemeProvider, GlobalStyle, theme } from '../src/styles'
+import {
+    Card,
+    Text,
+    Box,
+    Flex,
+    ThemeProvider,
+    GlobalStyle,
+    theme
+} from '../src'
 import ThemeProviderInfo from './info/ThemeProvider.md'
 import GlobalStyleInfo from './info/GlobalStyle.md'
 

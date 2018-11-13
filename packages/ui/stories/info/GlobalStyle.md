@@ -47,18 +47,4 @@ p, h1, h2, h3, h4, h5, h6 {
     -webkit-margin-end: 0px;
     font: inherit;
 }
-
-a,
-button,
-input,
-optgroup,
-select,
-textarea {
-    color: inherit;
-    font-family: inherit;
-    font-size: 100%;
-    margin: 0;
-    border: none;
-    outline: 0;
-}
 ```

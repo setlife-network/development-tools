@@ -3,7 +3,7 @@ import {
     borderRadius
 } from 'styled-system'
 import Box from './Box'
-import { utils } from '../styles'
+import utils from '../styles/utils'
 
 const Image = styled(Box)(
     {
