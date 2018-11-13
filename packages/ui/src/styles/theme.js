@@ -85,9 +85,6 @@ export default {
         }
     },
     // Component theming
-    Button: {
-        fontSize: '1.5rem'
-    },
     Modal: {
         maxWidth: '90%',
         borderRadius: '4px',

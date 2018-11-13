@@ -21,7 +21,7 @@
   "scripts": {
     "prepare": "yarn clean && yarn build",
     "clean": "rm -rf build",
-    "build": "NODE_ENV=production && babel src --out-dir build",
+    "build": "webpack",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "size": "bundlesize"
   },
@@ -30,7 +30,7 @@
   },
   "bundlesize": [
     {
-      "path": "./build/*/*.js"
+      "path": "./build/*.js"
     }
   ],
   "devDependencies": {

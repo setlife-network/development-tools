@@ -7,11 +7,11 @@ import utils from '../styles/utils'
 import mixins from '../styles/mixins'
 import Card from './Card'
 
-/** Button component description */
 const Button = styled(Card)`
-    ${utils.themed('Button')};
     cursor: pointer;
     outline: 0;
+    font-size: 1.5rem;
+    ${utils.themed('Button')};
     
     ${is('transparent')`
         ${mixins.link};
