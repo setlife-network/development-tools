@@ -1,11 +1,14 @@
 {
-  "name": "ui",
-  "version": "0.0.0",
+  "name": "@setlife/ui",
+  "version": "1.0.0",
   "description": "React UI components used across all Setlife projects",
   "main": "build/index.js",
   "author": "Quinn Pruitt <qpruitt93@gmail.com>",
   "homepage": "https://github.com/quinnstonchurchill/setlife#readme",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/quinnstonchurchill/setlife.git"
@@ -22,6 +25,7 @@
     "prepare": "yarn clean && yarn build",
     "clean": "rm -rf build",
     "build": "webpack",
+    "transpile": "babel src --out-file build/index.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "size": "bundlesize"
   },
