@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
-import is from 'styled-is'
 import { themeGet } from 'styled-system'
 import { shade, transitions } from 'polished'
+import utils from './utils'
 
 export default {
     link: css`
@@ -29,7 +29,7 @@ export default {
             background-color: ${p => shade(0.1, p.theme.colors[p.bg])};
         }
 
-        ${is('transparent')`
+        ${utils.is('transparent')`
             &:hover {
                 background-color: ${p => shade(0.05, p.theme.colors[p.color])};
                 color: ${themeGet('colors.white')};

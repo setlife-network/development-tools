@@ -26,7 +26,7 @@ storiesOf('Components|Box', module)
     
                     All props are powered by [styled-system](https://github.com/jxnblk/styled-system/blob/master/docs/table.md)
                 `,
-                inline: true
+                inline: true,
             }
         }
     )

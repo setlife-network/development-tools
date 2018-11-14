@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import is, { isNot } from 'styled-is'
 import { themeGet } from 'styled-system'
 import { border, tint } from 'polished'
 import utils from '../styles/utils'
@@ -13,22 +12,22 @@ const Button = styled(Card)`
     font-size: 1.5rem;
     ${utils.themed('Button')};
     
-    ${is('transparent')`
+    ${utils.is('transparent')`
         ${mixins.link};
         background-color: transparent;
         ${p => border('1px', 'solid', p.theme.colors[p.color])};
     `}
 
-    ${is('fullWidth')`
+    ${utils.is('fullWidth')`
         width: 100%;
     `}
 
-    ${isNot('transparent', 'disabled')`
+    ${utils.isNot('transparent', 'disabled')`
         ${mixins.clickableBg};
         box-shadow: ${themeGet('shadows.1')};
     `}
 
-    ${is('disabled')`
+    ${utils.is('disabled')`
         background-color: ${p => tint(0.5, p.theme.colors[p.bg])};
         color: white;
         cursor: default;

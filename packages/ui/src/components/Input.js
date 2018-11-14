@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-import is from 'styled-is'
 import Card from './Card'
 import utils from '../styles/utils'
 
@@ -16,7 +15,7 @@ const Input = styled(Card).attrs({
         color: ${themeGet('colors.lightGrey')}
     }
 
-    ${is('disabled')`
+    ${utils.is('disabled')`
         opacity: 0.5;
     `}
 `

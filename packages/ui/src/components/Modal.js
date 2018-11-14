@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-import is from 'styled-is'
 import { transitions } from 'polished'
 import Transition from 'react-transition-group/Transition'
 import utils from '../styles/utils'
@@ -42,7 +41,7 @@ const Modal = styled.div`
     align-items: center;
     opacity: ${p => transitionOpacity[p.state]};
 
-    ${is('open')`
+    ${utils.is('open')`
         visibility: visible;
         overflow-x: hidden;
         overflow-y: auto;
@@ -89,7 +88,8 @@ export default class ModalComponent extends Component {
             document.removeEventListener('keyup', this.onKeyUp)
         }
     }
-    onKeyUp = ({ keyCode }) => {
+    // onKeyUp = ({ keyCode }) => {
+    onKeyUp({ keyCode }) {
         if (keyCode === 27) {
             this.props.onClose()
         }

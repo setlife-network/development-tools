@@ -9,8 +9,8 @@ import {
     GlobalStyle,
     theme
 } from '../'
-import ThemeProviderInfo from './info/ThemeProvider.md'
-import GlobalStyleInfo from './info/GlobalStyle.md'
+import ThemeProviderInfo from './readme/ThemeProvider.md'
+import GlobalStyleInfo from './readme/GlobalStyle.md'
 
 const Color = ({ name, color }) => (
     <Card m='1rem' depth={1}>

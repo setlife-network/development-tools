@@ -25,7 +25,7 @@ storiesOf('Components|Flex', module)
         ),
         {
             info: {
-                text: 'Extended <Box /> component for flexbox layouts',
+                text: 'Extended <Box /> component for flexbox layouts https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
                 inline: true
             }
         }

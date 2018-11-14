@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import is from 'styled-is'
 import {
     alignItems,
     alignSelf,
@@ -33,33 +32,17 @@ const Flex = styled(Box)`
     ${alignContent};
     ${utils.themed('Flex')};
     
-    ${is('wrap')`
+    ${utils.is('wrap')`
         flex-wrap: wrap;
     `}
 
-    ${is('row')`
-        flex-direction: row;
-    `}
-
-    ${is('row', 'reverse')`
-        flex-direction: row-reverse;
-    `}
-
-    ${is('column')`
-        flex-direction: column;
-    `}
-
-    ${is('column', 'reverse')`
-        flex-direction: column-reverse;
-    `}
-
     /* Misc */
-    ${is('center')`
+    ${utils.is('center')`
         align-items: center;
         justify-content: center;
     `}
 
-    ${is('order')`
+    ${utils.is('order')`
         order: ${p => p.order};
     `}
 `
@@ -74,9 +57,6 @@ Flex.propTypes /* remove-proptypes */ = {
     ...justifySelf.propTypes,
     ...flexDirection.propTypes,
     ...flexBasis.propTypes,
-    row: PropTypes.bool,
-    column: PropTypes.bool,
-    reverse: PropTypes.bool,
     wrap: PropTypes.bool,
     center: PropTypes.bool,
     order: PropTypes.number,

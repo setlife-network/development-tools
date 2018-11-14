@@ -2,10 +2,16 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Toggle extends Component {
-    state = {
-        toggled: false
+    constructor(props) {
+        super(props)
+        this.state = {
+            toggled: false
+        }
+
+        this.onToggle = this.onToggle.bind(this)
     }
-    onToggle = value => {
+    // onToggle = value => {
+    onToggle(value) {
         this.setState(
             prevState => ({
                 toggled: typeof value === 'boolean' ? value : !prevState.toggled

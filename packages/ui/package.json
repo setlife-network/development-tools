@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "React UI components used across all Setlife projects",
   "main": "build/index.js",
+  "module": "build/index.js",
+  "files": [
+    "build"
+  ],
   "author": "Quinn Pruitt <qpruitt93@gmail.com>",
   "homepage": "https://github.com/quinnstonchurchill/setlife#readme",
   "license": "ISC",
@@ -24,7 +28,7 @@
   "scripts": {
     "prepare": "yarn clean && yarn build",
     "clean": "rm -rf build",
-    "build": "webpack",
+    "build": "NODE_ENV=production rollup --config",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "size": "bundlesize"
   },
@@ -36,22 +40,25 @@
       "path": "./build/*.js"
     }
   ],
+  "peerDependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  },
   "devDependencies": {
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "@storybook/addon-info": "^4.0.4",
     "@storybook/addon-notes": "^4.0.4",
     "@storybook/addon-options": "^4.0.4",
     "@storybook/addon-viewport": "^4.0.4",
     "@storybook/react": "^4.0.4",
     "storybook-readme": "^4.0.2",
+    "styled-components": "^4.0.3",
     "tools": "^0.0.0"
   },
   "dependencies": {
     "polished": "^2.3.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
     "react-transition-group": "^2.5.0",
-    "styled-components": "^4.0.3",
-    "styled-is": "^1.1.5",
     "styled-system": "^3.1.11"
   }
 }
