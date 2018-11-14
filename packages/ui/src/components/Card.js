@@ -32,7 +32,7 @@ const Card = styled(Box)(
 
 Card.displayName = 'Card'
 
-Card.propTypes = {
+Card.propTypes /* remove-proptypes */ = {
     ...borders.propTypes,
     ...borderColor.propTypes,
     ...borderRadius.propTypes,

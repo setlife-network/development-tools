@@ -29,7 +29,7 @@ const ThemeProvider = ({
     )
 }
 
-ThemeProvider.propTypes = {
+ThemeProvider.propTypes  /* remove-proptypes */ = {
     customBreakpoints: PropTypes.array,
     customColors: PropTypes.object,
     theme: PropTypes.shape({

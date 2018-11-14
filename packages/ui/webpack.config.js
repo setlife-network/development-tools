@@ -8,7 +8,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'index.js'
+        filename: 'index.webpack.js'
     },
     resolve: {
         extensions: ['.js']
@@ -26,13 +26,20 @@ module.exports = {
     ],
     optimization: {
         minimizer: [
-            new UglifyJsPlugin()
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    compress: {
+                        drop_console: true
+                    }   
+                }
+            })
         ]
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 loader: 'babel-loader'
             }
         ]
@@ -43,6 +50,7 @@ module.exports = {
         'react-transition-group',
         'styled-components',
         'styled-system',
-        'polished'
+        'polished',
+        'prop-types'
     ]
 }

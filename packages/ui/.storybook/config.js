@@ -11,7 +11,8 @@ addDecorator(withNotes)
 addDecorator(withViewport)
 addDecorator(withOptions({
     name: 'Setlife Design System',
-    hierarchyRootSeparator: /\|/
+    hierarchyRootSeparator: /\|/,
+    addonPanelInRight: true
 }))
 addDecorator(story => (
     <ThemeProvider>
@@ -22,7 +23,7 @@ addDecorator(story => (
     </ThemeProvider>
 ))
 
-const req = require.context('../stories', true, /\.story\.js$/)
+const req = require.context('../src/stories', true, /\.story\.js$/)
 
 function loadStories() {
     req.keys().forEach(filename => req(filename))

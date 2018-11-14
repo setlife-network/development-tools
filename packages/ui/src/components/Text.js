@@ -57,7 +57,7 @@ const Text = styled(Box).attrs({
 
 Text.displayName = 'Text'
 
-Text.propTypes = {
+Text.propTypes /* remove-proptypes */ = {
     ...textAlign.propTypes,
     ...fontWeight.propTypes,
     ...fontFamily.propTypes,

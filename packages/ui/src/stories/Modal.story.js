@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Flex, Button, Text, Modal, Toggle } from '../src'
+import { Flex, Button, Text, Modal, Toggle } from '../'
 
 storiesOf('Components|Modal', module)
     .addParameters({

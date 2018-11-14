@@ -42,7 +42,7 @@ const Box = styled('div')(
 
 Box.displayName = 'Box'
 
-Box.propTypes = {
+Box.propTypes /* remove-proptypes */ = {
     ...space.propTypes,
     ...width.propTypes,
     ...height.propTypes,

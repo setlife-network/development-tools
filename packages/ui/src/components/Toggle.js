@@ -2,10 +2,6 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class Toggle extends Component {
-    static propTypes = {
-        children: PropTypes.func.isRequired,
-        onToggle: PropTypes.func
-    }
     state = {
         toggled: false
     }
@@ -27,4 +23,9 @@ export default class Toggle extends Component {
             onToggle: this.onToggle
         })
     }
+}
+
+Toggle.propTypes /* remove-proptypes */ = {
+    children: PropTypes.func.isRequired,
+    onToggle: PropTypes.func
 }

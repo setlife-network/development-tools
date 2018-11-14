@@ -15,7 +15,7 @@ const Image = styled(Box)(
 
 Image.displayName='Image'
 
-Image.propTypes = {
+Image.propTypes /* remove-proptypes */ = {
     ...borderRadius.propTypes
 }
 

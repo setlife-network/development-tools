@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Image } from '../src'
+import { Image } from '../'
 
 storiesOf('Components|Image', module)
     .addParameters({

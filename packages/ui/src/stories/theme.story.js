@@ -8,7 +8,7 @@ import {
     ThemeProvider,
     GlobalStyle,
     theme
-} from '../src'
+} from '../'
 import ThemeProviderInfo from './info/ThemeProvider.md'
 import GlobalStyleInfo from './info/GlobalStyle.md'
 

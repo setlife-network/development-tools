@@ -66,7 +66,7 @@ const Flex = styled(Box)`
 
 Flex.displayName = 'Flex'
 
-Flex.propTypes = {
+Flex.propTypes /* remove-proptypes */ = {
     ...alignItems.propTypes,
     ...alignSelf.propTypes,
     ...alignContent.propTypes,

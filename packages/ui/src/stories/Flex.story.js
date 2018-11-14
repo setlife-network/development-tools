@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Box, Flex, Text } from '../src'
+import { Box, Flex, Text } from '../'
 
 storiesOf('Components|Flex', module)
     .addParameters({

@@ -66,14 +66,6 @@ const ModalContent = styled.div`
 `
 
 export default class ModalComponent extends Component {
-    static displayName = 'Modal'
-    static propTypes = {
-        open: PropTypes.bool,
-        onClose: PropTypes.func
-    }
-    static defaultProps = {
-        open: false
-    }
     constructor(props) {
         super(props)
         if (!this.container && typeof document !== 'undefined') {
@@ -131,4 +123,13 @@ export default class ModalComponent extends Component {
             this.container
         )
     }
+}
+
+Modal.propTypes /* remove-proptypes */ = {
+    open: PropTypes.bool,
+    onClose: PropTypes.func
+}
+
+Modal.defaultProps = {
+    open: false
 }

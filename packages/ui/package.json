@@ -25,7 +25,7 @@
     "prepare": "yarn clean && yarn build",
     "clean": "rm -rf build",
     "build": "webpack",
-    "transpile": "babel src --out-file build/index.js",
+    "build:babel": "NODE_ENV=production babel src --out-file build/index.babel.js --ignore src/stories",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "size": "bundlesize"
   },

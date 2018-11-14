@@ -37,7 +37,7 @@ const Button = styled(Card)`
 
 Button.displanName = 'Button'
 
-Button.propTypes = {
+Button.propTypes /* remove-proptypes */ = {
     onClick: PropTypes.func,
     disabled: PropTypes.bool,
     transparent: PropTypes.bool,
