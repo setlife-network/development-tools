@@ -10,7 +10,7 @@ const Input = styled(Card).attrs({
     font-size: 2rem;
     font-family: inherit;
     outline: 0;
-    ${utils.themed('Input')};
+    ${utils.themed('Input')}
     &::placeholder {
         color: ${themeGet('colors.lightGrey')}
     }

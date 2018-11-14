@@ -45,14 +45,14 @@ const textStyle = variant({
 const Text = styled(Box).attrs({
     as: p => p.variant ? tags[p.variant] : 'p',
 })`
-    ${fontFamily};
-    ${textAlign};
-    ${fontWeight};
-    ${fontSize};
-    ${lineHeight};
-    ${letterSpacing};
-    ${textStyle};
-    ${utils.themed('Text')};
+    ${fontFamily}
+    ${textAlign}
+    ${fontWeight}
+    ${fontSize}
+    ${lineHeight}
+    ${letterSpacing}
+    ${textStyle}
+    ${utils.themed('Text')}
 `
 
 Text.displayName = 'Text'

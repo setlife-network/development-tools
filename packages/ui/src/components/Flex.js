@@ -23,14 +23,14 @@ const flexBasis = style({
 
 const Flex = styled(Box)`
     display: flex;
-    ${flexDirection};
-    ${flexBasis};
-    ${alignItems};
-    ${alignSelf};
-    ${justifyContent};
-    ${justifySelf};
-    ${alignContent};
-    ${utils.themed('Flex')};
+    ${flexDirection}
+    ${flexBasis}
+    ${alignItems}
+    ${alignSelf}
+    ${justifyContent}
+    ${justifySelf}
+    ${alignContent}
+    ${utils.themed('Flex')}
     
     ${utils.is('wrap')`
         flex-wrap: wrap;

@@ -7,7 +7,7 @@ import { uglify } from 'rollup-plugin-uglify'
 export default {
     input: 'src/index.js',
     output: {
-        file: 'build/bundle.js',
+        file: 'build/index.js',
         format: 'cjs'
     },
     external: [
@@ -16,13 +16,35 @@ export default {
         'styled-components'
     ],
     plugins: [
+        babel(),
         resolve({
             customResolveOptions: {
                 moduleDirectory: path.resolve(__dirname, '../../node_modules/**')
             }
         }),
-        babel(),
-        commonjs(),
-        uglify()
+        commonjs({
+            namedExports: [
+                'Box',
+                'Button',
+                'Card',
+                'Flex',
+                'Image',
+                'Input',
+                'Text',
+                'Modal',
+                'Text',
+                'Toggle',
+                'GlobalStyle',
+                'media',
+                'mixins',
+                'theme',
+                'ThemeProvider'
+            ]
+        }),
+        uglify({
+            output: {
+                comments: false
+            }
+        })
     ]
 }

@@ -10,7 +10,7 @@ const Button = styled(Card)`
     cursor: pointer;
     outline: 0;
     font-size: 1.5rem;
-    ${utils.themed('Button')};
+    ${utils.themed('Button')}
     
     ${utils.is('transparent')`
         ${mixins.link};
