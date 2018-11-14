@@ -1,10 +1,12 @@
 const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
+const nodeExternals = require('webpack-node-externals')
 const path = require('path')
 
 module.exports = {
     mode: 'production',
+    target: 'node',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -45,12 +47,8 @@ module.exports = {
         ]
     },
     externals: [
-        'react',
-        'react-dom',
-        'react-transition-group',
-        'styled-components',
-        'styled-system',
-        'polished',
-        'prop-types'
+        nodeExternals({
+            modulesDir: path.resolve(__dirname, '../../node_modules')
+        })
     ]
 }

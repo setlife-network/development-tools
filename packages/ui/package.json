@@ -25,7 +25,6 @@
     "prepare": "yarn clean && yarn build",
     "clean": "rm -rf build",
     "build": "webpack",
-    "build:babel": "NODE_ENV=production babel src --out-file build/index.babel.js --ignore src/stories",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "size": "bundlesize"
   },
@@ -43,6 +42,7 @@
     "@storybook/addon-options": "^4.0.4",
     "@storybook/addon-viewport": "^4.0.4",
     "@storybook/react": "^4.0.4",
+    "storybook-readme": "^4.0.2",
     "tools": "^0.0.0"
   },
   "dependencies": {
