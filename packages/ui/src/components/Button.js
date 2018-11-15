@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
-import { border, tint } from 'polished'
+import { fontFamily, themeGet } from 'styled-system'
 import utils from '../styles/utils'
 import mixins from '../styles/mixins'
 import Card from './Card'
 
 const Button = styled(Card)`
+    ${fontFamily}
     cursor: pointer;
     outline: 0;
     font-size: 1.5rem;
@@ -15,7 +15,7 @@ const Button = styled(Card)`
     ${utils.is('transparent')`
         ${mixins.link};
         background-color: transparent;
-        ${p => border('1px', 'solid', p.theme.colors[p.color])};
+        border: solid 1px;
     `}
 
     ${utils.is('fullWidth')`
@@ -24,11 +24,11 @@ const Button = styled(Card)`
 
     ${utils.isNot('transparent', 'disabled')`
         ${mixins.clickableBg};
-        box-shadow: ${themeGet('shadows.1')};
+        box-shadow: ${themeGet('shadows.1', '0px 1.5px 8px rgba(0,0,0,0.07)')};
     `}
 
     ${utils.is('disabled')`
-        background-color: ${p => tint(0.5, p.theme.colors[p.bg])};
+        opacity: 0.5;
         color: white;
         cursor: default;
     `}
@@ -37,6 +37,7 @@ const Button = styled(Card)`
 Button.displanName = 'Button'
 
 Button.propTypes /* remove-proptypes */ = {
+    ...fontFamily.propTypes,
     onClick: PropTypes.func,
     disabled: PropTypes.bool,
     transparent: PropTypes.bool,
@@ -46,7 +47,7 @@ Button.propTypes /* remove-proptypes */ = {
 Button.defaultProps = {
     as: 'button',
     bg: 'blue',
-    color: 'white',
+    color: '#ffffff',
     border: 'none',
     borderRadius: 3,
     fullWidth: false,

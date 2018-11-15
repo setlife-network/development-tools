@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-    ThemeProvider as StyledThemeProvider
-} from 'styled-components'
+import { ThemeProvider as StyledThemeProvider } from 'styled-components'
 import defaultTheme from './theme'
 
 const ThemeProvider = ({
@@ -13,13 +11,11 @@ const ThemeProvider = ({
 }) => {
     const breakpoints = customBreakpoints || defaultTheme.breakpoints
     const colors = customColors || defaultTheme.colors
-    const newTheme = {
+
+    const newTheme = theme ? theme : {
         ...defaultTheme,
         breakpoints,
-        colors: {
-            ...colors
-        },
-        ...theme
+        colors,
     }
 
     return (
@@ -32,13 +28,7 @@ const ThemeProvider = ({
 ThemeProvider.propTypes  /* remove-proptypes */ = {
     customBreakpoints: PropTypes.array,
     customColors: PropTypes.object,
-    theme: PropTypes.shape({
-        breakpoints: PropTypes.array,
-        shadows: PropTypes.object,
-        colors: PropTypes.object,
-        fonts: PropTypes.object,
-        space: PropTypes.array
-    })
+    theme: PropTypes.object
 }
 
 export default ThemeProvider

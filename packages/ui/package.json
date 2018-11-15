@@ -46,13 +46,13 @@
     "styled-components": "^4.0.0"
   },
   "devDependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
     "@storybook/addon-info": "^4.0.4",
     "@storybook/addon-notes": "^4.0.4",
     "@storybook/addon-options": "^4.0.4",
     "@storybook/addon-viewport": "^4.0.4",
     "@storybook/react": "^4.0.4",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "storybook-readme": "^4.0.2",
     "styled-components": "^4.0.3",
     "tools": "^0.0.0"

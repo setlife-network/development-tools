@@ -1,8 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
 import { Text } from '../'
+import Readme from './readme/Text.md'
 
 storiesOf('Components|Text', module)
+    .addDecorator(withDocs(Readme))
     .add(
         'Text Component',
         () => (
@@ -14,17 +17,12 @@ storiesOf('Components|Text', module)
                     my='1rem'
                     color='purple'
                     lineHeight={2}
+                    css='cursor: pointer;'
                 >
-                    I can be customized in all sorts of ways.
+                    Text with a lot of custom styling
                 </Text>
             </>
-        ),
-        {
-            info: {
-                text: 'Low level component for all your typographical concerns. Extends <Box />',
-                inline: true
-            }
-        }
+        )
     )
     .add(
         'Text Align',
@@ -51,10 +49,5 @@ storiesOf('Components|Text', module)
                 <Text variant='h5'>H5</Text>
                 <Text variant='h6'>H6</Text>
             </>
-        ),
-        {
-            notes: {
-                markdown: 'Pass a `variant` prop to apply preset text styles defined in `theme.fontVariants`'
-            }
-        }
+        )
     )

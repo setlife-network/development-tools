@@ -1,12 +1,41 @@
-`<GlobalStyle />` is a wrapper around `createGlobalStyle` from styled-components which is used as a css reset.
+# GlobalStyle
 
+A wrapper around `createGlobalStyle` from styled-components which creates a CSS reset. Using this component is completely optional and you are free to define global styles however you like. 
 
-Using this component is completely optional and you are free to define global styles in any way.
+Whether you use `GlobalStyle`, `createClobalStyle`, or a pure css global stylesheet, here's a minimal recommended global styling
 
 ```css
 html {
-    font-size: ${themeGet('baseRem')}px;
-    font-family: ${themeGet('fonts')};
+    /* Useful for scaling fonts and spacing */
+    font-size: 8px;
+    /* Can also be passed as a fontFamily prop or defined in a theme */
+    font-family: 'Your Font';
+}
+```
+
+## Usage
+
+Use this component ONCE, preferably at the root level
+
+```js
+import { ThemeProvider, GlobalStyle } from '@setlife/ui'
+
+render(
+    <ThemeProvider>
+        <>
+            <App />
+            <GlobalStyle />
+        </>
+    </ThemeProvider>,
+    document.getElementById('app')
+)
+```
+
+## Default Global Styling
+```css
+html {
+    font-size: ${themeGet('baseRem', 8)}px;
+    font-family: ${themeGet('fonts', 'inherit')};
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -33,11 +62,6 @@ a {
 a:hover, a:active {
     color: inherit;
     outline: 0;
-}
-
-img {
-    border: 0;
-    border-style: none;
 }
 
 p, h1, h2, h3, h4, h5, h6 {

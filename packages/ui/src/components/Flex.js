@@ -4,7 +4,6 @@ import {
     alignItems,
     alignSelf,
     justifyContent,
-    justifySelf,
     alignContent,
     style
 } from 'styled-system'
@@ -28,7 +27,6 @@ const Flex = styled(Box)`
     ${alignItems}
     ${alignSelf}
     ${justifyContent}
-    ${justifySelf}
     ${alignContent}
     ${utils.themed('Flex')}
     
@@ -54,7 +52,6 @@ Flex.propTypes /* remove-proptypes */ = {
     ...alignSelf.propTypes,
     ...alignContent.propTypes,
     ...justifyContent.propTypes,
-    ...justifySelf.propTypes,
     ...flexDirection.propTypes,
     ...flexBasis.propTypes,
     wrap: PropTypes.bool,

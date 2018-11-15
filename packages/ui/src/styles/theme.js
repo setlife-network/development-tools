@@ -1,20 +1,3 @@
-const colors = {
-    white: '#ffffff',
-    background: '#F7F7F9',
-    border: '#EEEFF2',
-    lightGrey: '#CFD5DE',
-    grey: '#718093',
-    darkGrey: '#344768',
-    purple: '#C15BEE',
-    blue: '#00B2FF',
-    green: '#02BE57',
-    yellow: '#F4D163',
-    red: '#CF242B',
-    facebook: '#32529F',
-    twitter: '#38A1F3',
-    overlay: 'rgba(0,0,0,0.5)'
-}
-
 export default {
     // 1 rem equals...
     baseRem: 8,
@@ -30,8 +13,20 @@ export default {
     },
     // Colors (styled-system)
     colors: {
-        ...colors,
-        primary: colors.blue
+        white: '#ffffff',
+        background: '#F7F7F9',
+        border: '#EEEFF2',
+        lightGrey: '#CFD5DE',
+        grey: '#718093',
+        darkGrey: '#344768',
+        purple: '#C15BEE',
+        blue: '#00B2FF',
+        green: '#02BE57',
+        yellow: '#F4D163',
+        red: '#CF242B',
+        facebook: '#32529F',
+        twitter: '#38A1F3',
+        overlay: 'rgba(0,0,0,0.5)'
     },
     // Fonts
     fonts: 'Open Sans, sans-serif',
@@ -83,11 +78,5 @@ export default {
             fontSize: '1.5rem',
             fontWeight: 600,
         }
-    },
-    // Component theming
-    Modal: {
-        maxWidth: '90%',
-        borderRadius: '4px',
-        padding: '2rem'
     }
 }

@@ -3,8 +3,8 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-import { transitions } from 'polished'
 import Transition from 'react-transition-group/Transition'
+import Card from './Card'
 import utils from '../styles/utils'
 
 const transitionOpacity = {
@@ -20,11 +20,8 @@ const Backdrop = styled.div`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: ${themeGet('colors.overlay')};
-    ${transitions(
-        'background-color',
-        `200ms ease-in-out`
-    )}
+    background-color: ${themeGet('colors.overlay', 'rgba(0,0,0,0.5)')};
+    transition: background 200ms ease-in-out;
 `
 
 const Modal = styled.div`
@@ -40,29 +37,29 @@ const Modal = styled.div`
     display: flex;
     align-items: center;
     opacity: ${p => transitionOpacity[p.state]};
+    transition: opacity 200ms ease-in-out;
 
     ${utils.is('open')`
         visibility: visible;
         overflow-x: hidden;
         overflow-y: auto;
     `}
-
-    ${transitions(
-        'opacity',
-        `200ms ease-in-out`
-    )}
 `
 
-const ModalContent = styled.div`
+const ModalContent = styled(Card)`
     position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
     pointer-events: auto;
-    background-color: white;
-    box-shadow: ${themeGet('shadows.5')};
+    box-shadow: ${themeGet('shadows.5', '0px 5px 25px rgba(0,0,0,0.14)')};
     ${utils.themed('Modal')};
 `
+
+ModalContent.defaultProps = {
+    maxWidth: '90%',
+    m: 'auto',
+    p: '2rem',
+    borderRadius: '4px',
+    bg: 'white'
+}
 
 export default class ModalComponent extends Component {
     constructor(props) {

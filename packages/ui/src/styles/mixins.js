@@ -1,26 +1,18 @@
 import { css } from 'styled-components'
-import { themeGet } from 'styled-system'
-import { shade, transitions } from 'polished'
-import utils from './utils'
+import { shade } from 'polished'
 
 export default {
     link: css`
-        ${transitions(
-            'color',
-            '200ms ease-in-out'
-        )}
+        transition: color 200ms ease-in-out;
         &:hover {
-            color: ${p => shade(0.05, p.theme.colors[p.color])};
+            color: ${p => shade(0.1, p.theme.colors[p.color])};
         }
         &:active {
-            color: ${p => shade(0.1, p.theme.colors[p.color])};
+            color: ${p => shade(0.2, p.theme.colors[p.color])};
         }
     `,
     clickableBg: css`
-        ${transitions(
-            'background-color',
-            '200ms ease-in-out'
-        )}
+        transition: background 200ms ease-in-out;
 
         &:hover {
             background-color: ${p => shade(0.05, p.theme.colors[p.bg])};
@@ -28,16 +20,5 @@ export default {
         &:active {
             background-color: ${p => shade(0.1, p.theme.colors[p.bg])};
         }
-
-        ${utils.is('transparent')`
-            &:hover {
-                background-color: ${p => shade(0.05, p.theme.colors[p.color])};
-                color: ${themeGet('colors.white')};
-            }
-            &:active {
-                background-color: ${p => shade(0.1, p.theme.colors[p.color])};
-                color: ${themeGet('colors.white')};
-            }
-        `}
     `
 }

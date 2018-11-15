@@ -1,13 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
 import { Box, Flex, Text } from '../'
+import Readme from './readme/Flex.md'
 
 storiesOf('Components|Flex', module)
-    .addParameters({
-        info: {
-            propTablesExclude: [Box, Text]
-        }
-    })
+    .addDecorator(withDocs(Readme))
     .add(
         'Flex Component',
         () => (
@@ -22,13 +20,7 @@ storiesOf('Components|Flex', module)
                     <Text color='white'>Flex</Text>
                 </Box>
             </Flex>
-        ),
-        {
-            info: {
-                text: 'Extended <Box /> component for flexbox layouts https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
-                inline: true
-            }
-        }
+        )
     )
     .add(
         'Align',
@@ -50,10 +42,7 @@ storiesOf('Components|Flex', module)
                     </Flex>
                 </Flex>
             </>
-        ),
-        {
-            notes: 'Align elements to the start or end of a row, as well as top, bottom, or center of a column.'
-        }
+        )
     )
     .add(
         'Justify',
@@ -123,12 +112,7 @@ storiesOf('Components|Flex', module)
             <Flex bg='lightGrey' center height={200}>
                 <Text>Absolute centering can be this easy!</Text>
             </Flex>
-        ),
-        {
-            notes: {
-                markdown: "Pass the `center` prop to center a container's children"
-            }
-        }
+        )
     )
     .add(
         'Responsive Grid',
@@ -140,8 +124,5 @@ storiesOf('Components|Flex', module)
                 <Box width={[1, 1/2, 1/3, 1/4]} height={60} bg='purple' />
                 <Box width={[1, 1/2, 1/3, 1/4]} height={60} bg='blue' />
             </Flex>
-        ),
-        {
-            notes: ''
-        }
+        )
     )

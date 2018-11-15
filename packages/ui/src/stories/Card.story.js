@@ -1,28 +1,33 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
 import { Card, Text } from '../'
+import Readme from './readme/Card.md'
 
 storiesOf('Components|Card', module)
-    .addParameters({
-        info: {
-            propTablesExclude: [Text]
-        }
-    })
+    .addDecorator(withDocs(Readme))
     .add(
         'Card Component',
+        () => (
+            <Card
+                bg='white'
+                border='solid 1px'
+                borderColor='blue'
+                borderRadius={4}
+                height={140}
+                width={140}
+            />
+        )
+    )
+    .add(
+        'Background Images',
         () => (
             <Card
                 backgroundImage='url(https://i.imgflip.com/1qnbjv.jpg)'
                 backgroundRepeat='no-repeat'
                 height={400}
             />
-        ),
-        {
-            info: {
-                inline: true,
-                text: 'Extended `Box` component for adding box shadows and background images'
-            }
-        }
+        )
     )
     .add(
         'Box Shadows',
@@ -44,10 +49,5 @@ storiesOf('Components|Card', module)
                     <Text>Shadow 5</Text>
                 </Card>
             </div>
-        ),
-        {
-            notes: {
-                markdown: 'Pass a `depth` prop to apply box shadows defined in `theme.shadows`'
-            }
-        }
+        )
     )

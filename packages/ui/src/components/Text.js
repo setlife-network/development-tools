@@ -4,7 +4,8 @@ import {
     lineHeight,
     letterSpacing,
     fontFamily,
-    variant
+    variant,
+    px
 } from 'styled-system'
 import Box from './Box'
 import utils from '../styles/utils'
@@ -35,7 +36,7 @@ const fontWeight = style({
 const fontSize = style({
     prop: 'size',
     cssProperty: 'fontSize',
-    transformValue: n => n + 'px'
+    transformValue: px
 })
 
 const textStyle = variant({

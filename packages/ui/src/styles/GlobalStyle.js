@@ -3,8 +3,8 @@ import { themeGet } from 'styled-system'
 
 const GlobalStyle = createGlobalStyle`
     html {
-        font-size: ${themeGet('baseRem')}px;
-        font-family: ${themeGet('fonts')};
+        font-size: ${themeGet('baseRem', 8)}px;
+        font-family: ${themeGet('fonts', 'inherit')};
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
     }

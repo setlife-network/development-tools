@@ -1,14 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
 import { Image } from '../'
+import Readme from './readme/Image.md'
 
 storiesOf('Components|Image', module)
-    .addParameters({
-        info: {
-            inline: true,
-            text: 'Image component with 100% max-width and auto height for maintaining aspect ratio and responsiveness. Extends `Box`'
-        }
-    })
+    .addDecorator(withDocs(Readme))
     .add(
         'Image Component',
         () => (

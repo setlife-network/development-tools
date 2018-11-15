@@ -1,19 +1,17 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withDocs } from 'storybook-readme'
 import { Button } from '../'
+// import { Button } from '../../build'
+import Readme from './readme/Button.md'
 
 storiesOf('Components|Button', module)
+    .addDecorator(withDocs(Readme))
     .add(
         'Button Component',
         () => (
-            <Button onClick={() => console.log('Clicked')}>Hello</Button>
-        ),
-        {
-            info: {
-                text: `Use the <Button /> component to render a button. Extends <Card />`,
-                inline: true
-            }
-        }
+            <Button onClick={() => console.log('Clicked')}>Hello! I'm a Button</Button>
+        )
     )
     .add(
         'Colors',
@@ -23,12 +21,7 @@ storiesOf('Components|Button', module)
                 <Button bg='green' mr='2rem'>Green Button</Button>
                 <Button transparent color='purple' mr='2rem'>Purple Button</Button>
             </>
-        ),
-        {
-            notes: {
-                markdown: 'Pass a `bg` prop to change the background color. You can also render a transparent button by setting the `transparent` and `color` props'
-            }
-        }
+        )
     )
     .add(
         'Disabled',

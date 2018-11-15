@@ -1,14 +1,24 @@
+# ThemeProvider
+
 A wrapper around `ThemeProvider` from `styled-components` for applying custom themes or the default theme defined in the `theme` module
 
+## Usage
+
+Pass a `theme` object to enable theming. 
+
 ```js
+import { ThemeProvider, theme } from '@setlife/ui'
+
 <ThemeProvider theme={theme}>
     <App />
 </ThemeProvider>
 ```
 
-In most cases, the default theme will suffice, although you may want to apply custom colors or breakpoints for the current project.
+### Overrides & Custom Themes
 
-When defining your own color object, the only required keys are a `primary` and `overlay` color, which are used in the `Button` and `Modal` components, respectively.
+In most cases, the default theme will suffice, although you may want to apply custom colors or breakpoints for your current project.
+
+The default Setlife theme will suffice in most cases, although you may override colors and breakpoints, or supply your own custom theme.
 
 ```js
 // defaut colors
@@ -25,9 +35,7 @@ const colors = {
     yellow: '#F4D163',
     red: '#CF242B',
     facebook: '#32529F',
-    overlay: 'rgba(0,0,0,0.5)',
-    transparent: 'transparent',
-    primary: '#00B2FF'
+    overlay: 'rgba(0,0,0,0.5)'
 }
 
 // default breakpoints
@@ -38,18 +46,19 @@ const breakpoints = ['600px', '900px', '1200px', '1800px']
 </ThemeProvider>
 ```
 
-If you choose to provide your own theme entirely, the following structure is recommended to prevent component errors
+If you are using your own theme, the following structure is recommended
 
 ```js
 {
-    baseRem: Number,
     breakpoints: [String],
-    colors: {
-        primary: String,
-        overlay: String,
-        ...customColors
-    },
-    fonts: String
-    fontVariants: Object
+    colors: Object,
+    fonts: String,
+    fontVariants: Object,
 }
 ```
+
+## Props
+
+## Further Reading
+- [styled-system theming](https://github.com/jxnblk/styled-system/blob/master/docs/table.md)
+- [styled-components ThemeProvider](https://www.styled-components.com/docs/advanced#theming)
