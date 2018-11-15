@@ -2,10 +2,10 @@
   "name": "@setlife/ui",
   "version": "1.0.0",
   "description": "React UI components used across all Setlife projects",
-  "main": "build/index.js",
-  "module": "build/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "files": [
-    "build"
+    "dist"
   ],
   "author": "Quinn Pruitt <qpruitt93@gmail.com>",
   "homepage": "https://github.com/quinnstonchurchill/setlife#readme",
@@ -27,17 +27,18 @@
   ],
   "scripts": {
     "prepare": "yarn clean && yarn build",
-    "clean": "rm -rf build",
+    "clean": "rm -rf dist",
     "build": "NODE_ENV=production rollup --config",
+    "size": "bundlesize",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "size": "bundlesize"
+    "build-storybook": "build-storybook"
   },
   "bugs": {
     "url": "https://github.com/quinnstonchurchill/setlife/issues"
   },
   "bundlesize": [
     {
-      "path": "./build/*.js"
+      "path": "./dist/*.js"
     }
   ],
   "peerDependencies": {

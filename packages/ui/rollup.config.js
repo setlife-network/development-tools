@@ -5,68 +5,40 @@ import resolve from 'rollup-plugin-node-resolve'
 import { uglify } from 'rollup-plugin-uglify'
 import gzip from 'rollup-plugin-gzip'
 
+// const nodeModules = path.resolve(__dirname, '../../node_modules/**')
+const nodeModules = 'node_modules/**'
+
 export default {
     input: 'src/index.js',
     output: {
-        file: 'build/index.js',
+        file: 'dist/index.js',
         format: 'cjs',
-        name: '@setlife/ui',
-        named: true
     },
     external: [
         'react',
         'react-dom',
+        'prop-types',
         'styled-components'
     ],
     plugins: [
-        // 4.37 kb
-        babel(),
-        resolve({
-            // browser: true,
-            // main: true,
-            customResolveOptions: {
-                moduleDirectory: path.resolve(__dirname, '../../node_modules/**')
-            }
-        }),
-
-        // 15.81 kb
-        // babel({
-        //     exclude: path.resolve(__dirname, '../../node_modules/**')
-        // }),
-        // resolve(),
-
-        // 4.27 kb
-        // babel({
-        //     exclude: path.resolve(__dirname, '../../node_modules/**')
-        // }),
+        // 4.37 kb -> 4.28kb
+        // babel(),
         // resolve({
         //     customResolveOptions: {
-        //         moduleDirectory: path.resolve(__dirname, '../../node_modules/**')
+        //         moduleDirectory: nodeModules
         //     }
         // }),
-        
-        commonjs({
-            include: path.resolve(__dirname, '../../node_modules/**'),
-            // namedExports: {
-            //     'src/index.js': [
-            //         'Box',
-            //         'Button',
-            //         'Card',
-            //         'Flex',
-            //         'Image',
-            //         'Input',
-            //         'Text',
-            //         'Modal',
-            //         'Text',
-            //         'Toggle',
-            //         'GlobalStyle',
-            //         'media',
-            //         'mixins',
-            //         'theme',
-            //         'ThemeProvider'
-            //     ]
-            // }
+        // commonjs({
+        //     include: nodeModules
+        // }),
+
+        // DOESNT WORK
+        resolve(),
+        commonjs(),
+        babel({
+            runtimeHelpers: true
         }),
+
         uglify({
             output: {
                 comments: false
