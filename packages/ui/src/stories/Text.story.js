@@ -12,8 +12,8 @@ storiesOf('Components|Text', module)
             <>
                 <Text>Hello, I am a text component!</Text>
                 <Text
-                    size={24}
-                    weight='bold'
+                    fontSize={24}
+                    fontWeight='bold'
                     my='1rem'
                     color='purple'
                     lineHeight={2}
@@ -28,9 +28,9 @@ storiesOf('Components|Text', module)
         'Text Align',
         () => (
             <>
-                <Text align='left'>Left align</Text>
-                <Text align='center'>Center align</Text>
-                <Text align='right'>Right align</Text>
+                <Text textAlign='left'>Left align</Text>
+                <Text textAlign='center'>Center align</Text>
+                <Text textAlign='right'>Right align</Text>
             </>
         )
     )

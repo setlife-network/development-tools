@@ -2,8 +2,9 @@
   "name": "@setlife/ui",
   "version": "1.0.0",
   "description": "React UI components used across all Setlife projects",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.umd.js",
   "files": [
     "dist"
   ],
@@ -26,9 +27,9 @@
     "styled-components"
   ],
   "scripts": {
-    "prepare": "yarn clean && yarn build",
     "clean": "rm -rf dist",
     "build": "NODE_ENV=production rollup --config",
+    "bundle": "webpack",
     "size": "bundlesize",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook"
@@ -44,7 +45,7 @@
   "peerDependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "styled-components": "^4.0.0"
+    "styled-components": ">= 4"
   },
   "devDependencies": {
     "@storybook/addon-info": "^4.0.4",
@@ -52,11 +53,11 @@
     "@storybook/addon-options": "^4.0.4",
     "@storybook/addon-viewport": "^4.0.4",
     "@storybook/react": "^4.0.4",
+    "node-eval": "^2.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "storybook-readme": "^4.0.2",
-    "styled-components": "^4.0.3",
-    "tools": "^0.0.0"
+    "styled-components": "^4.1.2"
   },
   "dependencies": {
     "polished": "^2.3.0",

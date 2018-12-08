@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import {
-    style,
+    textAlign,
+    fontWeight,
+    fontSize,
     lineHeight,
     letterSpacing,
     fontFamily,
-    variant,
-    px
+    variant
 } from 'styled-system'
 import Box from './Box'
 import utils from '../styles/utils'
@@ -22,22 +23,6 @@ const tags = {
     display3: 'h3',
     display4: 'h4',
 }
-
-const textAlign = style({
-    prop: 'align',
-    cssProperty: 'textAlign'
-})
-
-const fontWeight = style({
-    prop: 'weight',
-    cssProperty: 'fontWeight'
-})
-
-const fontSize = style({
-    prop: 'size',
-    cssProperty: 'fontSize',
-    transformValue: px
-})
 
 const textStyle = variant({
     key: 'fontVariants'
@@ -70,7 +55,7 @@ Text.propTypes /* remove-proptypes */ = {
 
 Text.defaultProps = {
     color: 'darkGrey',
-    size: 16,
+    fontSize: 16,
     letterSpacing: '0.025rem',
     lineHeight: 1.6
 }

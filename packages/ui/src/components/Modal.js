@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { createPortal } from 'react-dom'
+import React from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-import Transition from 'react-transition-group/Transition'
+import { Transition } from 'react-transition-group'
 import Card from './Card'
 import utils from '../styles/utils'
 
@@ -61,7 +61,7 @@ ModalContent.defaultProps = {
     bg: 'white'
 }
 
-export default class ModalComponent extends Component {
+export default class ModalComponent extends React.Component {
     constructor(props) {
         super(props)
         if (!this.container && typeof document !== 'undefined') {
@@ -100,7 +100,7 @@ export default class ModalComponent extends Component {
 
         if (!this.container) return null
 
-        return createPortal(
+        return ReactDOM.createPortal(
             <Transition
                 timeout={200}
                 in={open}

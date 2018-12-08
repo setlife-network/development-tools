@@ -16,33 +16,6 @@
     "url": "https://github.com/quinnstonchurchill/setlife/issues"
   },
   "dependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.5",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/register": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "babel-plugin-styled-components": "^1.8.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.20",
-    "bundlesize": "^0.17.0",
-    "compression-webpack-plugin": "^2.0.0",
-    "eslint": "^5.4.0",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.8.0",
-    "rollup": "^0.67.1",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-gzip": "^2.0.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-sizes": "^0.4.2",
-    "rollup-plugin-uglify": "^6.0.0",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
-    "webpack-node-externals": "^1.7.2"
+
   }
 }

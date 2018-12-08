@@ -1,7 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withDocs } from 'storybook-readme'
-import { Box, Text } from '../'
+// import { Box, Text } from '../'
+import { Box, Text } from '../../dist/index.esm.js'
 import Readme from './readme/Box.md'
 
 storiesOf('Components|Box', module)

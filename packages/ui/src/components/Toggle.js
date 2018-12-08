@@ -1,7 +1,7 @@
-import { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class Toggle extends Component {
+export default class Toggle extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
