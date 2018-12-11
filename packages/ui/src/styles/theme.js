@@ -39,33 +39,27 @@ export default {
             textTransform: 'uppercase'
         },
         h1: {
-            // fontSize: '3.75rem',
-            fontSize: 30,
+            fontSize: '3.75rem',
             fontWeight: 600,
         },
         h2: {
-            // fontSize: '3rem',
-            fontSize: 24,
+            fontSize: '3rem',
             fontWeight: 600,
         },
         h3: {
-            // fontSize: '2.5rem',
-            fontSize: 20,
+            fontSize: '2.5rem',
             fontWeight: 600,
         },
         h4: {
-            // fontSize: '2rem',
-            fontSize: 16,
+            fontSize: '2rem',
             fontWeight: 600,
         },
         h5: {
-            // fontSize: '1.75rem',
-            fontSize: 14,
+            fontSize: '1.75rem',
             fontWeight: 600,
         },
         h6: {
-            // fontSize: '1.5rem',
-            fontSize: 12,
+            fontSize: '1.5rem',
             fontWeight: 600,
         }
     }

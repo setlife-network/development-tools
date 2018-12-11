@@ -1,7 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import { ThemeProvider } from 'styled-components'
-import { theme } from 'styles'
+import { ThemeProvider, GlobalStyle } from '@setlife/ui'
 
 // Redux setup
 import { Provider as ReduxProvider } from 'react-redux'
@@ -24,9 +23,10 @@ class MyApp extends App {
         return (
             <Container>
                 <ReduxProvider store={store}>
-                    <ThemeProvider theme={theme}>
+                    <ThemeProvider>
                         <>
                             <Component {...pageProps} />
+                            <GlobalStyle />
                         </>
                     </ThemeProvider>
                 </ReduxProvider>

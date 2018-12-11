@@ -1,6 +1,6 @@
 {
   "name": "@setlife/ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React UI components used across all Setlife projects",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
@@ -29,7 +29,7 @@
     "clean": "rm -rf dist",
     "build": "NODE_ENV=production rollup --config",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook -o docs"
   },
   "bugs": {
     "url": "https://github.com/quinnstonchurchill/setlife/issues"

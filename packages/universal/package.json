@@ -1,6 +1,6 @@
 {
   "name": "universal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Universal React boilerplate with Next.js",
   "main": "server.js",
   "private": true,
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/quinnstonchurchill/setlife-react-node-boilerplate#readme",
   "dependencies": {
+    "@setlife/ui": "^1.0.1",
     "apollo-cache-inmemory": "^1.2.10",
     "apollo-client": "^2.4.2",
     "apollo-link": "^1.2.2",
@@ -49,6 +50,7 @@
     "styled-icons": "^3.0.0",
     "styled-is": "^1.1.5",
     "styled-system": "^3.1.6",
+    "ui": "^1.0.0",
     "yup": "^0.26.5"
   },
   "devDependencies": {

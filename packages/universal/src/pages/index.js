@@ -1,8 +1,18 @@
 import React from 'react'
-import Text from 'components/Text'
+import { Text, Toggle, Button, Modal } from '@setlife/ui'
 
 export default () => (
     <>
-        <Text>Welcome to Setlife!</Text>
+        <Text variant='h1' color='blue'>Welcome to Setlife!</Text>
+        <Toggle>
+            {({ toggled, onToggle }) => (
+                <>
+                    <Button onClick={onToggle}>Open Modal</Button>
+                    <Modal open={toggled} onClose={onToggle}>
+                        <Text>Modal text</Text>
+                    </Modal>
+                </>
+            )}
+        </Toggle>
     </>
 )
