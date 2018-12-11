@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 export default class Toggle extends React.Component {
     constructor(props) {
@@ -29,9 +28,4 @@ export default class Toggle extends React.Component {
             onToggle: this.onToggle
         })
     }
-}
-
-Toggle.propTypes /* remove-proptypes */ = {
-    children: PropTypes.func.isRequired,
-    onToggle: PropTypes.func
 }

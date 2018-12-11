@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { fontFamily, themeGet } from 'styled-system'
 import utils from '../styles/utils'
@@ -35,14 +34,6 @@ const Button = styled(Card)`
 `
 
 Button.displanName = 'Button'
-
-Button.propTypes /* remove-proptypes */ = {
-    ...fontFamily.propTypes,
-    onClick: PropTypes.func,
-    disabled: PropTypes.bool,
-    transparent: PropTypes.bool,
-    fullWidth: PropTypes.bool
-}
 
 Button.defaultProps = {
     as: 'button',

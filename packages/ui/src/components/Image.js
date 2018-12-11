@@ -15,10 +15,6 @@ const Image = styled(Box)(
 
 Image.displayName='Image'
 
-Image.propTypes /* remove-proptypes */ = {
-    ...borderRadius.propTypes
-}
-
 Image.defaultProps = {
     as: 'img',
     height: 'auto'

@@ -1,9 +1,10 @@
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
-import { uglify } from 'rollup-plugin-uglify'
+import { terser } from 'rollup-plugin-terser'
 import gzip from 'rollup-plugin-gzip'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import { plugin as analyze } from 'rollup-plugin-analyzer'
 import pkg from './package.json'
 
 import fs from 'fs'
@@ -31,26 +32,8 @@ function getNamedExports(moduleIds) {
     return result
 }
 
-const globals = {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'styled-components': 'styled',
-    'prop-types': 'PropTypes'
-}
-
-export default {
+const baseConfig = {
     input: 'src/index.js',
-    output: [
-        { file: pkg.main, format: 'cjs' },
-        { file: pkg.module, format: 'es' },
-    ],
-    // don't bundle these modules
-    external: [
-        'react',
-        'react-dom',
-        'styled-components',
-        'prop-types'
-    ],
     plugins: [
         peerDepsExternal(),
         // locate & include node modules not listed in externals
@@ -58,7 +41,6 @@ export default {
         // convert commonJS modules to es modules
         commonjs({
             include: /node_modules/,
-            // namedExports: globals
             namedExports: getNamedExports([
                 'react-transition-group',
                 'react-dom'
@@ -68,11 +50,22 @@ export default {
         babel({
             exclude: /node_modules/,
         }),
-        uglify({
-            output: {
-                comments: false
-            }
-        }),
-        gzip()
+        terser(),
+        gzip(),
+        analyze({
+            limit: 5,
+            // showExports: true
+        })
     ]
 }
+
+export default [
+    {
+        ...baseConfig,
+        output: { file: pkg.main, format: 'cjs' },
+    },
+    {
+        ...baseConfig,
+        output: { file: pkg.module, format: 'es' },
+    }
+]

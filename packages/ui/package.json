@@ -2,9 +2,8 @@
   "name": "@setlife/ui",
   "version": "1.0.0",
   "description": "React UI components used across all Setlife projects",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
-  "browser": "./dist/index.umd.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
   "files": [
     "dist"
   ],
@@ -29,19 +28,12 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "NODE_ENV=production rollup --config",
-    "bundle": "webpack",
-    "size": "bundlesize",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook"
   },
   "bugs": {
     "url": "https://github.com/quinnstonchurchill/setlife/issues"
   },
-  "bundlesize": [
-    {
-      "path": "./dist/*.js"
-    }
-  ],
   "peerDependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",

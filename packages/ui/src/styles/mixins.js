@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
-import { shade } from 'polished'
+import shade from 'polished/lib/color/shade'
+// import { shade } from 'polished'
 
 export default {
     link: css`

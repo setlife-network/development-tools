@@ -18,10 +18,6 @@ const tags = {
     h4: 'h4',
     h5: 'h5',
     h6: 'h6',
-    display1: 'h1',
-    display2: 'h2',
-    display3: 'h3',
-    display4: 'h4',
 }
 
 const textStyle = variant({
@@ -42,16 +38,6 @@ const Text = styled(Box).attrs({
 `
 
 Text.displayName = 'Text'
-
-Text.propTypes /* remove-proptypes */ = {
-    ...textAlign.propTypes,
-    ...fontWeight.propTypes,
-    ...fontFamily.propTypes,
-    ...fontSize.propTypes,
-    ...lineHeight.propTypes,
-    ...letterSpacing.propTypes,
-    ...textStyle.propTypes
-}
 
 Text.defaultProps = {
     color: 'darkGrey',

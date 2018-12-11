@@ -42,23 +42,4 @@ const Box = styled('div')(
 
 Box.displayName = 'Box'
 
-Box.propTypes /* remove-proptypes */ = {
-    ...space.propTypes,
-    ...width.propTypes,
-    ...height.propTypes,
-    ...color.propTypes,
-    ...flex.propTypes,
-    ...minWidth.propTypes,
-    ...maxWidth.propTypes,
-    ...minHeight.propTypes,
-    ...maxHeight.propTypes,
-    ...display.propTypes,
-    ...position.propTypes,
-    ...top.propTypes,
-    ...right.propTypes,
-    ...bottom.propTypes,
-    ...left.propTypes,
-    ...opacity.propTypes
-}
-
 export default Box

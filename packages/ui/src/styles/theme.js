@@ -38,44 +38,34 @@ export default {
         caps: {
             textTransform: 'uppercase'
         },
-        display1: {
-            fontSize: '12rem',
-            fontWeight: 400,
-        },
-        display2: {
-            fontSize: '11rem',
-            fontWeight: 400,
-        },
-        display3: {
-            fontSize: '9rem',
-            fontWeight: 400,
-        },
-        display4: {
-            fontSize: '7rem',
-            fontWeight: 400,
-        },
         h1: {
-            fontSize: '3.75rem',
+            // fontSize: '3.75rem',
+            fontSize: 30,
             fontWeight: 600,
         },
         h2: {
-            fontSize: '3rem',
+            // fontSize: '3rem',
+            fontSize: 24,
             fontWeight: 600,
         },
         h3: {
-            fontSize: '2.5rem',
+            // fontSize: '2.5rem',
+            fontSize: 20,
             fontWeight: 600,
         },
         h4: {
-            fontSize: '2rem',
+            // fontSize: '2rem',
+            fontSize: 16,
             fontWeight: 600,
         },
         h5: {
-            fontSize: '1.75rem',
+            // fontSize: '1.75rem',
+            fontSize: 14,
             fontWeight: 600,
         },
         h6: {
-            fontSize: '1.5rem',
+            // fontSize: '1.5rem',
+            fontSize: 12,
             fontWeight: 600,
         }
     }

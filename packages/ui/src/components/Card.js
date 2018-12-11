@@ -32,15 +32,4 @@ const Card = styled(Box)(
 
 Card.displayName = 'Card'
 
-Card.propTypes /* remove-proptypes */ = {
-    ...borders.propTypes,
-    ...borderColor.propTypes,
-    ...borderRadius.propTypes,
-    ...backgroundImage.propTypes,
-    ...backgroundSize.propTypes,
-    ...backgroundPosition.propTypes,
-    ...backgroundRepeat.propTypes,
-    ...depth.propTypes
-}
-
 export default Card 

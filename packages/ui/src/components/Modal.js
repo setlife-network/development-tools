@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-import { Transition } from 'react-transition-group'
+import Transition from 'react-transition-group/Transition'
 import Card from './Card'
 import utils from '../styles/utils'
 
@@ -120,11 +119,6 @@ export default class ModalComponent extends React.Component {
             this.container
         )
     }
-}
-
-Modal.propTypes /* remove-proptypes */ = {
-    open: PropTypes.bool,
-    onClose: PropTypes.func
 }
 
 Modal.defaultProps = {

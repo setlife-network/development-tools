@@ -47,9 +47,9 @@ All `Box` props plus the following...
 | Name          | Type                                                           | Default  | Required | Description                                                                       |
 |---------------|----------------------------------------------------------------|----------|----------|-----------------------------------------------------------------------------------|
 | fontFamily    | string                                                         | -        | no       | font family                                                                       |
-| align         | string, array                                                  | left     | no       | text align                                                                        |
-| weight        | string, number, array                                          | 400      | no       | font weight                                                                       |
-| size          | string, number, array                                          | 16px     | no       | font size                                                                         |
+| textAlign         | string, array                                                  | left     | no       | text align                                                                        |
+| fontWeight        | string, number, array                                          | 400      | no       | font weight                                                                       |
+| fontSize          | string, number, array                                          | 16px     | no       | font size                                                                         |
 | lineHeight    | string, number, array                                          | 1.6      | no       | -                                                                                 |
 | letterSpacing | string, number, array                                          | 0.025rem | no       | -                                                                                 |
-| variant       | h1, h2, h3, h4, h5, h6, display1, display2, display3, display4 | -        | no       | applies text styles found in `theme.fontVariants` and changes underlying html tag |
+| variant       | h1, h2, h3, h4, h5, h6 | -        | no       | applies text styles found in `theme.fontVariants` and changes underlying html tag |

@@ -16,8 +16,6 @@ import { ThemeProvider, theme } from '@setlife/ui'
 
 ### Overrides & Custom Themes
 
-In most cases, the default theme will suffice, although you may want to apply custom colors or breakpoints for your current project.
-
 The default Setlife theme will suffice in most cases, although you may override colors and breakpoints, or supply your own custom theme.
 
 ```js
@@ -46,18 +44,16 @@ const breakpoints = ['600px', '900px', '1200px', '1800px']
 </ThemeProvider>
 ```
 
-If you are using your own theme, the following structure is recommended
+If you are using your own theme, the following structure is recommended to prevent errors from theme-dependent props
 
 ```js
 {
     breakpoints: [String],
     colors: Object,
-    fonts: String,
+    fonts: String | Object,
     fontVariants: Object,
 }
 ```
-
-## Props
 
 ## Further Reading
 - [styled-system theming](https://github.com/jxnblk/styled-system/blob/master/docs/table.md)

@@ -38,10 +38,6 @@ storiesOf('Components|Text', module)
         'Headings',
         () => (
             <>
-                <Text variant='display1'>Display1</Text>
-                <Text variant='display2'>Display2</Text>
-                <Text variant='display3'>Display3</Text>
-                <Text variant='display4'>Display4</Text>
                 <Text variant='h1'>H1</Text>
                 <Text variant='h2'>H2</Text>
                 <Text variant='h3'>H3</Text>

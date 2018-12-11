@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import {
     alignItems,
@@ -46,18 +45,5 @@ const Flex = styled(Box)`
 `
 
 Flex.displayName = 'Flex'
-
-Flex.propTypes /* remove-proptypes */ = {
-    ...alignItems.propTypes,
-    ...alignSelf.propTypes,
-    ...alignContent.propTypes,
-    ...justifyContent.propTypes,
-    ...flexDirection.propTypes,
-    ...flexBasis.propTypes,
-    wrap: PropTypes.bool,
-    center: PropTypes.bool,
-    order: PropTypes.number,
-    center: PropTypes.bool
-}
 
 export default Flex
