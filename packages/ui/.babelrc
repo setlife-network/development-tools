@@ -1,20 +1,25 @@
 {
-    "presets": [
-        ["@babel/env", {
-            "modules": false
-        }],
-        "@babel/react"
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false
+      }
     ],
-    "plugins": [
-        ["babel-plugin-styled-components", {
-            "displayName": true
-        }]
-    ],
-    "env": {
-        "production": {
-            "plugins": [
-                ["transform-react-remove-prop-types", { "mode": "remove" }]
-            ]
-        }
+    "@babel/react"
+  ],
+  "plugins": [
+    "react-docgen",
+    [
+      "babel-plugin-styled-components",
+      {
+        "displayName": true
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [["transform-react-remove-prop-types", { "mode": "remove" }]]
     }
+  }
 }

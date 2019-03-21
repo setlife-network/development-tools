@@ -1,49 +1,49 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import {
-    alignItems,
-    alignSelf,
-    justifyContent,
-    alignContent,
-    style
-} from 'styled-system'
-import Box from './Box'
-import utils from '../styles/utils'
+  alignItems,
+  alignSelf,
+  justifyContent,
+  alignContent,
+  style
+} from 'styled-system';
+import Box from './Box';
+import utils from '../styles/utils';
 
 const flexDirection = style({
-    prop: 'direction',
-    cssProperty: 'flexDirection'
-})
+  prop: 'direction',
+  cssProperty: 'flexDirection'
+});
 
 const flexBasis = style({
-    prop: 'basis',
-    cssProperty: 'flexBasis'
-})
+  prop: 'basis',
+  cssProperty: 'flexBasis'
+});
 
 const Flex = styled(Box)`
-    display: flex;
-    ${flexDirection}
-    ${flexBasis}
-    ${alignItems}
-    ${alignSelf}
-    ${justifyContent}
-    ${alignContent}
-    ${utils.themed('Flex')}
-    
-    ${utils.is('wrap')`
-        flex-wrap: wrap;
-    `}
+  display: flex;
+  ${flexDirection}
+  ${flexBasis}
+  ${alignItems}
+  ${alignSelf}
+  ${justifyContent}
+  ${alignContent}
+  ${utils.themed('Flex')}
 
-    /* Misc */
-    ${utils.is('center')`
-        align-items: center;
-        justify-content: center;
-    `}
+  ${utils.is('wrap')`
+    flex-wrap: wrap;
+  `}
 
-    ${utils.is('order')`
-        order: ${p => p.order};
-    `}
-`
+  /* Misc */
+  ${utils.is('center')`
+    align-items: center;
+    justify-content: center;
+  `}
 
-Flex.displayName = 'Flex'
+  ${utils.is('order')`
+    order: ${p => p.order};
+  `}
+`;
 
-export default Flex
+Flex.displayName = 'Flex';
+
+export default Flex;

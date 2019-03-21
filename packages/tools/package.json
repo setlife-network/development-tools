@@ -1,6 +1,6 @@
 {
   "name": "tools",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Setlife cli tools and devDependencies",
   "author": "Quinn Pruitt <qpruitt93@gmail.com>",
   "homepage": "https://github.com/quinnstonchurchill/setlife#readme",
@@ -15,7 +15,5 @@
   "bugs": {
     "url": "https://github.com/quinnstonchurchill/setlife/issues"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
