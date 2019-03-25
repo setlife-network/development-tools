@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import defaultTheme from './theme';
+import defaultTheme from '../styles/theme';
 
 const ThemeProvider = ({
   theme,
@@ -25,7 +25,7 @@ ThemeProvider.propTypes = {
   theme: PropTypes.object,
   customBreakpoints: PropTypes.array,
   customColors: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node.isRequired
 };
 
 export default ThemeProvider;

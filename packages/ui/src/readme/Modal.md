@@ -36,6 +36,6 @@ import { Modal, Toggle } from '@setlife/ui'
 ## Props
 
 | Name    | Type     | Default | Required | Description                    |
-|---------|----------|---------|----------|--------------------------------|
+| ------- | -------- | ------- | -------- | ------------------------------ |
 | open    | bool     | FALSE   | no       | whether to show the modal      |
 | onClose | function | -       | no       | function for closing the modal |

@@ -1,9 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 import { themeGet } from 'styled-system';
+import normalize from 'styled-normalize';
 
 const GlobalStyle = createGlobalStyle`
+  ${normalize};
   html {
-    font-size: ${themeGet('baseRem', 8)}px;
+    font-size: 62.5%;
     font-family: ${themeGet('fonts', 'inherit')};
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -23,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: inherit;
-    background-color: transparent;
     text-decoration:none;
     cursor: pointer;
   }

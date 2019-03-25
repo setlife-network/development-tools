@@ -1,27 +1,38 @@
-import React from 'react'
-import { configure, addDecorator } from '@storybook/react'
-import { withOptions } from '@storybook/addon-options'
-import { withViewport } from '@storybook/addon-viewport'
-import { ThemeProvider, GlobalStyle, Box } from '../src'
+import React, { Fragment } from 'react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
+import { themes } from '@storybook/theming';
+import { addReadme } from 'storybook-readme';
+import { ThemeProvider } from 'styled-components';
+import {
+  // ThemeProvider,
+  GlobalStyle,
+  Box,
+  theme
+} from '../src';
 
-addDecorator(withViewport)
-addDecorator(withOptions({
-    name: 'Setlife Design System',
+addParameters({
+  options: {
+    name: 'Setlife UI Components',
     hierarchyRootSeparator: /\|/,
-}))
-addDecorator(story => (
-    <ThemeProvider>
-        <>
-            <Box p='2rem'>{story()}</Box>
-            <GlobalStyle />
-        </>
-    </ThemeProvider>
-))
+    theme: themes.light
+  }
+});
 
-const req = require.context('../src/stories', true, /\.story\.js$/)
+addDecorator(story => (
+  <ThemeProvider theme={theme}>
+    <Fragment>
+      <Box padding={2}>{story()}</Box>
+      <GlobalStyle />
+    </Fragment>
+  </ThemeProvider>
+));
+
+addDecorator(addReadme);
+
+const req = require.context('../src/stories', true, /\.story\.js$/);
 
 function loadStories() {
-    req.keys().forEach(filename => req(filename))
+  req.keys().forEach(filename => req(filename));
 }
 
-configure(loadStories, module)
+configure(loadStories, module);

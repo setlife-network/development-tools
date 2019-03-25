@@ -9,16 +9,14 @@ const Button = styled(Card)`
   cursor: pointer;
   outline: 0;
   font-size: 1.5rem;
+  display: inline-block;
+  text-align: center;
   ${utils.themed('Button')}
   
   ${utils.is('transparent')`
     ${mixins.link};
     background-color: transparent;
     border: solid 1px;
-  `}
-
-  ${utils.is('fullWidth')`
-    width: 100%;
   `}
 
   ${utils.isNot('transparent', 'disabled')`
@@ -37,13 +35,11 @@ Button.displanName = 'Button';
 
 Button.defaultProps = {
   as: 'button',
-  bg: 'blue',
+  backgroundColor: 'blue',
   color: '#ffffff',
   border: 'none',
   borderRadius: 3,
-  fullWidth: false,
-  p: '0 1.5rem',
-  height: '4rem'
+  padding: '0 1.5rem'
 };
 
 export default Button;

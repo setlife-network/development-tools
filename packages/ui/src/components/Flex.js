@@ -4,19 +4,24 @@ import {
   alignSelf,
   justifyContent,
   alignContent,
-  style
+  style,
+  order
 } from 'styled-system';
+import PropTypes from 'prop-types';
+
 import Box from './Box';
 import utils from '../styles/utils';
 
 const flexDirection = style({
-  prop: 'direction',
-  cssProperty: 'flexDirection'
+  prop: 'flexDirection',
+  cssProperty: 'flexDirection',
+  alias: 'direction'
 });
 
 const flexBasis = style({
-  prop: 'basis',
-  cssProperty: 'flexBasis'
+  prop: 'flexBasis',
+  cssProperty: 'flexBasis',
+  alias: 'basis'
 });
 
 const Flex = styled(Box)`
@@ -27,23 +32,31 @@ const Flex = styled(Box)`
   ${alignSelf}
   ${justifyContent}
   ${alignContent}
+  ${order}
   ${utils.themed('Flex')}
-
-  ${utils.is('wrap')`
-    flex-wrap: wrap;
-  `}
 
   /* Misc */
   ${utils.is('center')`
     align-items: center;
     justify-content: center;
   `}
-
-  ${utils.is('order')`
-    order: ${p => p.order};
-  `}
 `;
 
 Flex.displayName = 'Flex';
+
+Flex.propTypes = {
+  ...flexDirection.propTypes,
+  ...flexBasis.propTypes,
+  ...alignItems.propTypes,
+  ...alignSelf.propTypes,
+  ...justifyContent.propTypes,
+  ...alignContent.propTypes,
+  ...order.propTypes,
+  center: PropTypes.bool
+};
+
+Flex.defaultProps = {
+  center: false
+};
 
 export default Flex;

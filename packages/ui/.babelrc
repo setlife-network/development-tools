@@ -9,17 +9,12 @@
     "@babel/react"
   ],
   "plugins": [
-    "react-docgen",
+    ["module-resolver", { "root": ["./src"] }],
     [
       "babel-plugin-styled-components",
       {
         "displayName": true
       }
     ]
-  ],
-  "env": {
-    "production": {
-      "plugins": [["transform-react-remove-prop-types", { "mode": "remove" }]]
-    }
-  }
+  ]
 }

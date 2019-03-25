@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   width,
   height,
@@ -38,10 +39,29 @@ const Box = styled('div')(
   left,
   opacity,
   zIndex,
-  utils.css,
   utils.themed('Box')
 );
 
 Box.displayName = 'Box';
+
+Box.propTypes = {
+  ...color.propTypes,
+  ...space.propTypes,
+  ...width.propTypes,
+  ...height.propTypes,
+  ...flex.propTypes,
+  ...minWidth.propTypes,
+  ...maxWidth.propTypes,
+  ...minHeight.propTypes,
+  ...maxHeight.propTypes,
+  ...display.propTypes,
+  ...position.propTypes,
+  ...top.propTypes,
+  ...right.propTypes,
+  ...bottom.propTypes,
+  ...left.propTypes,
+  ...opacity.propTypes,
+  ...zIndex.propTypes
+};
 
 export default Box;

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import {
   borders,
-  borderColor,
-  borderRadius,
   backgroundImage,
   backgroundSize,
   backgroundPosition,
@@ -20,8 +18,6 @@ const depth = style({
 
 const Card = styled(Box)(
   borders,
-  borderColor,
-  borderRadius,
   backgroundImage,
   backgroundSize,
   backgroundPosition,
@@ -31,5 +27,14 @@ const Card = styled(Box)(
 );
 
 Card.displayName = 'Card';
+
+Card.propTypes = {
+  ...borders.propTypes,
+  ...backgroundImage.propTypes,
+  ...backgroundSize.propTypes,
+  ...backgroundPosition.propTypes,
+  ...backgroundRepeat.propTypes,
+  ...depth.propTypes
+};
 
 export default Card;

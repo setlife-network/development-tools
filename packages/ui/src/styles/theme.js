@@ -1,8 +1,12 @@
 export default {
-  // 1 rem equals...
-  baseRem: 8,
   // styled-system breakpoints
-  breakpoints: ['600px', '900px', '1200px', '1800px'],
+  breakpoints: {
+    d: 0,
+    sm: '600px',
+    md: '900px',
+    lg: '1200px',
+    xl: '1800px'
+  },
   // Box shadows
   shadows: {
     1: '0px 1.5px 8px rgba(0,0,0,0.07)',
@@ -39,28 +43,30 @@ export default {
       textTransform: 'uppercase'
     },
     h1: {
-      fontSize: '3.75rem',
+      fontSize: '3.4em',
       fontWeight: 600
     },
     h2: {
-      fontSize: '3rem',
+      fontSize: '3em',
       fontWeight: 600
     },
     h3: {
-      fontSize: '2.5rem',
+      fontSize: '2.4em',
       fontWeight: 600
     },
     h4: {
-      fontSize: '2rem',
+      fontSize: '2em',
       fontWeight: 600
     },
     h5: {
-      fontSize: '1.75rem',
+      fontSize: '1.6em',
       fontWeight: 600
     },
     h6: {
-      fontSize: '1.5rem',
+      fontSize: '1.4em',
       fontWeight: 600
     }
-  }
+  },
+  // Spacing scale
+  space: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 };

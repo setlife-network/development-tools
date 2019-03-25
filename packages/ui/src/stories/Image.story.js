@@ -1,17 +1,14 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { withDocs } from 'storybook-readme'
-import { Image } from '../'
-import Readme from './readme/Image.md'
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Readme from '../readme/Image.md';
+import { Image } from '..';
 
 storiesOf('Components|Image', module)
-    .addDecorator(withDocs(Readme))
-    .add(
-        'Image Component',
-        () => (
-            <Image
-                src='https://i.imgflip.com/1qnbjv.jpg'
-                width={200}
-            />
-        )
-    )
+  .addParameters({
+    readme: {
+      content: Readme
+    }
+  })
+  .add('Image Component', () => (
+    <Image src="https://i.imgflip.com/1qnbjv.jpg" width={200} />
+  ));
