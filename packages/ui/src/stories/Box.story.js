@@ -7,7 +7,8 @@ import Readme from '../readme/Box.md';
 storiesOf('Components|Box', module)
   .addParameters({
     readme: {
-      content: Readme
+      content: Readme,
+      DocPreview: ({ children }) => <Box padding={20}>{children}</Box>
     }
   })
   .add('Layout', () => (
@@ -28,14 +29,23 @@ storiesOf('Components|Box', module)
   ))
   .add('Spacing', () => (
     <Fragment>
-      <Box minHeight={100} backgroundColor="purple" my="2rem" mr="50%" p="2rem">
+      <Box
+        minHeight={100}
+        backgroundColor="purple"
+        marginY="2rem"
+        marginRight="50%"
+        padding="2rem"
+      >
         <Text color="white">Spacing is easy!</Text>
       </Box>
-      <Box minHeight={100} backgroundColor="blue" my="2rem" ml="25%" p="4rem">
+      <Box
+        minHeight={100}
+        backgroundColor="blue"
+        marginY="2rem"
+        marginLeft="25%"
+        padding="4rem"
+      >
         <Text color="white">Seriously dude... so easy</Text>
       </Box>
     </Fragment>
-  ))
-  .add('Overrides', () => (
-    <Box height={200} width={200} backgroundColor="purple" />
   ));

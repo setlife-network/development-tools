@@ -33,13 +33,16 @@ const Button = styled(Card)`
 
 Button.displanName = 'Button';
 
+Button.propTypes = Card.propTypes;
+
 Button.defaultProps = {
   as: 'button',
-  backgroundColor: 'blue',
+  bg: 'blue',
   color: '#ffffff',
   border: 'none',
   borderRadius: 3,
-  padding: '0 1.5rem'
+  py: '1rem',
+  px: '2rem'
 };
 
 export default Button;

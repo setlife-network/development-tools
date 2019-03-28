@@ -15,13 +15,13 @@ storiesOf('Components|Button', module)
   ))
   .add('Colors', () => (
     <Fragment>
-      <Button backgroundColor="blue" marginRight="2rem">
+      <Button backgroundColor="blue" marginRight={2}>
         Blue Button
       </Button>
-      <Button backgroundColor="green" marginRight="2rem">
+      <Button backgroundColor="green" marginRight={2}>
         Green Button
       </Button>
-      <Button transparent color="purple" marginRight="2rem">
+      <Button transparent color="purple" marginRight={2}>
         Purple Button
       </Button>
     </Fragment>
