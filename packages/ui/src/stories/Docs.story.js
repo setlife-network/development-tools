@@ -1,7 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { doc, withDocs } from 'storybook-readme';
-import { Card, Text, Box, Flex, ThemeProvider, theme } from '..';
+import { ThemeProvider } from 'styled-components';
+
+import { Card, Text, Box, Flex, theme } from '..';
 import ThemeProviderReadme from '../readme/ThemeProvider.md';
 import GlobalStyleReadme from '../readme/GlobalStyle.md';
 import ComponentThemingReadme from '../readme/ComponentTheming.md';

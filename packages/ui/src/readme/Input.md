@@ -5,7 +5,7 @@ Text input component. Extends `Card`
 ## Usage
 
 ```js
-import { Flex } from '@setlife/ui'
+import { Input } from '@setlife/ui';
 ```
 
 <!-- STORY -->

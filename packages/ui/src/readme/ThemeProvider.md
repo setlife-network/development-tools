@@ -1,50 +1,23 @@
 # ThemeProvider
 
-A wrapper around `ThemeProvider` from `styled-components` for applying custom themes or the default theme defined in the `theme` module
+Use `ThemeProvider` from `styled-components` for applying custom themes or the default theme defined in the `theme` module
 
 ## Usage
 
-Pass a `theme` object to enable theming. 
+Pass a `theme` object to enable theming.
 
 ```js
-import { ThemeProvider, theme } from '@setlife/ui'
+import { ThemeProvider } from 'styled-components';
+import { theme } from '@setlife/ui';
 
 <ThemeProvider theme={theme}>
-    <App />
-</ThemeProvider>
+  <App />
+</ThemeProvider>;
 ```
 
 ### Overrides & Custom Themes
 
-The default Setlife theme will suffice in most cases, although you may override colors and breakpoints, or supply your own custom theme.
-
-```js
-// defaut colors
-const colors = {
-    white: '#ffffff',
-    background: '#F7F7F9',
-    border: '#EEEFF2',
-    lightGrey: '#CFD5DE',
-    grey: '#718093',
-    darkGrey: '#344768',
-    purple: '#C15BEE',
-    blue: '#00B2FF',
-    green: '#02BE57',
-    yellow: '#F4D163',
-    red: '#CF242B',
-    facebook: '#32529F',
-    overlay: 'rgba(0,0,0,0.5)'
-}
-
-// default breakpoints
-const breakpoints = ['600px', '900px', '1200px', '1800px']
-
-<ThemeProvider customColors={colors} customBreakpoints={breakpoints}>
-    <App />
-</ThemeProvider>
-```
-
-If you are using your own theme, the following structure is recommended to prevent errors from theme-dependent props
+The default Setlife theme will suffice in most cases. If you are using your own theme, the following structure is recommended to prevent errors from theme-dependent props
 
 ```js
 {
@@ -56,5 +29,6 @@ If you are using your own theme, the following structure is recommended to preve
 ```
 
 ## Further Reading
+
 - [styled-system theming](https://github.com/jxnblk/styled-system/blob/master/docs/table.md)
 - [styled-components ThemeProvider](https://www.styled-components.com/docs/advanced#theming)

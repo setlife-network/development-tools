@@ -3,12 +3,7 @@ import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
 import { addReadme } from 'storybook-readme';
 import { ThemeProvider } from 'styled-components';
-import {
-  // ThemeProvider,
-  GlobalStyle,
-  Box,
-  theme
-} from '../src';
+import { GlobalStyle, Box, theme } from '../src';
 
 addParameters({
   options: {

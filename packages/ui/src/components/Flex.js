@@ -24,9 +24,16 @@ const flexBasis = style({
   alias: 'basis'
 });
 
+const flexWrap = style({
+  prop: 'flexWrap',
+  cssProperty: 'flexWrap',
+  alias: 'wrap'
+});
+
 const Flex = styled(Box)`
   display: flex;
   ${flexDirection}
+  ${flexWrap}
   ${flexBasis}
   ${alignItems}
   ${alignSelf}
@@ -47,6 +54,7 @@ Flex.displayName = 'Flex';
 Flex.propTypes = {
   ...flexDirection.propTypes,
   ...flexBasis.propTypes,
+  ...flexWrap.propTypes,
   ...alignItems.propTypes,
   ...alignSelf.propTypes,
   ...justifyContent.propTypes,

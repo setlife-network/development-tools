@@ -12,6 +12,8 @@ import Box from './Box';
 import utils from '../styles/utils';
 
 const tags = {
+  p: 'p',
+  a: 'a',
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',
@@ -25,7 +27,7 @@ const textStyle = variant({
 });
 
 const Text = styled(Box).attrs({
-  as: p => (p.variant ? tags[p.variant] : 'p')
+  as: p => tags[p.variant]
 })`
   ${fontFamily}
   ${textAlign}
@@ -40,9 +42,10 @@ const Text = styled(Box).attrs({
 Text.displayName = 'Text';
 
 Text.defaultProps = {
+  variant: 'p',
   color: 'darkGrey',
-  fontSize: 16,
-  letterSpacing: '0.025rem',
+  fontSize: '1.6em',
+  letterSpacing: '0.02em',
   lineHeight: 1.6
 };
 

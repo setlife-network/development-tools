@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Text from './Text';
-import { utils } from '../styles';
+import utils from '../styles/utils';
 
 const Link = styled(Text).attrs({
   as: 'a',

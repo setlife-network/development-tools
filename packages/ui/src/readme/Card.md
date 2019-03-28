@@ -9,25 +9,25 @@ import { Card } from '@setlife/ui'
 
 <!-- STORY -->
 
-Use exactly as you would a `Box` except with additional props.
-
 Pass a `depth` prop to apply box shadows defined in `theme.shadows`
 
 ## Props
 
 All `Box` props plus the following...
 
-| Name               | Type                  | Default | Required | Description                                |
-|--------------------|-----------------------|---------|----------|--------------------------------------------|
-| border             | string, number, array | -       | no       | -                                          |
-| borderTop          | string, number, array | -       | no       | -                                          |
-| borderRight        | string, number, array | -       | no       | -                                          |
-| borderBottom       | string, number, array | -       | no       | -                                          |
-| borderLeft         | string, number, array | -       | no       | -                                          |
-| borderColor        | string, number, array | -       | no       | -                                          |
-| borderRadius       | string, number, array | -       | no       | -                                          |
-| backgroundImage    | string, array         | -       | no       | -                                          |
-| backgroundSize     | string, array         | -       | no       | -                                          |
-| backgroundPosition | string, array         | -       | no       | -                                          |
-| backgroundRepeat   | string, array         | -       | no       | -                                          |
-| depth              | number                | -       | no       | apply box shadows based on `theme.shadows` |
+| Name               | Type                          | Default | Required | Description                                |
+| ------------------ | ----------------------------- | ------- | -------- | ------------------------------------------ |
+| border             | string, number, array, object | -       | no       | -                                          |
+| borderTop          | string, number, array, object | -       | no       | -                                          |
+| borderRight        | string, number, array, object | -       | no       | -                                          |
+| borderBottom       | string, number, array, object | -       | no       | -                                          |
+| borderLeft         | string, number, array, object | -       | no       | -                                          |
+| borderColor        | string, number, array, object | -       | no       | -                                          |
+| borderRadius       | string, number, array, object | -       | no       | -                                          |
+| borderWidth        | string, number, array, object | -       | no       | -                                          |
+| borderStye         | string, number, array, object | -       | no       | -                                          |
+| backgroundImage    | string, array                 | -       | no       | -                                          |
+| backgroundSize     | string, array                 | -       | no       | -                                          |
+| backgroundPosition | string, array                 | -       | no       | -                                          |
+| backgroundRepeat   | string, array                 | -       | no       | -                                          |
+| depth              | number                        | -       | no       | apply box shadows based on `theme.shadows` |

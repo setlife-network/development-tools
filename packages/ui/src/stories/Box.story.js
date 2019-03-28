@@ -21,11 +21,7 @@ storiesOf('Components|Box', module)
     />
   ))
   .add('Responsive Props', () => (
-    <Box
-      height={200}
-      backgroundColor="green"
-      width={{ d: '100%', sm: '75%' }}
-    />
+    <Box height={200} backgroundColor="green" width={{ xs: 400, sm: 200 }} />
   ))
   .add('Spacing', () => (
     <Fragment>

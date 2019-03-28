@@ -1,17 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Card, Text } from '..';
+import { Card, Text, Box } from '..';
 import Readme from '../readme/Card.md';
 
 storiesOf('Components|Card', module)
   .addParameters({
     readme: {
-      content: Readme
+      content: Readme,
+      DocPreview: ({ children }) => <Box padding={20}>{children}</Box>
     }
   })
   .add('Card Component', () => (
     <Card
-      bg="white"
+      backgroundColor="white"
       border="solid 1px"
       borderColor="blue"
       borderRadius={4}

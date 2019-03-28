@@ -1,12 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Readme from '../readme/Image.md';
-import { Image } from '..';
+import { Image, Box } from '..';
 
 storiesOf('Components|Image', module)
   .addParameters({
     readme: {
-      content: Readme
+      content: Readme,
+      DocPreview: ({ children }) => <Box padding={20}>{children}</Box>
     }
   })
   .add('Image Component', () => (

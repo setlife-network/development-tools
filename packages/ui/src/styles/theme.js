@@ -2,6 +2,7 @@ export default {
   // styled-system breakpoints
   breakpoints: {
     d: 0,
+    xs: '400px',
     sm: '600px',
     md: '900px',
     lg: '1200px',
@@ -59,11 +60,11 @@ export default {
       fontWeight: 600
     },
     h5: {
-      fontSize: '1.6em',
+      fontSize: '1.8em',
       fontWeight: 600
     },
     h6: {
-      fontSize: '1.4em',
+      fontSize: '1.6em',
       fontWeight: 600
     }
   },

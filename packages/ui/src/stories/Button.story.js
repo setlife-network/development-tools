@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Button } from '..';
+import { Box, Button } from '..';
 // import { Button } from '../../build'
 import Readme from '../readme/Button.md';
 
 storiesOf('Components|Button', module)
   .addParameters({
     readme: {
-      content: Readme
+      content: Readme,
+      DocPreview: ({ children }) => <Box padding={20}>{children}</Box>
     }
   })
   .add('Button Component', () => (

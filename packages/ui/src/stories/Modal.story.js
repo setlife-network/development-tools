@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Flex, Button, Text, Modal, Toggle } from '..';
+import { Flex, Button, Text, Modal, Toggle, Box } from '..';
 import Readme from '../readme/Modal.md';
 
 storiesOf('Components|Modal', module)
   .addParameters({
     readme: {
-      content: Readme
+      content: Readme,
+      DocPreview: ({ children }) => <Box padding={20}>{children}</Box>
     }
   })
   .add('Modal Component', () => (
