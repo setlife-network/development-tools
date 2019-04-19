@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { fontFamily, themeGet } from 'styled-system';
-import utils from '../styles/utils';
-import mixins from '../styles/mixins';
+import { mixins, utils } from '../styles';
 import Card from './Card';
 
 const Button = styled(Card)`

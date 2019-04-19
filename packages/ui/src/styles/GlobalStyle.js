@@ -30,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a:hover, a:active {
-    color: inherit;
     outline: 0;
   }
 

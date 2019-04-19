@@ -7,6 +7,9 @@ import Transition from 'react-transition-group/Transition';
 import Card from './Card';
 import utils from '../styles/utils';
 
+// accessible modal with hooks
+// https://levelup.gitconnected.com/how-to-create-an-accessible-react-modal-5b87e6a27503
+
 const transitionOpacity = {
   entering: 1,
   entered: 1,
@@ -24,7 +27,7 @@ const Backdrop = styled.div`
   transition: background 200ms ease-in-out;
 `;
 
-const Modal = styled.div`
+const ModalRoot = styled.div`
   position: fixed;
   top: 0px;
   left: 0px;
@@ -66,7 +69,7 @@ export default class ModalComponent extends React.Component {
     open: PropTypes.bool.isRequired,
     children: PropTypes.any.isRequired,
     closeModal: PropTypes.func.isRequired
-  }
+  };
   static defaultProps = {
     open: false
   };
@@ -77,21 +80,17 @@ export default class ModalComponent extends React.Component {
       document.body.appendChild(this.container);
     }
   }
-
   componentDidMount() {
     this.attachEventHandlers();
   }
-
   componentDidUpdate() {
     this.attachEventHandlers();
   }
-
   onKeyUp({ keyCode }) {
     if (keyCode === 27) {
       this.props.closeModal();
     }
   }
-
   attachEventHandlers() {
     if (this.props.open) {
       // prevent page from scrolling when modal is opened
@@ -102,7 +101,6 @@ export default class ModalComponent extends React.Component {
       document.removeEventListener('keyup', this.onKeyUp);
     }
   }
-
   render() {
     const { closeModal, open, children } = this.props;
 
@@ -111,10 +109,10 @@ export default class ModalComponent extends React.Component {
     return ReactDOM.createPortal(
       <Transition timeout={200} in={open}>
         {state => (
-          <Modal open={open || state === 'exiting'} state={state}>
+          <ModalRoot open={open || state === 'exiting'} state={state}>
             <Backdrop onClick={closeModal} />
             <ModalContent>{children}</ModalContent>
-          </Modal>
+          </ModalRoot>
         )}
       </Transition>,
       this.container

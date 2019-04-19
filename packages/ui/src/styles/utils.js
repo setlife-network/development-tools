@@ -4,7 +4,6 @@ const styledIf = (method, condition) => (...names) => (...args) => props =>
   names[method](name => Boolean(props[name]) === condition) && css(...args);
 
 export default {
-  css: props => props.css,
   themed: key => props => props.theme[key],
   is: styledIf('every', true),
   isNot: styledIf('every', false),

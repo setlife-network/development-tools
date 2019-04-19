@@ -1,14 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Link, Box } from '..';
+import { Link } from '..';
 
-storiesOf('Components|Link', module)
-  // .addParameters({
-  //   readme: {
-  //     content: Readme,
-  //     DocPreview: ({ children }) => <Box padding={20}>{children}</Box>
-  //   }
-  // })
-  .add('Link', () => {
-    <Link>I am a link</Link>;
-  });
+storiesOf('Components|Link', module).add('Link', () => (
+  <Link target="_blank" href="https://google.com">
+    I am a link
+  </Link>
+));

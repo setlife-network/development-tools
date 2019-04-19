@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { themes } from '@storybook/theming';
-import { addReadme } from 'storybook-readme';
+import { addReadme, configureReadme } from 'storybook-readme';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle, Box, theme } from '../src';
+import { GlobalStyle, Flex, Box, theme } from '../src';
 
 addParameters({
   options: {
@@ -16,11 +16,17 @@ addParameters({
 addDecorator(story => (
   <ThemeProvider theme={theme}>
     <Fragment>
-      <Box padding={2}>{story()}</Box>
+      <Box padding={2} width={1}>
+        {story()}
+      </Box>
       <GlobalStyle />
     </Fragment>
   </ThemeProvider>
 ));
+
+configureReadme({
+  StoryPreview: ({ children }) => <Box width={1}>{children}</Box>
+});
 
 addDecorator(addReadme);
 

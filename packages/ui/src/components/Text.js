@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import {
-  textAlign,
-  fontWeight,
-  fontSize,
   lineHeight,
   letterSpacing,
   fontFamily,
-  variant
+  variant,
+  style,
+  getPx
 } from 'styled-system';
+
 import Box from './Box';
-import utils from '../styles/utils';
+import { utils } from '../styles';
 
 const tags = {
   p: 'p',
@@ -24,6 +24,24 @@ const tags = {
 
 const textStyle = variant({
   key: 'fontVariants'
+});
+
+const textAlign = style({
+  prop: 'textAlign',
+  alias: 'align'
+});
+
+const fontWeight = style({
+  prop: 'fontWeight',
+  key: 'fontWeights',
+  alias: 'weight'
+});
+
+const fontSize = style({
+  prop: 'fontSize',
+  key: 'fontSizes',
+  transformValue: getPx,
+  scale: [12, 14, 16, 20, 24, 32, 48, 64, 72]
 });
 
 const Text = styled(Box).attrs({
